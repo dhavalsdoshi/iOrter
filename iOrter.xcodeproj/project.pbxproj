@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAFFB5D916672E83003968BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5D816672E83003968BF /* UIKit.framework */; };
+		BAFFB5DB16672E83003968BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DA16672E83003968BF /* Foundation.framework */; };
+		BAFFB5DD16672E83003968BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DC16672E83003968BF /* CoreGraphics.framework */; };
+		BAFFB5E316672E83003968BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5E116672E83003968BF /* InfoPlist.strings */; };
+		BAFFB5E516672E83003968BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5E416672E83003968BF /* main.m */; };
+		BAFFB5E916672E83003968BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5E816672E83003968BF /* AppDelegate.m */; };
+		BAFFB5EB16672E83003968BF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EA16672E83003968BF /* Default.png */; };
+		BAFFB5ED16672E83003968BF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EC16672E83003968BF /* Default@2x.png */; };
+		BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EE16672E83003968BF /* Default-568h@2x.png */; };
+		BAFFB5F216672E83003968BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5F016672E83003968BF /* MainStoryboard.storyboard */; };
+		BAFFB5F516672E83003968BF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F416672E83003968BF /* MasterViewController.m */; };
+		BAFFB5F816672E83003968BF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F716672E83003968BF /* DetailViewController.m */; };
+		BAFFB60016672E83003968BF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5FF16672E83003968BF /* SenTestingKit.framework */; };
+		BAFFB60116672E83003968BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5D816672E83003968BF /* UIKit.framework */; };
+		BAFFB60216672E83003968BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DA16672E83003968BF /* Foundation.framework */; };
+		BAFFB60A16672E83003968BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB60816672E83003968BF /* InfoPlist.strings */; };
+		BAFFB60D16672E83003968BF /* iOrterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB60C16672E83003968BF /* iOrterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAFFB60316672E83003968BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAFFB5CB16672E83003968BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAFFB5D316672E83003968BF;
+			remoteInfo = iOrter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BAFFB5D416672E83003968BF /* iOrter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOrter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFFB5D816672E83003968BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BAFFB5DA16672E83003968BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BAFFB5DC16672E83003968BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BAFFB5E016672E83003968BF /* iOrter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOrter-Info.plist"; sourceTree = "<group>"; };
+		BAFFB5E216672E83003968BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BAFFB5E416672E83003968BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAFFB5E616672E83003968BF /* iOrter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOrter-Prefix.pch"; sourceTree = "<group>"; };
+		BAFFB5E716672E83003968BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BAFFB5E816672E83003968BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BAFFB5EA16672E83003968BF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BAFFB5EC16672E83003968BF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BAFFB5EE16672E83003968BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BAFFB5F116672E83003968BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BAFFB5F316672E83003968BF /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		BAFFB5F416672E83003968BF /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		BAFFB5F616672E83003968BF /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BAFFB5F716672E83003968BF /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BAFFB5FE16672E83003968BF /* iOrterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOrterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFFB5FF16672E83003968BF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		BAFFB60716672E83003968BF /* iOrterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOrterTests-Info.plist"; sourceTree = "<group>"; };
+		BAFFB60916672E83003968BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BAFFB60B16672E83003968BF /* iOrterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOrterTests.h; sourceTree = "<group>"; };
+		BAFFB60C16672E83003968BF /* iOrterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOrterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAFFB5D116672E83003968BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFFB5D916672E83003968BF /* UIKit.framework in Frameworks */,
+				BAFFB5DB16672E83003968BF /* Foundation.framework in Frameworks */,
+				BAFFB5DD16672E83003968BF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFFB5FA16672E83003968BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFFB60016672E83003968BF /* SenTestingKit.framework in Frameworks */,
+				BAFFB60116672E83003968BF /* UIKit.framework in Frameworks */,
+				BAFFB60216672E83003968BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAFFB5C916672E83003968BF = {
+			isa = PBXGroup;
+			children = (
+				BAFFB5DE16672E83003968BF /* iOrter */,
+				BAFFB60516672E83003968BF /* iOrterTests */,
+				BAFFB5D716672E83003968BF /* Frameworks */,
+				BAFFB5D516672E83003968BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAFFB5D516672E83003968BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAFFB5D416672E83003968BF /* iOrter.app */,
+				BAFFB5FE16672E83003968BF /* iOrterTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAFFB5D716672E83003968BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAFFB5D816672E83003968BF /* UIKit.framework */,
+				BAFFB5DA16672E83003968BF /* Foundation.framework */,
+				BAFFB5DC16672E83003968BF /* CoreGraphics.framework */,
+				BAFFB5FF16672E83003968BF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAFFB5DE16672E83003968BF /* iOrter */ = {
+			isa = PBXGroup;
+			children = (
+				BAFFB5E716672E83003968BF /* AppDelegate.h */,
+				BAFFB5E816672E83003968BF /* AppDelegate.m */,
+				BAFFB5F016672E83003968BF /* MainStoryboard.storyboard */,
+				BAFFB5F316672E83003968BF /* MasterViewController.h */,
+				BAFFB5F416672E83003968BF /* MasterViewController.m */,
+				BAFFB5F616672E83003968BF /* DetailViewController.h */,
+				BAFFB5F716672E83003968BF /* DetailViewController.m */,
+				BAFFB5DF16672E83003968BF /* Supporting Files */,
+			);
+			path = iOrter;
+			sourceTree = "<group>";
+		};
+		BAFFB5DF16672E83003968BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAFFB5E016672E83003968BF /* iOrter-Info.plist */,
+				BAFFB5E116672E83003968BF /* InfoPlist.strings */,
+				BAFFB5E416672E83003968BF /* main.m */,
+				BAFFB5E616672E83003968BF /* iOrter-Prefix.pch */,
+				BAFFB5EA16672E83003968BF /* Default.png */,
+				BAFFB5EC16672E83003968BF /* Default@2x.png */,
+				BAFFB5EE16672E83003968BF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAFFB60516672E83003968BF /* iOrterTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAFFB60B16672E83003968BF /* iOrterTests.h */,
+				BAFFB60C16672E83003968BF /* iOrterTests.m */,
+				BAFFB60616672E83003968BF /* Supporting Files */,
+			);
+			path = iOrterTests;
+			sourceTree = "<group>";
+		};
+		BAFFB60616672E83003968BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAFFB60716672E83003968BF /* iOrterTests-Info.plist */,
+				BAFFB60816672E83003968BF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAFFB5D316672E83003968BF /* iOrter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAFFB61016672E83003968BF /* Build configuration list for PBXNativeTarget "iOrter" */;
+			buildPhases = (
+				BAFFB5D016672E83003968BF /* Sources */,
+				BAFFB5D116672E83003968BF /* Frameworks */,
+				BAFFB5D216672E83003968BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOrter;
+			productName = iOrter;
+			productReference = BAFFB5D416672E83003968BF /* iOrter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAFFB5FD16672E83003968BF /* iOrterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAFFB61316672E83003968BF /* Build configuration list for PBXNativeTarget "iOrterTests" */;
+			buildPhases = (
+				BAFFB5F916672E83003968BF /* Sources */,
+				BAFFB5FA16672E83003968BF /* Frameworks */,
+				BAFFB5FB16672E83003968BF /* Resources */,
+				BAFFB5FC16672E83003968BF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAFFB60416672E83003968BF /* PBXTargetDependency */,
+			);
+			name = iOrterTests;
+			productName = iOrterTests;
+			productReference = BAFFB5FE16672E83003968BF /* iOrterTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAFFB5CB16672E83003968BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = ThoughtWorks;
+			};
+			buildConfigurationList = BAFFB5CE16672E83003968BF /* Build configuration list for PBXProject "iOrter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BAFFB5C916672E83003968BF;
+			productRefGroup = BAFFB5D516672E83003968BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAFFB5D316672E83003968BF /* iOrter */,
+				BAFFB5FD16672E83003968BF /* iOrterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAFFB5D216672E83003968BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFFB5E316672E83003968BF /* InfoPlist.strings in Resources */,
+				BAFFB5EB16672E83003968BF /* Default.png in Resources */,
+				BAFFB5ED16672E83003968BF /* Default@2x.png in Resources */,
+				BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */,
+				BAFFB5F216672E83003968BF /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFFB5FB16672E83003968BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFFB60A16672E83003968BF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BAFFB5FC16672E83003968BF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAFFB5D016672E83003968BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFFB5E516672E83003968BF /* main.m in Sources */,
+				BAFFB5E916672E83003968BF /* AppDelegate.m in Sources */,
+				BAFFB5F516672E83003968BF /* MasterViewController.m in Sources */,
+				BAFFB5F816672E83003968BF /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFFB5F916672E83003968BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFFB60D16672E83003968BF /* iOrterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAFFB60416672E83003968BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAFFB5D316672E83003968BF /* iOrter */;
+			targetProxy = BAFFB60316672E83003968BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BAFFB5E116672E83003968BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAFFB5E216672E83003968BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BAFFB5F016672E83003968BF /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAFFB5F116672E83003968BF /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		BAFFB60816672E83003968BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAFFB60916672E83003968BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BAFFB60E16672E83003968BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BAFFB60F16672E83003968BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAFFB61116672E83003968BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
+				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BAFFB61216672E83003968BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
+				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BAFFB61416672E83003968BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iOrter.app/iOrter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
+				INFOPLIST_FILE = "iOrterTests/iOrterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		BAFFB61516672E83003968BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iOrter.app/iOrter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
+				INFOPLIST_FILE = "iOrterTests/iOrterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAFFB5CE16672E83003968BF /* Build configuration list for PBXProject "iOrter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFFB60E16672E83003968BF /* Debug */,
+				BAFFB60F16672E83003968BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAFFB61016672E83003968BF /* Build configuration list for PBXNativeTarget "iOrter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFFB61116672E83003968BF /* Debug */,
+				BAFFB61216672E83003968BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BAFFB61316672E83003968BF /* Build configuration list for PBXNativeTarget "iOrterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFFB61416672E83003968BF /* Debug */,
+				BAFFB61516672E83003968BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAFFB5CB16672E83003968BF /* Project object */;
+}
