@@ -266,7 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "# Run the unit tests in this test bundle.\n\"${PROJECT_DIR}/XcodeScripts/RunPlatformUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -384,6 +384,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,6 +396,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,6 +455,7 @@
 				BAFFB61216672E83003968BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAFFB61316672E83003968BF /* Build configuration list for PBXNativeTarget "iOrterTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +464,7 @@
 				BAFFB61516672E83003968BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

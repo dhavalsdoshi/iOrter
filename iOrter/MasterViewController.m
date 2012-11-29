@@ -62,9 +62,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-    NSDate *object = _objects[indexPath.row];
+    NSDate *object = [_objects objectAtIndex:indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
 }
@@ -105,7 +105,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        NSDate *object = [_objects objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
