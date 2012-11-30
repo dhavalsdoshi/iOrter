@@ -7,6 +7,8 @@
 //
 
 #import "iOrterTests.h"
+#import <OCMock/OCMock.h>
+#import "SectionService.h"
 
 @implementation iOrterTests
 
@@ -17,16 +19,17 @@
     // Set-up code here.
 }
 
+-(void)testDummy
+{
+    id mock = [OCMockObject mockForClass:[SectionService class]];
+    [[[mock stub] andReturn:@"Yahya"] getSectionsForBoard:@"Yahya"];
+    STAssertEquals([mock getSectionsForBoard:@"Yahya"], @"Yahya", @"too few arguments");
+}
+
 - (void)tearDown
 {
     // Tear-down code here.
     
     [super tearDown];
 }
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in iOrterTests");
-}
-
 @end
