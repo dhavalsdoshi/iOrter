@@ -15,8 +15,8 @@
     NSMutableArray *sections = [NSMutableArray arrayWithCapacity:10];
     NSError *error;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://ideaboardz.com/for/test/2.json"]] options:kNilOptions error: &error];
-    for (NSDictionary *d in [dict objectForKey:@"sections"]) {
-        [sections addObject:[[Section alloc] initWithName:[d objectForKey:@"name"]]];
+    for (NSDictionary *section in [dict objectForKey:@"sections"]) {
+        [sections addObject:[[Section alloc] initWithName:[section objectForKey:@"name"]]];
     }
     return sections;
 }
