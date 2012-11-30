@@ -19,13 +19,6 @@
     // Set-up code here.
 }
 
--(void)testDummy
-{
-    id mock = [OCMockObject mockForClass:[SectionService class]];
-    [[[mock stub] andReturn:@"Yahya"] getSectionsForBoard:@"Yahya"];
-    STAssertEquals([mock getSectionsForBoard:@"Yahya"], @"Yahya", @"too few arguments");
-}
-
 - (void)tearDown
 {
     // Tear-down code here.
