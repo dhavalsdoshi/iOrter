@@ -2,6 +2,6 @@
 
 @interface Section : NSObject
 @property (nonatomic, strong) NSString *name;
-
--(id) initWithName:(NSString *)name;
+@property (nonatomic) NSInteger *sectionId;
+-(id) initWithId:(NSInteger *) sectionId name:(NSString *)sectionName;
 @end

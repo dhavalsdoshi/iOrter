@@ -1,11 +1,12 @@
 #import "Section.h"
 
 @implementation Section
-@synthesize name;
--(id) initWithName:(NSString *)name
+@synthesize name, sectionId;
+-(id) initWithId:(NSInteger *) sectionId name:(NSString *)sectionName
 {
     self = [super init];
-    self.name = name;
+    self.name = sectionName;
+    self.sectionId = sectionId;
     return self;
 }
 @end

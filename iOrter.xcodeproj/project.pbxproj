@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		088444D316676A80008AD190 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444D216676A80008AD190 /* Section.m */; };
-		088444D416676A80008AD190 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444D216676A80008AD190 /* Section.m */; };
-		088444E016676CA3008AD190 /* SectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444DF16676CA3008AD190 /* SectionService.m */; };
-		088444E116676CA3008AD190 /* SectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444DF16676CA3008AD190 /* SectionService.m */; };
-		088444E516676CD8008AD190 /* SectionServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444E416676CD8008AD190 /* SectionServiceTests.m */; };
+		088444E016676CA3008AD190 /* BoardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444DF16676CA3008AD190 /* BoardService.m */; };
+		088444E516676CD8008AD190 /* BoardServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444E416676CD8008AD190 /* BoardServiceTests.m */; };
 		088444EF16687BE4008AD190 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 088444EE16687BE4008AD190 /* libOCMock.a */; };
+		BA62AC77166DC00C00144264 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = BA62AC76166DC00C00144264 /* Idea.m */; };
+		BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23DF166C8D1600144EC1 /* SectionService.m */; };
+		BA6D23E3166C8D2900144EC1 /* SectionServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23E2166C8D2900144EC1 /* SectionServiceTest.m */; };
+		BAD8A682166C7B090073871C /* SectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD8A681166C7B090073871C /* SectionViewController.m */; };
 		BAFFB5D916672E83003968BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5D816672E83003968BF /* UIKit.framework */; };
 		BAFFB5DB16672E83003968BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DA16672E83003968BF /* Foundation.framework */; };
 		BAFFB5DD16672E83003968BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DC16672E83003968BF /* CoreGraphics.framework */; };
@@ -24,7 +26,7 @@
 		BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EE16672E83003968BF /* Default-568h@2x.png */; };
 		BAFFB5F216672E83003968BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5F016672E83003968BF /* MainStoryboard.storyboard */; };
 		BAFFB5F516672E83003968BF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F416672E83003968BF /* MasterViewController.m */; };
-		BAFFB5F816672E83003968BF /* SectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F716672E83003968BF /* SectionViewController.m */; };
+		BAFFB5F816672E83003968BF /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F716672E83003968BF /* BoardViewController.m */; };
 		BAFFB60016672E83003968BF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5FF16672E83003968BF /* SenTestingKit.framework */; };
 		BAFFB60116672E83003968BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5D816672E83003968BF /* UIKit.framework */; };
 		BAFFB60216672E83003968BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DA16672E83003968BF /* Foundation.framework */; };
@@ -45,11 +47,19 @@
 /* Begin PBXFileReference section */
 		088444D116676A80008AD190 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Section.h; path = Model/Section.h; sourceTree = "<group>"; };
 		088444D216676A80008AD190 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Section.m; path = Model/Section.m; sourceTree = "<group>"; };
-		088444DE16676CA3008AD190 /* SectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionService.h; path = Service/SectionService.h; sourceTree = "<group>"; };
-		088444DF16676CA3008AD190 /* SectionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionService.m; path = Service/SectionService.m; sourceTree = "<group>"; };
-		088444E316676CD8008AD190 /* SectionServiceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionServiceTests.h; path = Service/SectionServiceTests.h; sourceTree = "<group>"; };
-		088444E416676CD8008AD190 /* SectionServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionServiceTests.m; path = Service/SectionServiceTests.m; sourceTree = "<group>"; };
+		088444DE16676CA3008AD190 /* BoardService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardService.h; path = Service/BoardService.h; sourceTree = "<group>"; };
+		088444DF16676CA3008AD190 /* BoardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardService.m; path = Service/BoardService.m; sourceTree = "<group>"; };
+		088444E316676CD8008AD190 /* BoardServiceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardServiceTests.h; path = Service/BoardServiceTests.h; sourceTree = "<group>"; };
+		088444E416676CD8008AD190 /* BoardServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardServiceTests.m; path = Service/BoardServiceTests.m; sourceTree = "<group>"; };
 		088444EE16687BE4008AD190 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/include/libOCMock.a; sourceTree = "<group>"; };
+		BA62AC75166DC00C00144264 /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Idea.h; path = Model/Idea.h; sourceTree = "<group>"; };
+		BA62AC76166DC00C00144264 /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Idea.m; path = Model/Idea.m; sourceTree = "<group>"; };
+		BA6D23DE166C8D1600144EC1 /* SectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionService.h; path = Service/SectionService.h; sourceTree = "<group>"; };
+		BA6D23DF166C8D1600144EC1 /* SectionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionService.m; path = Service/SectionService.m; sourceTree = "<group>"; };
+		BA6D23E1166C8D2900144EC1 /* SectionServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionServiceTest.h; path = Service/SectionServiceTest.h; sourceTree = "<group>"; };
+		BA6D23E2166C8D2900144EC1 /* SectionServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionServiceTest.m; path = Service/SectionServiceTest.m; sourceTree = "<group>"; };
+		BAD8A680166C7B090073871C /* SectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionViewController.h; sourceTree = "<group>"; };
+		BAD8A681166C7B090073871C /* SectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionViewController.m; sourceTree = "<group>"; };
 		BAFFB5D416672E83003968BF /* iOrter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOrter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFFB5D816672E83003968BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAFFB5DA16672E83003968BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,8 +76,8 @@
 		BAFFB5F116672E83003968BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BAFFB5F316672E83003968BF /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BAFFB5F416672E83003968BF /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		BAFFB5F616672E83003968BF /* SectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SectionViewController.h; sourceTree = "<group>"; };
-		BAFFB5F716672E83003968BF /* SectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SectionViewController.m; sourceTree = "<group>"; };
+		BAFFB5F616672E83003968BF /* BoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
+		BAFFB5F716672E83003968BF /* BoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
 		BAFFB5FE16672E83003968BF /* iOrterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOrterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFFB5FF16672E83003968BF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BAFFB60716672E83003968BF /* iOrterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOrterTests-Info.plist"; sourceTree = "<group>"; };
@@ -104,6 +114,8 @@
 		088444D016676A2F008AD190 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA62AC75166DC00C00144264 /* Idea.h */,
+				BA62AC76166DC00C00144264 /* Idea.m */,
 				088444D116676A80008AD190 /* Section.h */,
 				088444D216676A80008AD190 /* Section.m */,
 			);
@@ -113,8 +125,10 @@
 		088444D916676C30008AD190 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				088444DE16676CA3008AD190 /* SectionService.h */,
-				088444DF16676CA3008AD190 /* SectionService.m */,
+				088444DE16676CA3008AD190 /* BoardService.h */,
+				088444DF16676CA3008AD190 /* BoardService.m */,
+				BA6D23DE166C8D1600144EC1 /* SectionService.h */,
+				BA6D23DF166C8D1600144EC1 /* SectionService.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -122,8 +136,10 @@
 		088444E216676CAF008AD190 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				088444E316676CD8008AD190 /* SectionServiceTests.h */,
-				088444E416676CD8008AD190 /* SectionServiceTests.m */,
+				088444E316676CD8008AD190 /* BoardServiceTests.h */,
+				088444E416676CD8008AD190 /* BoardServiceTests.m */,
+				BA6D23E1166C8D2900144EC1 /* SectionServiceTest.h */,
+				BA6D23E2166C8D2900144EC1 /* SectionServiceTest.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -169,9 +185,11 @@
 				BAFFB5F016672E83003968BF /* MainStoryboard.storyboard */,
 				BAFFB5F316672E83003968BF /* MasterViewController.h */,
 				BAFFB5F416672E83003968BF /* MasterViewController.m */,
-				BAFFB5F616672E83003968BF /* SectionViewController.h */,
-				BAFFB5F716672E83003968BF /* SectionViewController.m */,
+				BAFFB5F616672E83003968BF /* BoardViewController.h */,
+				BAFFB5F716672E83003968BF /* BoardViewController.m */,
 				BAFFB5DF16672E83003968BF /* Supporting Files */,
+				BAD8A680166C7B090073871C /* SectionViewController.h */,
+				BAD8A681166C7B090073871C /* SectionViewController.m */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";
@@ -323,9 +341,12 @@
 				BAFFB5E516672E83003968BF /* main.m in Sources */,
 				BAFFB5E916672E83003968BF /* AppDelegate.m in Sources */,
 				BAFFB5F516672E83003968BF /* MasterViewController.m in Sources */,
-				BAFFB5F816672E83003968BF /* SectionViewController.m in Sources */,
+				BAFFB5F816672E83003968BF /* BoardViewController.m in Sources */,
 				088444D316676A80008AD190 /* Section.m in Sources */,
-				088444E016676CA3008AD190 /* SectionService.m in Sources */,
+				088444E016676CA3008AD190 /* BoardService.m in Sources */,
+				BAD8A682166C7B090073871C /* SectionViewController.m in Sources */,
+				BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */,
+				BA62AC77166DC00C00144264 /* Idea.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,9 +355,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFFB60D16672E83003968BF /* iOrterTests.m in Sources */,
-				088444D416676A80008AD190 /* Section.m in Sources */,
-				088444E116676CA3008AD190 /* SectionService.m in Sources */,
-				088444E516676CD8008AD190 /* SectionServiceTests.m in Sources */,
+				088444E516676CD8008AD190 /* BoardServiceTests.m in Sources */,
+				BA6D23E3166C8D2900144EC1 /* SectionServiceTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +420,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -421,7 +441,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -431,6 +451,7 @@
 		BAFFB61116672E83003968BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
@@ -443,6 +464,7 @@
 		BAFFB61216672E83003968BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";

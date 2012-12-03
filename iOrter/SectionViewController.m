@@ -1,23 +1,22 @@
-//
-//  IdeaViewController.m
-//  iOrter
-//
-//  Created by Akshay Mankar on 03/12/12.
-//  Copyright (c) 2012 ThoughtWorks. All rights reserved.
-//
+#import "SectionViewController.h"
+#import "Service/SectionService.h"
 
-#import "IdeaViewController.h"
-
-@interface IdeaViewController ()
+@interface SectionViewController ()
 
 @end
 
-@implementation IdeaViewController
+@implementation SectionViewController{
+    Section *selectedSection;
+    NSMutableArray *sections;
+    NSMutableArray *ideas;
+    SectionService *sectionService;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
+        sectionService = [[SectionService alloc] init];
         // Custom initialization
     }
     return self;
@@ -26,7 +25,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -46,20 +44,24 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Idea";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Idea"];
+    }
+    cell.textLabel.text = @"Dummy Ideav";
     
     // Configure the cell...
     
@@ -116,6 +118,27 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (void)setSelectedSection:(Section *)section  andAllSections:(NSMutableArray *)allSections {
+    selectedSection = section;
+    sections = allSections;
+}
+
+- (IBAction)showActionSheet {
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] init];
+    [popupQuery initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    for(Section *section in sections){
+        [popupQuery addButtonWithTitle:section.name];
+    }
+    [popupQuery addButtonWithTitle:@"Cancel"];
+    popupQuery.cancelButtonIndex = sections.count;
+    popupQuery.actionSheetStyle = UIActionSheetStyleDefault;
+    [popupQuery showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+
 }
 
 @end

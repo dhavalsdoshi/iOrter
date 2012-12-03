@@ -19,3 +19,6 @@ build/*
 xcuserdata
 Frank/*
 !Frank/features/
+
+# Idea Files
+.idea/**

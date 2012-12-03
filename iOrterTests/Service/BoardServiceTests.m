@@ -11,8 +11,10 @@
     Method mockMethod = class_getInstanceMethod([self class], @selector(mockMethod:));
     method_exchangeImplementations(originalMethod,mockMethod);
     NSMutableArray *sections = [sectionService getSectionsForBoard:@"fdskfhjkls"];
-    NSString *str = [[sections objectAtIndex:0] name];
-    STAssertTrue([str isEqualToString: @"Yahya"], @"Getting Sections from Section Service");
+    NSString *sectionName = [[sections objectAtIndex:0] name];
+    NSInteger *sectionId = [[sections objectAtIndex:0] sectionId];
+    STAssertTrue([sectionName isEqualToString: @"Yahya"], @"Section Name");
+    STAssertEquals(sectionId, (NSInteger *)4, @"Section Id");
     method_exchangeImplementations(mockMethod, originalMethod);
 }
 

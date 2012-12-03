@@ -66,4 +66,13 @@
     return sections.count;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showSection"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Section *selectedSection = [sections objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setSelectedSection:selectedSection andAllSections:sections];
+    }
+}
+
 @end
