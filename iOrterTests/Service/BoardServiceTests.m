@@ -1,19 +1,11 @@
-//
-//  SectionServiceTests.m
-//  iOrter
-//
-//  Created by Yahya Poonawala on 29/11/12.
-//  Copyright (c) 2012 ThoughtWorks. All rights reserved.
-//
-
-#import "SectionServiceTests.h"
+#import "BoardServiceTests.h"
 #import "Section.h"
 #import <objc/objc-runtime.h>
-@implementation SectionServiceTests
+@implementation BoardServiceTests
 
 -(void) testShouldGetSections
 {
-    SectionService *sectionService = [[SectionService alloc] init];
+    BoardService *sectionService = [[BoardService alloc] init];
     
     Method originalMethod = class_getClassMethod([NSData class], @selector(dataWithContentsOfURL:));
     Method mockMethod = class_getInstanceMethod([self class], @selector(mockMethod:));

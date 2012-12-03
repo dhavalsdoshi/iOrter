@@ -8,7 +8,7 @@
 
 #import "iOrterTests.h"
 #import <OCMock/OCMock.h>
-#import "SectionService.h"
+#import "BoardService.h"
 
 @implementation iOrterTests
 
