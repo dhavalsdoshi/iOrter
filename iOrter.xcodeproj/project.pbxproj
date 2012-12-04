@@ -329,7 +329,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${PROJECT_DIR}/XcodeScripts/RunPlatformUnitTests\"\n";
+			shellScript = "# Run the unit tests in this test bundle.\n\"${PROJECT_DIR}/Scripts/run_tests.rb\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -486,6 +486,7 @@
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/usr/include/";
 				INFOPLIST_FILE = "iOrterTests/iOrterTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/include\"",
@@ -513,6 +514,7 @@
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/usr/include/";
 				INFOPLIST_FILE = "iOrterTests/iOrterTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/include\"",
