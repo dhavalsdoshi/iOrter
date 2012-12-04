@@ -1,19 +1,36 @@
 #import "BoardService.h"
 #import "Section.h"
-@implementation BoardService
+#import "SectionService.h"
+@implementation BoardService{
+    SectionService *sectionService;
+}
 
+- (id)initWithSectionService:(SectionService *)secService {
+    self = [super init];
+    sectionService = secService;
+    return self;
+}
+
+//if URL of board is http://ideaboardz.com/for/board_name/board_id, the board parameter should be "#{board_name}/#{board_id}"
 -(NSMutableArray *) getSectionsForBoard:(NSString *)board
 {
     NSMutableArray *sections = [NSMutableArray arrayWithCapacity:10];
-    NSURL *boardJSONURL = [NSURL URLWithString:@"http://ideaboardz.com/for/test/2.json"];
-    NSData *boardJSON = [NSData dataWithContentsOfURL:boardJSONURL];
+    NSMutableString *URLString = [NSMutableString stringWithString: @"http://ideaboardz.com/for/"];
+    [URLString appendString:board];
+    [URLString appendString:@".json"];
+    NSURL *boardJSONURL = [NSURL URLWithString:URLString];
+    NSData *boardJSONString = [NSData dataWithContentsOfURL:boardJSONURL];
     NSError *error;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:boardJSON options:kNilOptions error:&error];
-    id <NSFastEnumeration> allSections = [dict objectForKey:@"sections"];
+    NSDictionary *boardJSONDictionary = [NSJSONSerialization JSONObjectWithData:boardJSONString options:kNilOptions error:&error];
+    NSDictionary *sectionsAndIdeas = [sectionService getSectionWiseIdeasForBoard:board];
+
+    id <NSFastEnumeration> allSections = [boardJSONDictionary objectForKey:@"sections"];
     for (NSDictionary *section in allSections) {
-        NSInteger *sectionID =  (NSInteger *)[[[section objectForKey:@"id"] stringValue] intValue];
+        id keySectionID = [section objectForKey:@"id"];
+        NSInteger *sectionID =  (NSInteger *)[[keySectionID stringValue] intValue];
         NSString *sectionName = [section objectForKey:@"name"];
         Section *newSection = [[Section alloc] initWithId:sectionID name:sectionName];
+        newSection.ideas = [sectionsAndIdeas objectForKey:keySectionID];
         [sections addObject:newSection];
     }
     return sections;

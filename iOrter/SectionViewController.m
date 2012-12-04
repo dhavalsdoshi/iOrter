@@ -8,15 +8,14 @@
 @implementation SectionViewController{
     Section *selectedSection;
     NSMutableArray *sections;
-    NSMutableArray *ideas;
     SectionService *sectionService;
+    NSMutableArray *colors;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        sectionService = [[SectionService alloc] init];
         // Custom initialization
     }
     return self;
@@ -25,6 +24,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    sectionService = [[SectionService alloc] init];
+    colors = [NSMutableArray array];
+    [colors addObject:[UIColor colorWithRed:1.0 green:1.0 blue:0.5 alpha:1.0]];
+    [colors addObject:[UIColor orangeColor]];
+    [colors addObject:[UIColor colorWithRed:0.73 green:0.93 blue:0.41 alpha:1.0]];
+    [colors addObject:[UIColor colorWithRed:0.81 green:0.49 blue:0.87 alpha:1.0]];
+    [colors addObject:[UIColor colorWithRed:0.8 green:1.0 blue:1.0 alpha:1.0]];
+    [colors addObject:[UIColor colorWithRed:0.09 green:0.71 blue:1.0 alpha:1.0]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -42,32 +49,40 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 1;
+    return selectedSection.ideas.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Idea";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *cellIdentifier = @"Idea";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Idea"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.textLabel.text = @"Dummy Ideav";
-    
-    // Configure the cell...
-    
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
+    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = [selectedSection.ideas objectAtIndex:indexPath.row];
     return cell;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellText = [selectedSection.ideas objectAtIndex:indexPath.row];
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
+    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
+    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    return labelSize.height + 20;
+}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger colorIndex = (int)selectedSection.sectionId %  (int)colors.count;
+    cell.backgroundColor = [colors objectAtIndex:colorIndex];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -138,7 +153,9 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-
+    if (buttonIndex == sections.count) return;
+    selectedSection = [sections objectAtIndex:buttonIndex];
+    [self.tableView reloadData];
 }
 
 @end

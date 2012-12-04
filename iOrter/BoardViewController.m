@@ -31,7 +31,7 @@
 //    if (self.detailItem) {
 //        self.detailDescriptionLabel.text = [self.detailItem description];
 //    }
-    sections = [[[BoardService alloc] init] getSectionsForBoard:@"abcd"];
+    sections = [[[BoardService alloc] initWithSectionService:[[SectionService alloc] init]] getSectionsForBoard:@"test/2"];
 }
 
 - (void)viewDidLoad

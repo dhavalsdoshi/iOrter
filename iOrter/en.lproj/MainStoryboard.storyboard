@@ -129,7 +129,7 @@
                     <navigationItem key="navigationItem" title="Section" id="mGc-Kk-Lug">
                         <barButtonItem key="rightBarButtonItem" title="Change Section" id="MH7-W9-RTP">
                             <connections>
-                                <action selector="showActionSheet" destination="Wpe-IX-ao6" id="6tl-GO-x3S"/>
+                                <action selector="showActionSheet" destination="Wpe-IX-ao6" id="Kr8-oC-iKM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
