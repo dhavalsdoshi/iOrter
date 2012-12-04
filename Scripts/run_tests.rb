@@ -16,7 +16,7 @@ system(command)
 test_output_file = File.open("/tmp/test.out")
 test_output = test_output_file.read
 failed = test_output.include? "failed"
-print test_op;
+print test_output;
 if failed
   exit(1);
 end

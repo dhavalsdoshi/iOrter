@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'xcoder'
 project = Xcode.project('iOrter')
 config = Xcode.project(:iOrter).target(:iOrterTests).config(:Debug)
