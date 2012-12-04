@@ -486,7 +486,7 @@
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/usr/include/";
 				INFOPLIST_FILE = "iOrterTests/iOrterTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/include\"",
@@ -497,6 +497,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -514,7 +515,7 @@
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/usr/include/";
 				INFOPLIST_FILE = "iOrterTests/iOrterTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/include\"",
@@ -525,6 +526,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
