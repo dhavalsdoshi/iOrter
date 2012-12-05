@@ -142,7 +142,7 @@
 
 - (IBAction)showActionSheet {
     UIActionSheet *popupQuery = [[UIActionSheet alloc] init];
-    [popupQuery initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    popupQuery = [popupQuery initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     for(Section *section in sections){
         [popupQuery addButtonWithTitle:section.name];
     }

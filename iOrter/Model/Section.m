@@ -3,11 +3,11 @@
 @implementation Section
 @synthesize name, sectionId, ideas;
 
--(id) initWithId:(NSInteger *) sectionId name:(NSString *)sectionName
+-(id) initWithId:(NSInteger *) Id name:(NSString *)sectionName
 {
     self = [super init];
     self.name = sectionName;
-    self.sectionId = sectionId;
+    self.sectionId = Id;
     return self;
 }
 @end
