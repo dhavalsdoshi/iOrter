@@ -66,6 +66,7 @@
         <!--Board View Controller - Detail-->
         <scene sceneID="24">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="" title="Detail" id="21" customClass="BoardViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="K0E-vp-SxP">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -98,7 +99,6 @@
                         <outlet property="view" destination="K0E-vp-SxP" id="xoT-pG-jgc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-222" y="132"/>
         </scene>
@@ -118,33 +118,24 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6E-HQ-WTe">
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-J2-Z73">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0d-Hn-KrU">
                                             <color key="backgroundColor" red="0.29618800919999999" green="1" blue="0.98821014029999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="uQm-J2-Z73" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cBj-G1-BJ5"/>
-                                                <constraint firstItem="uQm-J2-Z73" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" constant="5" id="nQ9-bu-67B"/>
-                                                <constraint firstItem="uQm-J2-Z73" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zeM-oZ-hNw"/>
+                                                <constraint firstAttribute="width" constant="280" id="FUY-Yh-MeN"/>
                                             </constraints>
-                                        </view>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="E6E-HQ-WTe" firstAttribute="centerY" secondItem="XQd-Vd-6jd" secondAttribute="centerY" type="default" id="fSB-gV-1Zg"/>
-                                    <constraint firstItem="E6E-HQ-WTe" firstAttribute="leading" secondItem="XQd-Vd-6jd" secondAttribute="leading" constant="10" id="giz-tj-nI6"/>
-                                    <constraint firstItem="E6E-HQ-WTe" firstAttribute="top" secondItem="XQd-Vd-6jd" secondAttribute="top" constant="6" id="tre-df-B9S"/>
-                                    <constraint firstAttribute="trailing" secondItem="E6E-HQ-WTe" secondAttribute="trailing" constant="11" id="vsf-Lq-IiU"/>
+                                    <constraint firstItem="b0d-Hn-KrU" firstAttribute="leading" secondItem="XQd-Vd-6jd" secondAttribute="leading" type="default" id="J1p-3w-HyH"/>
+                                    <constraint firstItem="b0d-Hn-KrU" firstAttribute="top" secondItem="XQd-Vd-6jd" secondAttribute="top" constant="66" id="SHz-EI-JUS"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="ideaLabel" destination="uQm-J2-Z73" id="o7D-YD-u94"/>
-                                    <outlet property="ideaView" destination="E6E-HQ-WTe" id="qhq-3p-QPj"/>
+                                    <outlet property="ideaView" destination="b0d-Hn-KrU" id="zg2-hN-zog"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -154,7 +145,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Section" id="mGc-Kk-Lug">
-                        <barButtonItem key="rightBarButtonItem" image="DropDownButton.png" id="MH7-W9-RTP">
+                        <barButtonItem key="rightBarButtonItem" image="DropDownButton.png" style="plain" id="MH7-W9-RTP">
                             <connections>
                                 <action selector="showActionSheet" destination="Wpe-IX-ao6" id="Kr8-oC-iKM"/>
                             </connections>

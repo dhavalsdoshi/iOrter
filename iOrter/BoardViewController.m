@@ -32,6 +32,7 @@
 //        self.detailDescriptionLabel.text = [self.detailItem description];
 //    }
     sections = [[[BoardService alloc] initWithSectionService:[[SectionService alloc] init]] getSectionsForBoard:@"test/2"];
+    
 }
 
 - (void)viewDidLoad
@@ -39,6 +40,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    self.title = @"Test";
 }
 
 - (void)didReceiveMemoryWarning

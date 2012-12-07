@@ -11,6 +11,10 @@
 		088444E016676CA3008AD190 /* BoardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444DF16676CA3008AD190 /* BoardService.m */; };
 		088444E516676CD8008AD190 /* BoardServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444E416676CD8008AD190 /* BoardServiceTests.m */; };
 		088444EF16687BE4008AD190 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 088444EE16687BE4008AD190 /* libOCMock.a */; };
+		115569C41670651900FA146D /* DropDownButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 115569C31670651900FA146D /* DropDownButton.png */; };
+		115569C816707BF700FA146D /* IdeaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569C716707BF700FA146D /* IdeaCell.m */; };
+		115569CB167086C300FA146D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115569C9167086C300FA146D /* MainStoryboard.storyboard */; };
+		115569CC167086C300FA146D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115569C9167086C300FA146D /* MainStoryboard.storyboard */; };
 		BA62AC77166DC00C00144264 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = BA62AC76166DC00C00144264 /* Idea.m */; };
 		BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23DF166C8D1600144EC1 /* SectionService.m */; };
 		BA6D23E3166C8D2900144EC1 /* SectionServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23E2166C8D2900144EC1 /* SectionServiceTest.m */; };
@@ -24,7 +28,6 @@
 		BAFFB5EB16672E83003968BF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EA16672E83003968BF /* Default.png */; };
 		BAFFB5ED16672E83003968BF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EC16672E83003968BF /* Default@2x.png */; };
 		BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EE16672E83003968BF /* Default-568h@2x.png */; };
-		BAFFB5F216672E83003968BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5F016672E83003968BF /* MainStoryboard.storyboard */; };
 		BAFFB5F516672E83003968BF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F416672E83003968BF /* MasterViewController.m */; };
 		BAFFB5F816672E83003968BF /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F716672E83003968BF /* BoardViewController.m */; };
 		BAFFB60016672E83003968BF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5FF16672E83003968BF /* SenTestingKit.framework */; };
@@ -52,6 +55,10 @@
 		088444E316676CD8008AD190 /* BoardServiceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardServiceTests.h; path = Service/BoardServiceTests.h; sourceTree = "<group>"; };
 		088444E416676CD8008AD190 /* BoardServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardServiceTests.m; path = Service/BoardServiceTests.m; sourceTree = "<group>"; };
 		088444EE16687BE4008AD190 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/include/libOCMock.a; sourceTree = "<group>"; };
+		115569C31670651900FA146D /* DropDownButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownButton.png; sourceTree = "<group>"; };
+		115569C616707BF700FA146D /* IdeaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaCell.h; sourceTree = "<group>"; };
+		115569C716707BF700FA146D /* IdeaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdeaCell.m; sourceTree = "<group>"; };
+		115569CA167086C300FA146D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BA62AC75166DC00C00144264 /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Idea.h; path = Model/Idea.h; sourceTree = "<group>"; };
 		BA62AC76166DC00C00144264 /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Idea.m; path = Model/Idea.m; sourceTree = "<group>"; };
 		BA6D23DE166C8D1600144EC1 /* SectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionService.h; path = Service/SectionService.h; sourceTree = "<group>"; };
@@ -73,7 +80,6 @@
 		BAFFB5EA16672E83003968BF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BAFFB5EC16672E83003968BF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BAFFB5EE16672E83003968BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BAFFB5F116672E83003968BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BAFFB5F316672E83003968BF /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BAFFB5F416672E83003968BF /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		BAFFB5F616672E83003968BF /* BoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
@@ -181,8 +187,8 @@
 				088444D916676C30008AD190 /* Service */,
 				088444D016676A2F008AD190 /* Model */,
 				BAFFB5E716672E83003968BF /* AppDelegate.h */,
+				115569C9167086C300FA146D /* MainStoryboard.storyboard */,
 				BAFFB5E816672E83003968BF /* AppDelegate.m */,
-				BAFFB5F016672E83003968BF /* MainStoryboard.storyboard */,
 				BAFFB5F316672E83003968BF /* MasterViewController.h */,
 				BAFFB5F416672E83003968BF /* MasterViewController.m */,
 				BAFFB5F616672E83003968BF /* BoardViewController.h */,
@@ -190,6 +196,8 @@
 				BAFFB5DF16672E83003968BF /* Supporting Files */,
 				BAD8A680166C7B090073871C /* SectionViewController.h */,
 				BAD8A681166C7B090073871C /* SectionViewController.m */,
+				115569C616707BF700FA146D /* IdeaCell.h */,
+				115569C716707BF700FA146D /* IdeaCell.m */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 		BAFFB5DF16672E83003968BF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				115569C31670651900FA146D /* DropDownButton.png */,
 				BAFFB5E016672E83003968BF /* iOrter-Info.plist */,
 				BAFFB5E116672E83003968BF /* InfoPlist.strings */,
 				BAFFB5E416672E83003968BF /* main.m */,
@@ -303,7 +312,8 @@
 				BAFFB5EB16672E83003968BF /* Default.png in Resources */,
 				BAFFB5ED16672E83003968BF /* Default@2x.png in Resources */,
 				BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */,
-				BAFFB5F216672E83003968BF /* MainStoryboard.storyboard in Resources */,
+				115569C41670651900FA146D /* DropDownButton.png in Resources */,
+				115569CB167086C300FA146D /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFFB60A16672E83003968BF /* InfoPlist.strings in Resources */,
+				115569CC167086C300FA146D /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +358,7 @@
 				BAD8A682166C7B090073871C /* SectionViewController.m in Sources */,
 				BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */,
 				BA62AC77166DC00C00144264 /* Idea.m in Sources */,
+				115569C816707BF700FA146D /* IdeaCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,20 +383,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		115569C9167086C300FA146D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				115569CA167086C300FA146D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		BAFFB5E116672E83003968BF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BAFFB5E216672E83003968BF /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BAFFB5F016672E83003968BF /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BAFFB5F116672E83003968BF /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		BAFFB60816672E83003968BF /* InfoPlist.strings */ = {

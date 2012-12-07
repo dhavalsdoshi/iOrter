@@ -1,6 +1,6 @@
 #import "SectionViewController.h"
 #import "Service/SectionService.h"
-
+#import "IdeaCell.h"
 @interface SectionViewController ()
 
 @end
@@ -10,6 +10,7 @@
     NSMutableArray *sections;
     SectionService *sectionService;
     NSMutableArray *colors;
+    IdeaCell *cell;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -32,11 +33,8 @@
     [colors addObject:[UIColor colorWithRed:0.81 green:0.49 blue:0.87 alpha:1.0]];
     [colors addObject:[UIColor colorWithRed:0.8 green:1.0 blue:1.0 alpha:1.0]];
     [colors addObject:[UIColor colorWithRed:0.09 green:0.71 blue:1.0 alpha:1.0]];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = selectedSection.name;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,30 +58,38 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Idea";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[IdeaCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
-    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = [selectedSection.ideas objectAtIndex:indexPath.row];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSString *idea = [selectedSection.ideas objectAtIndex:indexPath.row];
+    cell.ideaLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
+    cell.ideaLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.ideaLabel.numberOfLines = 0;
+    cell.ideaLabel.text = idea;
+    NSInteger colorIndex = (int)selectedSection.sectionId %  (int)colors.count;
+    cell.ideaView.backgroundColor = [colors objectAtIndex:colorIndex];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView setSeparatorColor:[UIColor whiteColor]];
     NSString *cellText = [selectedSection.ideas objectAtIndex:indexPath.row];
     UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-    return labelSize.height + 20;
-}
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger colorIndex = (int)selectedSection.sectionId %  (int)colors.count;
-    cell.backgroundColor = [colors objectAtIndex:colorIndex];
+    return labelSize.height + 40;
+    
 }
 /*
+- (void)tableView:(UITableView *)tableView willDisplayCell:(IdeaCell *)ideaCell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -132,7 +138,9 @@
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
+     
      */
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (void)setSelectedSection:(Section *)section  andAllSections:(NSMutableArray *)allSections {
@@ -148,7 +156,7 @@
     }
     [popupQuery addButtonWithTitle:@"Cancel"];
     popupQuery.cancelButtonIndex = sections.count;
-    popupQuery.actionSheetStyle = UIActionSheetStyleDefault;
+    popupQuery.actionSheetStyle = UIActionSheetStyleAutomatic;
     [popupQuery showInView:self.view];
 }
 
@@ -156,6 +164,7 @@
     if (buttonIndex == sections.count) return;
     selectedSection = [sections objectAtIndex:buttonIndex];
     [self.tableView reloadData];
+    self.title = selectedSection.name;
 }
 
 @end
