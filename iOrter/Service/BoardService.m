@@ -1,6 +1,11 @@
 #import "BoardService.h"
 #import "Section.h"
 #import "SectionService.h"
+
+@interface BoardService()
+
+@end
+
 @implementation BoardService{
     SectionService *sectionService;
 }

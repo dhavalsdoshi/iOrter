@@ -1,5 +1,5 @@
 #import "SectionViewController.h"
-#import "Service/SectionService.h"
+#import "BoardRepository.h"
 #import "IdeaCell.h"
 @interface SectionViewController ()
 
@@ -8,9 +8,10 @@
 @implementation SectionViewController{
     Section *selectedSection;
     NSMutableArray *sections;
-    SectionService *sectionService;
+    BoardRepository *board;
     NSMutableArray *colors;
     IdeaCell *cell;
+    NSDictionary *sectionwiseIdeas;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -25,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    sectionService = [[SectionService alloc] init];
+    board = [[BoardRepository alloc] init];
     colors = [NSMutableArray array];
     [colors addObject:[UIColor colorWithRed:1.0 green:1.0 blue:0.5 alpha:1.0]];
     [colors addObject:[UIColor orangeColor]];
@@ -34,6 +35,7 @@
     [colors addObject:[UIColor colorWithRed:0.8 green:1.0 blue:1.0 alpha:1.0]];
     [colors addObject:[UIColor colorWithRed:0.09 green:0.71 blue:1.0 alpha:1.0]];
     self.title = selectedSection.name;
+   
     
 }
 
@@ -165,6 +167,7 @@
     selectedSection = [sections objectAtIndex:buttonIndex];
     [self.tableView reloadData];
     self.title = selectedSection.name;
+    
 }
 
 @end

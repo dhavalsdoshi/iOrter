@@ -1,7 +1,8 @@
 #import "BoardViewController.h"
-#import "Service/BoardService.h"
+
 #import "Model/Section.h"
 #import "SectionViewController.h"
+#import "BoardRepository.h"
 
 @interface BoardViewController ()
 - (void)configureView;
@@ -10,6 +11,7 @@
 @implementation BoardViewController
 {
     NSMutableArray *sections;
+    
 }
 
 #pragma mark - Managing the detail item
@@ -31,7 +33,9 @@
 //    if (self.detailItem) {
 //        self.detailDescriptionLabel.text = [self.detailItem description];
 //    }
-    sections = [[[BoardService alloc] initWithSectionService:[[SectionService alloc] init]] getSectionsForBoard:@"test/2"];
+    sections = [[[BoardRepository alloc] init] getSectionsForBoard:@"test/2"];
+
+
     
 }
 

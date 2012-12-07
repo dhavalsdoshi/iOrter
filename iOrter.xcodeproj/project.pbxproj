@@ -15,6 +15,9 @@
 		115569C816707BF700FA146D /* IdeaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569C716707BF700FA146D /* IdeaCell.m */; };
 		115569CB167086C300FA146D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115569C9167086C300FA146D /* MainStoryboard.storyboard */; };
 		115569CC167086C300FA146D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115569C9167086C300FA146D /* MainStoryboard.storyboard */; };
+		115569D51671E3AD00FA146D /* BoardRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569D41671E3AD00FA146D /* BoardRepository.m */; };
+		115569D61671E3AD00FA146D /* BoardRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569D41671E3AD00FA146D /* BoardRepository.m */; };
+		115569DB1671E55100FA146D /* BoardRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569DA1671E55100FA146D /* BoardRepositoryTests.m */; };
 		BA62AC77166DC00C00144264 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = BA62AC76166DC00C00144264 /* Idea.m */; };
 		BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23DF166C8D1600144EC1 /* SectionService.m */; };
 		BA6D23E3166C8D2900144EC1 /* SectionServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23E2166C8D2900144EC1 /* SectionServiceTest.m */; };
@@ -59,6 +62,10 @@
 		115569C616707BF700FA146D /* IdeaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaCell.h; sourceTree = "<group>"; };
 		115569C716707BF700FA146D /* IdeaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdeaCell.m; sourceTree = "<group>"; };
 		115569CA167086C300FA146D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		115569D31671E3AD00FA146D /* BoardRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardRepository.h; path = BoardRepository/BoardRepository.h; sourceTree = "<group>"; };
+		115569D41671E3AD00FA146D /* BoardRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardRepository.m; path = BoardRepository/BoardRepository.m; sourceTree = "<group>"; };
+		115569D91671E55100FA146D /* BoardRepositoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardRepositoryTests.h; path = BoardRepositoryTests/BoardRepositoryTests.h; sourceTree = "<group>"; };
+		115569DA1671E55100FA146D /* BoardRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardRepositoryTests.m; path = BoardRepositoryTests/BoardRepositoryTests.m; sourceTree = "<group>"; };
 		BA62AC75166DC00C00144264 /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Idea.h; path = Model/Idea.h; sourceTree = "<group>"; };
 		BA62AC76166DC00C00144264 /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Idea.m; path = Model/Idea.m; sourceTree = "<group>"; };
 		BA6D23DE166C8D1600144EC1 /* SectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionService.h; path = Service/SectionService.h; sourceTree = "<group>"; };
@@ -150,6 +157,24 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
+		115569D21671E38600FA146D /* BoardRepository */ = {
+			isa = PBXGroup;
+			children = (
+				115569D31671E3AD00FA146D /* BoardRepository.h */,
+				115569D41671E3AD00FA146D /* BoardRepository.m */,
+			);
+			name = BoardRepository;
+			sourceTree = "<group>";
+		};
+		115569D81671E50E00FA146D /* BoardRepositoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				115569D91671E55100FA146D /* BoardRepositoryTests.h */,
+				115569DA1671E55100FA146D /* BoardRepositoryTests.m */,
+			);
+			name = BoardRepositoryTests;
+			sourceTree = "<group>";
+		};
 		BAFFB5C916672E83003968BF = {
 			isa = PBXGroup;
 			children = (
@@ -184,8 +209,10 @@
 		BAFFB5DE16672E83003968BF /* iOrter */ = {
 			isa = PBXGroup;
 			children = (
+				115569D21671E38600FA146D /* BoardRepository */,
 				088444D916676C30008AD190 /* Service */,
 				088444D016676A2F008AD190 /* Model */,
+				BAFFB5DF16672E83003968BF /* Supporting Files */,
 				BAFFB5E716672E83003968BF /* AppDelegate.h */,
 				115569C9167086C300FA146D /* MainStoryboard.storyboard */,
 				BAFFB5E816672E83003968BF /* AppDelegate.m */,
@@ -193,7 +220,6 @@
 				BAFFB5F416672E83003968BF /* MasterViewController.m */,
 				BAFFB5F616672E83003968BF /* BoardViewController.h */,
 				BAFFB5F716672E83003968BF /* BoardViewController.m */,
-				BAFFB5DF16672E83003968BF /* Supporting Files */,
 				BAD8A680166C7B090073871C /* SectionViewController.h */,
 				BAD8A681166C7B090073871C /* SectionViewController.m */,
 				115569C616707BF700FA146D /* IdeaCell.h */,
@@ -220,6 +246,7 @@
 		BAFFB60516672E83003968BF /* iOrterTests */ = {
 			isa = PBXGroup;
 			children = (
+				115569D81671E50E00FA146D /* BoardRepositoryTests */,
 				088444E216676CAF008AD190 /* Service */,
 				BAFFB60B16672E83003968BF /* iOrterTests.h */,
 				BAFFB60C16672E83003968BF /* iOrterTests.m */,
@@ -359,6 +386,7 @@
 				BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */,
 				BA62AC77166DC00C00144264 /* Idea.m in Sources */,
 				115569C816707BF700FA146D /* IdeaCell.m in Sources */,
+				115569D51671E3AD00FA146D /* BoardRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +397,8 @@
 				BAFFB60D16672E83003968BF /* iOrterTests.m in Sources */,
 				088444E516676CD8008AD190 /* BoardServiceTests.m in Sources */,
 				BA6D23E3166C8D2900144EC1 /* SectionServiceTest.m in Sources */,
+				115569D61671E3AD00FA146D /* BoardRepository.m in Sources */,
+				115569DB1671E55100FA146D /* BoardRepositoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
