@@ -11,6 +11,7 @@
 @implementation IdeaCell
 @synthesize ideaView;
 @synthesize ideaLabel;
+@synthesize stickyBg;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

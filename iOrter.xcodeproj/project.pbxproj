@@ -38,6 +38,19 @@
 		BAFFB60216672E83003968BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DA16672E83003968BF /* Foundation.framework */; };
 		BAFFB60A16672E83003968BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB60816672E83003968BF /* InfoPlist.strings */; };
 		BAFFB60D16672E83003968BF /* iOrterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB60C16672E83003968BF /* iOrterTests.m */; };
+		BD5263BA1674BE5A00082EDB /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B51674BE5A00082EDB /* FPPopoverController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BD5263BB1674BE5A00082EDB /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B71674BE5A00082EDB /* FPPopoverView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BD5263BC1674BE5A00082EDB /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B91674BE5A00082EDB /* FPTouchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BD5263BF1674C06A00082EDB /* SectionsPopOver.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263BE1674C06A00082EDB /* SectionsPopOver.m */; };
+		BD5263C61674CC9B00082EDB /* pullDown.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263C41674CC9B00082EDB /* pullDown.png */; };
+		BD5263C71674CC9B00082EDB /* pullDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263C51674CC9B00082EDB /* pullDown@2x.png */; };
+		BD5263CC1674D02E00082EDB /* stickyBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263C81674D02D00082EDB /* stickyBlue.png */; };
+		BD5263CD1674D02E00082EDB /* stickyGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263C91674D02D00082EDB /* stickyGreen.png */; };
+		BD5263CE1674D02E00082EDB /* stickyOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263CA1674D02D00082EDB /* stickyOrange.png */; };
+		BD5263CF1674D02E00082EDB /* stickyYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263CB1674D02D00082EDB /* stickyYellow.png */; };
+		BD5263D21674D7F300082EDB /* notesBg.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263D01674D7F300082EDB /* notesBg.png */; };
+		BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263D11674D7F300082EDB /* notesBg@2x.png */; };
+		BD5263D61674D91500082EDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5263D41674D90400082EDB /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +110,24 @@
 		BAFFB60916672E83003968BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BAFFB60B16672E83003968BF /* iOrterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOrterTests.h; sourceTree = "<group>"; };
 		BAFFB60C16672E83003968BF /* iOrterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOrterTests.m; sourceTree = "<group>"; };
+		BD5263AB1674BAD700082EDB /* sticky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticky.png; sourceTree = "<group>"; };
+		BD5263B41674BE5A00082EDB /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
+		BD5263B51674BE5A00082EDB /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
+		BD5263B61674BE5A00082EDB /* FPPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverView.h; sourceTree = "<group>"; };
+		BD5263B71674BE5A00082EDB /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverView.m; sourceTree = "<group>"; };
+		BD5263B81674BE5A00082EDB /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
+		BD5263B91674BE5A00082EDB /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
+		BD5263BD1674C06A00082EDB /* SectionsPopOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsPopOver.h; sourceTree = "<group>"; };
+		BD5263BE1674C06A00082EDB /* SectionsPopOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsPopOver.m; sourceTree = "<group>"; };
+		BD5263C41674CC9B00082EDB /* pullDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pullDown.png; sourceTree = "<group>"; };
+		BD5263C51674CC9B00082EDB /* pullDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pullDown@2x.png"; sourceTree = "<group>"; };
+		BD5263C81674D02D00082EDB /* stickyBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickyBlue.png; sourceTree = "<group>"; };
+		BD5263C91674D02D00082EDB /* stickyGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickyGreen.png; sourceTree = "<group>"; };
+		BD5263CA1674D02D00082EDB /* stickyOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickyOrange.png; sourceTree = "<group>"; };
+		BD5263CB1674D02D00082EDB /* stickyYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickyYellow.png; sourceTree = "<group>"; };
+		BD5263D01674D7F300082EDB /* notesBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notesBg.png; sourceTree = "<group>"; };
+		BD5263D11674D7F300082EDB /* notesBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notesBg@2x.png"; sourceTree = "<group>"; };
+		BD5263D41674D90400082EDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5263D61674D91500082EDB /* QuartzCore.framework in Frameworks */,
 				BAFFB5D916672E83003968BF /* UIKit.framework in Frameworks */,
 				BAFFB5DB16672E83003968BF /* Foundation.framework in Frameworks */,
 				BAFFB5DD16672E83003968BF /* CoreGraphics.framework in Frameworks */,
@@ -178,6 +210,7 @@
 		BAFFB5C916672E83003968BF = {
 			isa = PBXGroup;
 			children = (
+				BD5263B31674BE2200082EDB /* FPPopover */,
 				088444EE16687BE4008AD190 /* libOCMock.a */,
 				BAFFB5DE16672E83003968BF /* iOrter */,
 				BAFFB60516672E83003968BF /* iOrterTests */,
@@ -198,6 +231,7 @@
 		BAFFB5D716672E83003968BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD5263D41674D90400082EDB /* QuartzCore.framework */,
 				BAFFB5D816672E83003968BF /* UIKit.framework */,
 				BAFFB5DA16672E83003968BF /* Foundation.framework */,
 				BAFFB5DC16672E83003968BF /* CoreGraphics.framework */,
@@ -209,6 +243,7 @@
 		BAFFB5DE16672E83003968BF /* iOrter */ = {
 			isa = PBXGroup;
 			children = (
+				BD5263A71674AFEA00082EDB /* Images */,
 				115569D21671E38600FA146D /* BoardRepository */,
 				088444D916676C30008AD190 /* Service */,
 				088444D016676A2F008AD190 /* Model */,
@@ -224,6 +259,8 @@
 				BAD8A681166C7B090073871C /* SectionViewController.m */,
 				115569C616707BF700FA146D /* IdeaCell.h */,
 				115569C716707BF700FA146D /* IdeaCell.m */,
+				BD5263BD1674C06A00082EDB /* SectionsPopOver.h */,
+				BD5263BE1674C06A00082EDB /* SectionsPopOver.m */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";
@@ -262,6 +299,35 @@
 				BAFFB60816672E83003968BF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BD5263A71674AFEA00082EDB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BD5263D01674D7F300082EDB /* notesBg.png */,
+				BD5263D11674D7F300082EDB /* notesBg@2x.png */,
+				BD5263C41674CC9B00082EDB /* pullDown.png */,
+				BD5263C81674D02D00082EDB /* stickyBlue.png */,
+				BD5263C91674D02D00082EDB /* stickyGreen.png */,
+				BD5263CA1674D02D00082EDB /* stickyOrange.png */,
+				BD5263CB1674D02D00082EDB /* stickyYellow.png */,
+				BD5263C51674CC9B00082EDB /* pullDown@2x.png */,
+				BD5263AB1674BAD700082EDB /* sticky.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		BD5263B31674BE2200082EDB /* FPPopover */ = {
+			isa = PBXGroup;
+			children = (
+				BD5263B41674BE5A00082EDB /* FPPopoverController.h */,
+				BD5263B51674BE5A00082EDB /* FPPopoverController.m */,
+				BD5263B61674BE5A00082EDB /* FPPopoverView.h */,
+				BD5263B71674BE5A00082EDB /* FPPopoverView.m */,
+				BD5263B81674BE5A00082EDB /* FPTouchView.h */,
+				BD5263B91674BE5A00082EDB /* FPTouchView.m */,
+			);
+			name = FPPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +407,14 @@
 				BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */,
 				115569C41670651900FA146D /* DropDownButton.png in Resources */,
 				115569CB167086C300FA146D /* MainStoryboard.storyboard in Resources */,
+				BD5263C61674CC9B00082EDB /* pullDown.png in Resources */,
+				BD5263C71674CC9B00082EDB /* pullDown@2x.png in Resources */,
+				BD5263CC1674D02E00082EDB /* stickyBlue.png in Resources */,
+				BD5263CD1674D02E00082EDB /* stickyGreen.png in Resources */,
+				BD5263CE1674D02E00082EDB /* stickyOrange.png in Resources */,
+				BD5263CF1674D02E00082EDB /* stickyYellow.png in Resources */,
+				BD5263D21674D7F300082EDB /* notesBg.png in Resources */,
+				BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +461,10 @@
 				BA62AC77166DC00C00144264 /* Idea.m in Sources */,
 				115569C816707BF700FA146D /* IdeaCell.m in Sources */,
 				115569D51671E3AD00FA146D /* BoardRepository.m in Sources */,
+				BD5263BA1674BE5A00082EDB /* FPPopoverController.m in Sources */,
+				BD5263BB1674BE5A00082EDB /* FPPopoverView.m in Sources */,
+				BD5263BC1674BE5A00082EDB /* FPTouchView.m in Sources */,
+				BD5263BF1674C06A00082EDB /* SectionsPopOver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

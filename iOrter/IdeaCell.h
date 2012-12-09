@@ -11,4 +11,5 @@
 @interface IdeaCell : UITableViewCell
 @property (nonatomic) IBOutlet UIView *ideaView;
 @property (nonatomic) IBOutlet UILabel *ideaLabel;
+@property (nonatomic) IBOutlet UIImageView *stickyBg;
 @end
