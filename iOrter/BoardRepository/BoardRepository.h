@@ -10,8 +10,8 @@
 #import "SectionService.h"
 #import "BoardService.h"
 @interface BoardRepository : NSObject
-
-- (id)initWithSectionService:(SectionService *)secService;
+@property (nonatomic, strong) BoardService *boardService;
+- (id)initWithService:(BoardService *)service;
 - (NSDictionary *)getSectionWiseIdeasForBoard:(NSString *)board;
 - (NSMutableArray *)getSectionsForBoard:(NSString *)board;
 

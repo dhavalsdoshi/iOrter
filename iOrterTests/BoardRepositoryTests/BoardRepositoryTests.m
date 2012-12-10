@@ -13,15 +13,16 @@
 
 - (void)testShouldGetSectionsFromBoard
 {
-//    BoardRepository *boardRepository = [[BoardRepository alloc] init];
-//    id mockForBoardService = [OCMockObject mockForClass:[BoardService class]];
-//    NSString *boardName = @"test/2";
-//    
-//    [[[mockForBoardService expect] andReturn:nil] getSectionsForBoard:boardName];
-//    
-//    [boardRepository getSectionsForBoard:boardName];
-//    
-//    [mockForBoardService verify];
+    id mockForBoardService = [OCMockObject mockForClass:[BoardService class]];
+    BoardRepository *boardRepository = [[BoardRepository alloc] initWithService:mockForBoardService];
+
+    NSString *boardName = @"test/2";
+    
+    [[mockForBoardService expect] getSectionsForBoard:boardName];
+    
+    [boardRepository getSectionsForBoard:boardName];
+    
+    [mockForBoardService verify];
 }
 @end
 

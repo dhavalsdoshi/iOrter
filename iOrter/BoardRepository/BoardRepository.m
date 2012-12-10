@@ -7,16 +7,22 @@
 //
 #import "BoardRepository.h"
 
+
 @implementation BoardRepository
 {
     SectionService *sectionService;
     NSMutableArray *sections;
 }
 
+@synthesize boardService;
+
+- (id)initWithService:(BoardService *)service {
+    self.boardService = service;
+    return self;
+}
 
 - (NSMutableArray *)getSectionsForBoard:(NSString *)board
 {
-    sections = [[[BoardService alloc] initWithSectionService:[[SectionService alloc]init]] getSectionsForBoard:@"test/2"];
-    return sections;
+    return [self.boardService getSectionsForBoard:@"test/2"];
 }
 @end

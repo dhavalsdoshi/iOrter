@@ -33,7 +33,11 @@
 //    if (self.detailItem) {
 //        self.detailDescriptionLabel.text = [self.detailItem description];
 //    }
-    sections = [[[BoardRepository alloc] init] getSectionsForBoard:@"test/2"];
+    SectionService *sectionService = [[SectionService alloc] init];
+    BoardService *boardservice = [[BoardService alloc] initWithSectionService:sectionService];
+    BoardRepository *boardRepository = [[BoardRepository alloc] initWithService:boardservice];
+    sections = [boardRepository getSectionsForBoard:@"test/2"];
+    
 
 
     
