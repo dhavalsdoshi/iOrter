@@ -13,5 +13,5 @@
     NSMutableArray *colors;
 
 }
-- (void)styleStickyCell:(Sticky *)cell withColorIdx:(NSInteger)colorIdx andLabel:(NSString *)idea;
+- (void)styleStickyCell:(Sticky *)cell withColorIdx:(NSInteger)colorIdx andLabel:(NSString *)label;
 @end

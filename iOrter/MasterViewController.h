@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
-
-@interface MasterViewController : UITableViewController
+#import "BaseTableViewController.h"
+@interface MasterViewController : BaseTableViewController
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;

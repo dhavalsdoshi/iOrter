@@ -40,7 +40,6 @@
 
 //    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"notesBg.png"]];
 //    self.view.backgroundColor = background;
-    self.tableView.separatorColor = [UIColor clearColor];
 
 }
 

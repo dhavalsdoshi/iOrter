@@ -76,8 +76,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text = @"View Demo";
+    Sticky *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.ideaLabel.text = @"View Demo";
     return cell;
 }
 
@@ -113,7 +113,10 @@
 }
 */
 
-
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+ [self styleStickyCell:(Sticky *)cell withColorIdx:0 andLabel:@"View Demo"];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showSection"]) {

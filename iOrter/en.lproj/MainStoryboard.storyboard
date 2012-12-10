@@ -28,25 +28,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lJ0-d7-vTF" customClass="Sticky">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phq-AM-6qj">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sn-7G-U6A">
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdR-Rn-ew9">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="260" id="JNk-PZ-YWe"/>
+                                                        <constraint firstAttribute="height" constant="31" id="Qz1-4T-gHh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="BbR-5h-jIn">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="tdR-Rn-ew9" firstAttribute="centerX" secondItem="BbR-5h-jIn" secondAttribute="centerX" type="default" id="3f8-qq-b12"/>
+                                                <constraint firstItem="tdR-Rn-ew9" firstAttribute="top" secondItem="5sn-7G-U6A" secondAttribute="top" constant="6" id="Y4a-tz-MQW"/>
+                                                <constraint firstItem="BbR-5h-jIn" firstAttribute="leading" secondItem="5sn-7G-U6A" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hWh-a4-xmh"/>
+                                                <constraint firstItem="BbR-5h-jIn" firstAttribute="centerY" secondItem="5sn-7G-U6A" secondAttribute="centerY" type="default" id="qCV-3Z-U6I"/>
+                                                <constraint firstItem="BbR-5h-jIn" firstAttribute="centerY" secondItem="tdR-Rn-ew9" secondAttribute="centerY" type="default" id="tIA-fU-lAy"/>
+                                                <constraint firstAttribute="trailing" secondItem="BbR-5h-jIn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wku-3h-KuP"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5sn-7G-U6A" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="20" type="default" id="6QT-hj-vko"/>
+                                    <constraint firstItem="5sn-7G-U6A" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" type="default" id="Ntq-5e-nbp"/>
+                                    <constraint firstAttribute="trailing" secondItem="5sn-7G-U6A" secondAttribute="trailing" constant="20" type="default" id="Y5h-M2-vkc"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="ideaLabel" destination="BbR-5h-jIn" id="sn1-8B-Xxd"/>
+                                    <outlet property="ideaView" destination="5sn-7G-U6A" id="Qyg-zk-Wro"/>
+                                    <outlet property="stickyBg" destination="tdR-Rn-ew9" id="Rh1-Du-sFE"/>
                                     <segue destination="Wpe-IX-ao6" kind="push" identifier="showSection" id="251-N0-DOC"/>
                                 </connections>
                             </tableViewCell>
@@ -149,6 +174,35 @@
     <resources>
         <image name="pullDown.png" width="19" height="19"/>
     </resources>
+    <classes>
+        <class className="BaseTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
+        </class>
+        <class className="MasterViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SectionViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showPopOver:"/>
+                <relationship kind="outlet" name="sectionsButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="Sticky" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Sticky.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ideaLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ideaView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="stickyBg" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
