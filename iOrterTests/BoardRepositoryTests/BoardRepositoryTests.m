@@ -10,7 +10,6 @@
 
 @implementation BoardRepositoryTests
 
-
 - (void)testShouldGetSectionsFromBoard
 {
     id mockForBoardService = [OCMockObject mockForClass:[BoardService class]];

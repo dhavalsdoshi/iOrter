@@ -12,6 +12,5 @@
 #import "BoardService.h"
 
 @interface BoardRepositoryTests : SenTestCase
-- (void)testShouldGetIdeasFromSectionService;
 - (void)testShouldGetSectionsFromBoard;
 @end

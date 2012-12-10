@@ -32,7 +32,6 @@
 		BAFFB5ED16672E83003968BF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EC16672E83003968BF /* Default@2x.png */; };
 		BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EE16672E83003968BF /* Default-568h@2x.png */; };
 		BAFFB5F516672E83003968BF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F416672E83003968BF /* MasterViewController.m */; };
-		BAFFB5F816672E83003968BF /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F716672E83003968BF /* BoardViewController.m */; };
 		BAFFB60016672E83003968BF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5FF16672E83003968BF /* SenTestingKit.framework */; };
 		BAFFB60116672E83003968BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5D816672E83003968BF /* UIKit.framework */; };
 		BAFFB60216672E83003968BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DA16672E83003968BF /* Foundation.framework */; };
@@ -102,8 +101,6 @@
 		BAFFB5EE16672E83003968BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BAFFB5F316672E83003968BF /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BAFFB5F416672E83003968BF /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		BAFFB5F616672E83003968BF /* BoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
-		BAFFB5F716672E83003968BF /* BoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
 		BAFFB5FE16672E83003968BF /* iOrterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOrterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFFB5FF16672E83003968BF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BAFFB60716672E83003968BF /* iOrterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOrterTests-Info.plist"; sourceTree = "<group>"; };
@@ -253,8 +250,6 @@
 				BAFFB5E816672E83003968BF /* AppDelegate.m */,
 				BAFFB5F316672E83003968BF /* MasterViewController.h */,
 				BAFFB5F416672E83003968BF /* MasterViewController.m */,
-				BAFFB5F616672E83003968BF /* BoardViewController.h */,
-				BAFFB5F716672E83003968BF /* BoardViewController.m */,
 				BAD8A680166C7B090073871C /* SectionViewController.h */,
 				BAD8A681166C7B090073871C /* SectionViewController.m */,
 				115569C616707BF700FA146D /* IdeaCell.h */,
@@ -453,7 +448,6 @@
 				BAFFB5E516672E83003968BF /* main.m in Sources */,
 				BAFFB5E916672E83003968BF /* AppDelegate.m in Sources */,
 				BAFFB5F516672E83003968BF /* MasterViewController.m in Sources */,
-				BAFFB5F816672E83003968BF /* BoardViewController.m in Sources */,
 				088444D316676A80008AD190 /* Section.m in Sources */,
 				088444E016676CA3008AD190 /* BoardService.m in Sources */,
 				BAD8A682166C7B090073871C /* SectionViewController.m in Sources */,

@@ -12,7 +12,6 @@
 @interface BoardRepository : NSObject
 @property (nonatomic, strong) BoardService *boardService;
 - (id)initWithService:(BoardService *)service;
-- (NSDictionary *)getSectionWiseIdeasForBoard:(NSString *)board;
 - (NSMutableArray *)getSectionsForBoard:(NSString *)board;
 
 @end
