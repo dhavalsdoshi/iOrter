@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IdeaCell : UITableViewCell
+@interface Sticky : UITableViewCell
 @property (nonatomic) IBOutlet UIView *ideaView;
 @property (nonatomic) IBOutlet UILabel *ideaLabel;
 @property (nonatomic) IBOutlet UIImageView *stickyBg;

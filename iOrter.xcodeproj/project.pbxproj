@@ -12,12 +12,13 @@
 		088444E516676CD8008AD190 /* BoardServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444E416676CD8008AD190 /* BoardServiceTests.m */; };
 		088444EF16687BE4008AD190 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 088444EE16687BE4008AD190 /* libOCMock.a */; };
 		115569C41670651900FA146D /* DropDownButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 115569C31670651900FA146D /* DropDownButton.png */; };
-		115569C816707BF700FA146D /* IdeaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569C716707BF700FA146D /* IdeaCell.m */; };
+		115569C816707BF700FA146D /* Sticky.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569C716707BF700FA146D /* Sticky.m */; };
 		115569CB167086C300FA146D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115569C9167086C300FA146D /* MainStoryboard.storyboard */; };
 		115569CC167086C300FA146D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115569C9167086C300FA146D /* MainStoryboard.storyboard */; };
 		115569D51671E3AD00FA146D /* BoardRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569D41671E3AD00FA146D /* BoardRepository.m */; };
 		115569D61671E3AD00FA146D /* BoardRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569D41671E3AD00FA146D /* BoardRepository.m */; };
 		115569DB1671E55100FA146D /* BoardRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569DA1671E55100FA146D /* BoardRepositoryTests.m */; };
+		11FF685C167600EF00E80A7F /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FF685B167600EE00E80A7F /* BaseTableViewController.m */; };
 		BA62AC77166DC00C00144264 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = BA62AC76166DC00C00144264 /* Idea.m */; };
 		BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23DF166C8D1600144EC1 /* SectionService.m */; };
 		BA6D23E3166C8D2900144EC1 /* SectionServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23E2166C8D2900144EC1 /* SectionServiceTest.m */; };
@@ -71,13 +72,15 @@
 		088444E416676CD8008AD190 /* BoardServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardServiceTests.m; path = Service/BoardServiceTests.m; sourceTree = "<group>"; };
 		088444EE16687BE4008AD190 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/include/libOCMock.a; sourceTree = "<group>"; };
 		115569C31670651900FA146D /* DropDownButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownButton.png; sourceTree = "<group>"; };
-		115569C616707BF700FA146D /* IdeaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaCell.h; sourceTree = "<group>"; };
-		115569C716707BF700FA146D /* IdeaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdeaCell.m; sourceTree = "<group>"; };
+		115569C616707BF700FA146D /* Sticky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sticky.h; sourceTree = "<group>"; };
+		115569C716707BF700FA146D /* Sticky.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sticky.m; sourceTree = "<group>"; };
 		115569CA167086C300FA146D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		115569D31671E3AD00FA146D /* BoardRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardRepository.h; path = BoardRepository/BoardRepository.h; sourceTree = "<group>"; };
 		115569D41671E3AD00FA146D /* BoardRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardRepository.m; path = BoardRepository/BoardRepository.m; sourceTree = "<group>"; };
 		115569D91671E55100FA146D /* BoardRepositoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardRepositoryTests.h; path = BoardRepositoryTests/BoardRepositoryTests.h; sourceTree = "<group>"; };
 		115569DA1671E55100FA146D /* BoardRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardRepositoryTests.m; path = BoardRepositoryTests/BoardRepositoryTests.m; sourceTree = "<group>"; };
+		11FF685A167600EE00E80A7F /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		11FF685B167600EE00E80A7F /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		BA62AC75166DC00C00144264 /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Idea.h; path = Model/Idea.h; sourceTree = "<group>"; };
 		BA62AC76166DC00C00144264 /* Idea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Idea.m; path = Model/Idea.m; sourceTree = "<group>"; };
 		BA6D23DE166C8D1600144EC1 /* SectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionService.h; path = Service/SectionService.h; sourceTree = "<group>"; };
@@ -252,10 +255,12 @@
 				BAFFB5F416672E83003968BF /* MasterViewController.m */,
 				BAD8A680166C7B090073871C /* SectionViewController.h */,
 				BAD8A681166C7B090073871C /* SectionViewController.m */,
-				115569C616707BF700FA146D /* IdeaCell.h */,
-				115569C716707BF700FA146D /* IdeaCell.m */,
+				115569C616707BF700FA146D /* Sticky.h */,
+				115569C716707BF700FA146D /* Sticky.m */,
 				BD5263BD1674C06A00082EDB /* SectionsPopOver.h */,
 				BD5263BE1674C06A00082EDB /* SectionsPopOver.m */,
+				11FF685A167600EE00E80A7F /* BaseTableViewController.h */,
+				11FF685B167600EE00E80A7F /* BaseTableViewController.m */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";
@@ -453,12 +458,13 @@
 				BAD8A682166C7B090073871C /* SectionViewController.m in Sources */,
 				BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */,
 				BA62AC77166DC00C00144264 /* Idea.m in Sources */,
-				115569C816707BF700FA146D /* IdeaCell.m in Sources */,
+				115569C816707BF700FA146D /* Sticky.m in Sources */,
 				115569D51671E3AD00FA146D /* BoardRepository.m in Sources */,
 				BD5263BA1674BE5A00082EDB /* FPPopoverController.m in Sources */,
 				BD5263BB1674BE5A00082EDB /* FPPopoverView.m in Sources */,
 				BD5263BC1674BE5A00082EDB /* FPTouchView.m in Sources */,
 				BD5263BF1674C06A00082EDB /* SectionsPopOver.m in Sources */,
+				11FF685C167600EF00E80A7F /* BaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

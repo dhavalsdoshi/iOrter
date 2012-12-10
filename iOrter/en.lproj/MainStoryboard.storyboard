@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Idea" id="XQd-Vd-6jd" customClass="IdeaCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Idea" id="XQd-Vd-6jd" customClass="Sticky">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -149,32 +149,6 @@
     <resources>
         <image name="pullDown.png" width="19" height="19"/>
     </resources>
-    <classes>
-        <class className="IdeaCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IdeaCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ideaLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ideaView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="stickyBg" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SectionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showPopOver:"/>
-                <relationship kind="outlet" name="sectionsButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

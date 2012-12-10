@@ -1,8 +1,9 @@
 #import <UIKit/UIKit.h>
 #import "Model/Section.h"
 #import "FPPopoverController.h"
+#import "BaseTableViewController.h"
 
-@interface SectionViewController : UITableViewController<FPPopoverControllerDelegate>{
+@interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate>{
     FPPopoverController *popover;
     NSMutableArray *sections;
 }

@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 ThoughtWorks. All rights reserved.
 //
 
-#import "IdeaCell.h"
+#import "Sticky.h"
 
-@implementation IdeaCell
+@implementation Sticky
 @synthesize ideaView;
 @synthesize ideaLabel;
 @synthesize stickyBg;

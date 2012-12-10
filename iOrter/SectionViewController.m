@@ -1,6 +1,6 @@
 #import "SectionViewController.h"
 #import "BoardRepository.h"
-#import "IdeaCell.h"
+#import "Sticky.h"
 #import "FPPopoverController.h"
 #import "SectionsPopOver.h"
 
@@ -12,7 +12,6 @@
     Section *selectedSection;
     NSMutableDictionary *stickyColors;
     BoardRepository *board;
-    NSMutableArray *colors;
     NSDictionary *sectionwiseIdeas;
 }
 @synthesize sectionsButton, sections;
@@ -29,7 +28,7 @@
 {
     [super viewDidLoad];
     board = [[BoardRepository alloc] init];
-    colors = [NSMutableArray array];
+    
 //    [colors addObject:[UIColor colorWithRed:1.0 green:1.0 blue:0.5 alpha:1.0]];
 //    [colors addObject:[UIColor orangeColor]];
 //    [colors addObject:[UIColor colorWithRed:0.73 green:0.93 blue:0.41 alpha:1.0]];
@@ -37,11 +36,6 @@
 //    [colors addObject:[UIColor colorWithRed:0.8 green:1.0 blue:1.0 alpha:1.0]];
 //    [colors addObject:[UIColor colorWithRed:0.09 green:0.71 blue:1.0 alpha:1.0]];
     self.title = selectedSection.name;
-
-    [colors addObject:@"stickyBlue.png"];
-    [colors addObject:@"stickyGreen.png"];
-    [colors addObject:@"stickyYellow.png"];
-    [colors addObject:@"stickyOrange.png"];
 
 
 //    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"notesBg.png"]];
@@ -71,9 +65,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Idea";
-    IdeaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    Sticky *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[IdeaCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[Sticky alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
     NSString *idea = [selectedSection.ideas objectAtIndex:indexPath.row];
@@ -99,31 +93,16 @@
     
 }
 
+ 
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    IdeaCell *currentCell = (IdeaCell*)cell;
 
-    NSInteger colorIndex = (int)selectedSection.sectionId %  (int)colors.count;
-    NSString *imageName = [colors objectAtIndex:colorIndex];
-    UIImage *bgImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 15, 10, 24)];
-    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSInteger colorIndex = (int)selectedSection.sectionId %  (int)colors.count;
     NSString *idea = [selectedSection.ideas objectAtIndex:indexPath.row];
 
-    CGSize  textSize = { 260.0, 10000.0 };
-    CGSize size = [idea sizeWithFont:[UIFont fontWithName:@"Georgia-Italic" size:17.0]
-                   constrainedToSize:textSize
-                       lineBreakMode:UILineBreakModeWordWrap];
-    float padding = 20.0;
-    size.width += (padding/2);
-    [currentCell.stickyBg setFrame:CGRectMake(currentCell.ideaLabel.frame.origin.x - padding/2,
-                                       currentCell.ideaLabel.frame.origin.y - padding/2,
-                                       size.width+padding,
-                                       size.height+padding)];
-//    currentCell.stickyBg.transform = CGAffineTransformMakeRotation(M_PI / 180 * 1);
-    currentCell.stickyBg.image = bgImage;
-
-
+    [self styleStickyCell:(Sticky *)cell withColorIdx:colorIndex andLabel:idea];
 }
 
 /*
