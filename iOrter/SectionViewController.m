@@ -142,7 +142,13 @@
 }
 
 -(IBAction)showPopOver:(id)sender{
-    [self popover:sender];
+    UISegmentedControl *control = (UISegmentedControl *) sender;
+    
+    if ([control selectedSegmentIndex]==1){
+        [self popover:sender];
+    }
+
+    
 }
 
 @end

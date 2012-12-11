@@ -146,22 +146,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Section" id="mGc-Kk-Lug">
-                        <barButtonItem key="rightBarButtonItem" image="pullDown.png" id="6rk-4t-46z">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uJ3-DM-UNj">
-                                <rect key="frame" x="285" y="8" width="30" height="28"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="RHc-8L-hGv">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" momentary="YES" id="DvP-j3-aJm">
+                                <rect key="frame" x="244" y="7" width="71" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="pullDown.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <segments>
+                                    <segment title="Add"/>
+                                    <segment title="" image="pullDown.png"/>
+                                </segments>
                                 <connections>
-                                    <action selector="showPopOver:" destination="Wpe-IX-ao6" eventType="touchUpInside" id="dax-7t-qww"/>
+                                    <action selector="showPopOver:" destination="Wpe-IX-ao6" eventType="valueChanged" id="hoM-os-zoJ"/>
                                 </connections>
-                            </button>
+                            </segmentedControl>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -174,6 +170,35 @@
     <resources>
         <image name="pullDown.png" width="19" height="19"/>
     </resources>
+    <classes>
+        <class className="BaseTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
+        </class>
+        <class className="MasterViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SectionViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showPopOver:"/>
+                <relationship kind="outlet" name="sectionsButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="Sticky" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Sticky.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ideaLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ideaView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="stickyBg" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
