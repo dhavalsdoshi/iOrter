@@ -1,5 +1,6 @@
 #import "SectionService.h"
 #import "Section.h"
+#import "HTTPResponseHandler.h"
 
 @implementation SectionService
 
@@ -23,5 +24,14 @@
         [ideas addObject:[idea objectForKey:@"message"]];
     }
     return sectionWiseIdeas;
+}
+
+- (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId
+{
+    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId,idea];
+    NSURL *ideaUrl = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:ideaUrl];
+    [[NSURLConnection alloc] initWithRequest:postRequest delegate:[[HTTPResponseHandler alloc] init]];
+        
 }
 @end

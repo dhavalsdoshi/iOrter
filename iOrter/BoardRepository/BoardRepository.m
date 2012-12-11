@@ -10,19 +10,25 @@
 
 @implementation BoardRepository
 {
-    SectionService *sectionService;
-    NSMutableArray *sections;
+
 }
 
 @synthesize boardService;
 
-- (id)initWithService:(BoardService *)service {
+- (id)initWithBoardService:(BoardService *)service andSectionService:(SectionService *)sectionservice
+{
     self.boardService = service;
+    self.sectionService = sectionservice;
     return self;
 }
 
 - (NSMutableArray *)getSectionsForBoard:(NSString *)board
 {
     return [self.boardService getSectionsForBoard:@"test/2"];
+}
+
+-(void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId
+{
+    [self.sectionService addIdea:idea toSection:sectionId];
 }
 @end

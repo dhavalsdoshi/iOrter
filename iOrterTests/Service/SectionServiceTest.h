@@ -1,5 +1,6 @@
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface SectionServiceTest : SenTestCase
+@interface SectionServiceTest : SenTestCase <NSURLConnectionDelegate>
 
 @end
+ 

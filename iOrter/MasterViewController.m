@@ -2,7 +2,6 @@
 #import "Model/Section.h"
 #import "SectionViewController.h"
 #import "BoardRepository.h"
-
 @interface MasterViewController () {
     NSMutableArray *_objects;
     
@@ -34,10 +33,8 @@
     //    }
     SectionService *sectionService = [[SectionService alloc] init];
     BoardService *boardservice = [[BoardService alloc] initWithSectionService:sectionService];
-    BoardRepository *boardRepository = [[BoardRepository alloc] initWithService:boardservice];
+    BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
     sections = [boardRepository getSectionsForBoard:@"test/2"];
-    
-    
     
     
 }
@@ -54,6 +51,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.title = @"Menu";
     [self configureView];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,21 +95,6 @@
     }
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {

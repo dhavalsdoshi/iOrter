@@ -56,11 +56,11 @@
                        lineBreakMode:UILineBreakModeWordWrap];
     float padding = 20.0;
     size.width += (padding/2);
-    [cell.stickyBg setFrame:CGRectMake(cell.ideaLabel.frame.origin.x - padding/2,
-                                       cell.ideaLabel.frame.origin.y - padding/2,
-                                       size.width+padding,
-                                       size.height+padding)];
-    
+//    [cell.stickyBg setFrame:CGRectMake(cell.ideaLabel.frame.origin.x - padding/2,
+//                                       cell.ideaLabel.frame.origin.y - padding/2,
+//                                       size.width+padding,
+//                                       size.height+padding)];
+//    
     NSString *imageName = [colors objectAtIndex:colorIdx];
     UIImage *bgImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 15, 10, 24)];
     cell.stickyBg.image = bgImage;

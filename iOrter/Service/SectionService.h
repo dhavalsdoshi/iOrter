@@ -5,4 +5,5 @@
 @interface SectionService : NSObject
 
 - (NSDictionary *)getSectionWiseIdeasForBoard:(NSString *)board;
+- (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId;
 @end

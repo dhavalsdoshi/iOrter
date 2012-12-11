@@ -2,6 +2,7 @@
 #import "Section.h"
 #import "SectionService.h"
 #import <objc/objc-runtime.h>
+#import "OCMock/OCmock.h"
 @implementation SectionServiceTest
 -(void) testShouldGetIdeas
 {
@@ -24,4 +25,10 @@
     }
     return nil;
 }
+
+
+-(void) testShouldAddANewIdeaToGivenSection {
+//TODO
+}
+
 @end

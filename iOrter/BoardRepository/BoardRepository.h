@@ -11,7 +11,8 @@
 #import "BoardService.h"
 @interface BoardRepository : NSObject
 @property (nonatomic, strong) BoardService *boardService;
-- (id)initWithService:(BoardService *)service;
+@property (nonatomic, strong) SectionService *sectionService;
+- (id)initWithBoardService:(BoardService *)service andSectionService:(SectionService *)sectionservice;
 - (NSMutableArray *)getSectionsForBoard:(NSString *)board;
-
+- (void)addIdea:(NSString*)idea toSection:(NSInteger)sectionId;
 @end
