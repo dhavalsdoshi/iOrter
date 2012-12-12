@@ -9,7 +9,7 @@
 #import "ContributeIdeaViewController.h"
 #import "BoardRepository.h"
 @interface ContributeIdeaViewController (){
-    NSInteger sectionId;
+    NSInteger *sectionId;
 }
 - (IBAction)addIdea:(id)sender;
 
@@ -58,11 +58,12 @@
 {
     if([text isEqualToString:@"\n"]){
         [self.ideaText resignFirstResponder];
+        [self addIdea:self];
     }
     return YES;
 }
 
--(void)textViewDidEndEditing:(UITextView *)textView
+-(void)addIdea:(id)sender
 {
     self.idea = ideaText.text;
     SectionService *sectionService = [[SectionService alloc] init];
@@ -71,5 +72,10 @@
     [board addIdea:self.idea toSection:sectionId];
     NSLog(@"%@",self.idea);
     [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
+    
 }
 @end
