@@ -9,7 +9,7 @@
 #import "ContributeIdeaViewController.h"
 #import "BoardRepository.h"
 @interface ContributeIdeaViewController (){
-    NSInteger *sectionId;
+    Section *selectedSection;
 }
 - (IBAction)addIdea:(id)sender;
 
@@ -34,7 +34,6 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
-    
 	// Do any additional setup after loading the view.
 }
 
@@ -44,9 +43,12 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setSectionIdentifier:(NSInteger *)sectionIdentifier
+-(void)setSection:(Section *)section
 {
-    sectionId = sectionIdentifier;
+    selectedSection = section;
+    self.navigationItem.title = selectedSection.name;
+
+
 }
 
 -(void) dismissKeyboard
@@ -54,28 +56,21 @@
     [self.ideaText resignFirstResponder];
 }
 
--(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+-(IBAction)cancelAdding:(id)sender
 {
-    if([text isEqualToString:@"\n"]){
-        [self.ideaText resignFirstResponder];
-        [self addIdea:self];
-    }
-    return YES;
+    [self dismissModalViewControllerAnimated:YES];
+
 }
 
--(void)addIdea:(id)sender
+-(IBAction)addIdea:(id)sender
 {
     self.idea = ideaText.text;
     SectionService *sectionService = [[SectionService alloc] init];
     BoardService *boardService = [[BoardService alloc] initWithSectionService:sectionService];
     BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
-    [board addIdea:self.idea toSection:sectionId];
+    [board addIdea:self.idea toSection:selectedSection.sectionId];
     NSLog(@"%@",self.idea);
     [self dismissModalViewControllerAnimated:YES];
 }
 
--(void)textViewDidEndEditing:(UITextView *)textView
-{
-    
-}
 @end

@@ -13,5 +13,6 @@
 @property (nonatomic) IBOutlet UITextView *ideaText;
 @property (nonatomic, strong) NSString *idea;
 @property (nonatomic, strong)  MasterViewController *delegate;
--(void) setSectionIdentifier:(NSInteger *)sectionIdentifier;
+-(void)setSection:(Section *)section;
+-(IBAction)cancelAdding:(id)sender;
 @end

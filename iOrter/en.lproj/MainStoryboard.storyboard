@@ -145,7 +145,7 @@
                             <outlet property="delegate" destination="Wpe-IX-ao6" id="ZnQ-SN-Zh6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Section" id="mGc-Kk-Lug">
+                    <navigationItem key="navigationItem" id="mGc-Kk-Lug">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="RHc-8L-hGv">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" momentary="YES" id="DvP-j3-aJm">
                                 <rect key="frame" x="244" y="7" width="71" height="31"/>
@@ -189,14 +189,32 @@
                                     <outlet property="delegate" destination="deS-ny-MtW" id="hLa-nK-pdL"/>
                                 </connections>
                             </textView>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-RZ-I37">
+                                <items>
+                                    <navigationItem id="zVB-YC-mNt">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3FK-i8-2Ji">
+                                            <connections>
+                                                <action selector="cancelAdding:" destination="deS-ny-MtW" id="rwC-Q9-RaE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7cp-hV-eF1">
+                                            <connections>
+                                                <action selector="addIdea:" destination="deS-ny-MtW" id="u5b-cn-cbw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="59o-EW-8Z2" firstAttribute="top" secondItem="chr-KE-lIS" secondAttribute="top" constant="40" id="p0H-j8-dK3"/>
-                            <constraint firstItem="59o-EW-8Z2" firstAttribute="centerX" secondItem="chr-KE-lIS" secondAttribute="centerX" type="default" id="zDQ-QR-kN3"/>
+                            <constraint firstItem="jZl-RZ-I37" firstAttribute="trailing" secondItem="chr-KE-lIS" secondAttribute="trailing" type="default" id="2Bk-w6-uUS"/>
+                            <constraint firstItem="59o-EW-8Z2" firstAttribute="top" secondItem="chr-KE-lIS" secondAttribute="top" constant="82" id="HJk-WB-pke"/>
+                            <constraint firstItem="jZl-RZ-I37" firstAttribute="centerX" secondItem="59o-EW-8Z2" secondAttribute="centerX" type="default" id="KSS-bh-iwB"/>
+                            <constraint firstItem="jZl-RZ-I37" firstAttribute="top" secondItem="chr-KE-lIS" secondAttribute="top" type="default" id="Nl7-RL-flB"/>
+                            <constraint firstItem="jZl-RZ-I37" firstAttribute="leading" secondItem="chr-KE-lIS" secondAttribute="leading" type="default" id="t1W-St-8Lp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Yur-YL-zjo"/>
                     <connections>
                         <outlet property="ideaText" destination="59o-EW-8Z2" id="63q-0b-64R"/>
                     </connections>
@@ -217,6 +235,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContributeIdeaViewController.h"/>
             <relationships>
                 <relationship kind="action" name="addIdea:"/>
+                <relationship kind="action" name="cancelAdding:"/>
                 <relationship kind="outlet" name="ideaText" candidateClass="UITextView"/>
             </relationships>
         </class>
