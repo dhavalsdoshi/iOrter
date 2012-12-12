@@ -1,7 +1,6 @@
 #import "MasterViewController.h"
 #import "Model/Section.h"
 #import "SectionViewController.h"
-#import "BoardRepository.h"
 @interface MasterViewController () {
     NSMutableArray *_objects;
     
@@ -12,7 +11,7 @@
 @implementation MasterViewController{
     NSMutableArray *sections;
 }
-
+@synthesize boardRepository;
 #pragma mark - Managing the detail item
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -33,7 +32,7 @@
     //    }
     SectionService *sectionService = [[SectionService alloc] init];
     BoardService *boardservice = [[BoardService alloc] initWithSectionService:sectionService];
-    BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
+    self.boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
     sections = [boardRepository getSectionsForBoard:@"test/2"];
     
     
@@ -100,6 +99,7 @@
 {
  [self styleStickyCell:(Sticky *)cell withColorIdx:0 andLabel:@"View Demo"];
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showSection"]) {

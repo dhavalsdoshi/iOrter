@@ -28,10 +28,17 @@
 
 - (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId
 {
-    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId,idea];
+   
+    NSString *encodedIdea = [idea stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId,encodedIdea];
+
     NSURL *ideaUrl = [NSURL URLWithString:urlString];
+    
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:ideaUrl];
+    [postRequest setHTTPMethod:@"POST"];
+    
     [[NSURLConnection alloc] initWithRequest:postRequest delegate:[[HTTPResponseHandler alloc] init]];
         
 }
+
 @end

@@ -28,7 +28,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"Did Fail With Error");
+    NSLog(@"Did Fail With Error- %@", error.localizedDescription);
 }
 
 @end

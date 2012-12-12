@@ -147,8 +147,17 @@
     if ([control selectedSegmentIndex]==1){
         [self popover:sender];
     }
+    else{
+        [self performSegueWithIdentifier:@"addIdea" sender:control];
+    }
+}
 
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"addIdea"]) {
+        NSInteger *sectionId = selectedSection.sectionId;
+        [[segue destinationViewController] setSectionIdentifier:sectionId];
+    }
 }
 
 @end

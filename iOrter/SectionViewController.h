@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Model/Section.h"
 #import "FPPopoverController.h"
+#import "ContributeIdeaViewController.h"
 #import "BaseTableViewController.h"
 
 @interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate>{
