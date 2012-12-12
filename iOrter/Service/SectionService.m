@@ -28,9 +28,8 @@
 
 - (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId
 {
-   
-    NSString *encodedIdea = [idea stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId,encodedIdea];
+    NSString *encoded = [self urlEncode:idea];
+    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId, encoded];
 
     NSURL *ideaUrl = [NSURL URLWithString:urlString];
     
@@ -41,4 +40,7 @@
         
 }
 
+- (NSString *) urlEncode:(NSString *)unencoded {
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef) unencoded, NULL, (CFStringRef)@"!*'();:@&=+$,/?", kCFStringEncodingUTF8));
+}
 @end
