@@ -63,6 +63,10 @@
 
 }
 
+- (void) clearProgressMessage {
+    [MBProgressHUD hideHUDForView:self.parentView animated:YES];
+}
+
 -(IBAction)addIdea:(id)sender
 {
     self.idea = ideaText.text;
@@ -71,14 +75,16 @@
     BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
 
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.parentView animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Posting..";
     
     [board addIdea:self.idea toSection:selectedSection.sectionId
         progress:^(float progress) {
             hud.progress = progress;
         } complete:^{
-            [MBProgressHUD hideHUDForView:self.parentView animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"Done!";
+            [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearProgressMessage) userInfo:nil repeats:NO];
         }];
 
     

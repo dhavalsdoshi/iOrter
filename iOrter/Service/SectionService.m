@@ -39,7 +39,7 @@
 - (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId progress:(onProgress)progress complete:(onComplete)complete;
 {
     NSString *encoded = [self urlEncode:idea];
-    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId, encoded];
+    NSString *urlString = [@"http://localhost:4567/hello?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId, encoded];
 
     NSURL *ideaUrl = [NSURL URLWithString:urlString];
     
