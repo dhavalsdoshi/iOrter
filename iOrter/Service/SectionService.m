@@ -1,15 +1,15 @@
 #import "SectionService.h"
 #import "Section.h"
-#import "HTTPResponseHandler.h"
 #import "MBProgressHUD.h"
+#import "HttpClient.h"
 
 
 @implementation SectionService
 
--(id) initWithView:(UIView *)v {
+-(id) initWithParent:(id)par {
     self = [super init];
     if (self) {
-        self.view = v;
+        self.parent = par;
     }
     return self;
 }
@@ -36,24 +36,16 @@
     return sectionWiseIdeas;
 }
 
-- (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId progress:(onProgress)progress complete:(onComplete)complete;
+- (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId 
 {
+    
     NSString *encoded = [self urlEncode:idea];
-    NSString *urlString = [@"http://localhost:4567/hello?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId, encoded];
+    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId, encoded];
 
-    NSURL *ideaUrl = [NSURL URLWithString:urlString];
+    HttpClient *client = [[HttpClient alloc] init];
+    [client postTo:urlString delegate:self.parent];
     
-    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:ideaUrl];
-    [postRequest setHTTPMethod:@"POST"];
-    
-    [self httpCall:postRequest withProgress:progress withCompletion:complete];
 }
-
--(void) httpCall:(NSMutableURLRequest *)postRequest withProgress:(onProgress)progress withCompletion:(onComplete)complete {
-    HTTPResponseHandler *handler = [[HTTPResponseHandler alloc] initWithCompletion:complete andProgress:progress] ;
-    [[NSURLConnection alloc] initWithRequest:postRequest delegate:handler];
-}
-
 - (NSString *) urlEncode:(NSString *)unencoded {
     return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef) unencoded, NULL, (CFStringRef)@"!*'();:@&=+$,/?", kCFStringEncodingUTF8));
 }

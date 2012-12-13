@@ -4,6 +4,7 @@
 #import "ContributeIdeaViewController.h"
 #import "BaseTableViewController.h"
 
+
 @interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate>{
     FPPopoverController *popover;
     NSMutableArray *sections;

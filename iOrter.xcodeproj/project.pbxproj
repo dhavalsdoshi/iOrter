@@ -11,6 +11,7 @@
 		088444E016676CA3008AD190 /* BoardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444DF16676CA3008AD190 /* BoardService.m */; };
 		088444E516676CD8008AD190 /* BoardServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444E416676CD8008AD190 /* BoardServiceTests.m */; };
 		088444EF16687BE4008AD190 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 088444EE16687BE4008AD190 /* libOCMock.a */; };
+		1134D2E41679EEAF00077E76 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1134D2E31679EEAF00077E76 /* HttpClient.m */; };
 		115569C41670651900FA146D /* DropDownButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 115569C31670651900FA146D /* DropDownButton.png */; };
 		115569C816707BF700FA146D /* Sticky.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569C716707BF700FA146D /* Sticky.m */; };
 		115569CB167086C300FA146D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115569C9167086C300FA146D /* MainStoryboard.storyboard */; };
@@ -20,7 +21,6 @@
 		115569DB1671E55100FA146D /* BoardRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569DA1671E55100FA146D /* BoardRepositoryTests.m */; };
 		11BDEFAD16773B9600782DC0 /* ContributeIdeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */; };
 		11FF685C167600EF00E80A7F /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FF685B167600EE00E80A7F /* BaseTableViewController.m */; };
-		11FF6862167716F000E80A7F /* HTTPResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FF6861167716F000E80A7F /* HTTPResponseHandler.m */; };
 		78B540DB1679A59100113691 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B540DA1679A59100113691 /* MBProgressHUD.m */; };
 		BA62AC77166DC00C00144264 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = BA62AC76166DC00C00144264 /* Idea.m */; };
 		BA6D23E0166C8D1600144EC1 /* SectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6D23DF166C8D1600144EC1 /* SectionService.m */; };
@@ -75,6 +75,8 @@
 		088444E416676CD8008AD190 /* BoardServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardServiceTests.m; path = Service/BoardServiceTests.m; sourceTree = "<group>"; };
 		088444EE16687BE4008AD190 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/include/libOCMock.a; sourceTree = "<group>"; };
 		1134D2DE1679D1FD00077E76 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		1134D2E21679EEAF00077E76 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		1134D2E31679EEAF00077E76 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
 		115569C31670651900FA146D /* DropDownButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownButton.png; sourceTree = "<group>"; };
 		115569C616707BF700FA146D /* Sticky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sticky.h; sourceTree = "<group>"; };
 		115569C716707BF700FA146D /* Sticky.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sticky.m; sourceTree = "<group>"; };
@@ -87,8 +89,6 @@
 		11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeIdeaViewController.m; sourceTree = "<group>"; };
 		11FF685A167600EE00E80A7F /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		11FF685B167600EE00E80A7F /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
-		11FF6860167716F000E80A7F /* HTTPResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponseHandler.h; sourceTree = "<group>"; };
-		11FF6861167716F000E80A7F /* HTTPResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseHandler.m; sourceTree = "<group>"; };
 		78B540D91679A59100113691 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = iOrter/MBProgressHUD.h; sourceTree = "<group>"; };
 		78B540DA1679A59100113691 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = iOrter/MBProgressHUD.m; sourceTree = "<group>"; };
 		BA62AC75166DC00C00144264 /* Idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Idea.h; path = Model/Idea.h; sourceTree = "<group>"; };
@@ -281,11 +281,11 @@
 				BD5263BE1674C06A00082EDB /* SectionsPopOver.m */,
 				11FF685A167600EE00E80A7F /* BaseTableViewController.h */,
 				11FF685B167600EE00E80A7F /* BaseTableViewController.m */,
-				11FF6860167716F000E80A7F /* HTTPResponseHandler.h */,
-				11FF6861167716F000E80A7F /* HTTPResponseHandler.m */,
 				11BDEFAB16773B9600782DC0 /* ContributeIdeaViewController.h */,
 				11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */,
 				1134D2DE1679D1FD00077E76 /* Global.h */,
+				1134D2E21679EEAF00077E76 /* HttpClient.h */,
+				1134D2E31679EEAF00077E76 /* HttpClient.m */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";
@@ -490,9 +490,9 @@
 				BD5263BC1674BE5A00082EDB /* FPTouchView.m in Sources */,
 				BD5263BF1674C06A00082EDB /* SectionsPopOver.m in Sources */,
 				11FF685C167600EF00E80A7F /* BaseTableViewController.m in Sources */,
-				11FF6862167716F000E80A7F /* HTTPResponseHandler.m in Sources */,
 				11BDEFAD16773B9600782DC0 /* ContributeIdeaViewController.m in Sources */,
 				78B540DB1679A59100113691 /* MBProgressHUD.m in Sources */,
+				1134D2E41679EEAF00077E76 /* HttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

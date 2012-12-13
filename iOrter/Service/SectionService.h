@@ -5,9 +5,9 @@
 
 @interface SectionService : NSObject
 
-@property (nonatomic, strong) UIView *view;
+@property (nonatomic, strong) id parent;
 
--(id)initWithView:(UIView *)view;
+-(id)initWithParent:(id)parent;
 - (NSDictionary *)getSectionWiseIdeasForBoard:(NSString *)board;
-- (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId progress:(onProgress)progress complete:(onComplete)complete;;
+- (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId ;
 @end

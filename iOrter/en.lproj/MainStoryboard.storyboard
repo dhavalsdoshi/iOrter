@@ -184,7 +184,7 @@
                                     <constraint firstAttribute="height" constant="244" id="PTm-Hx-cFs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="deS-ny-MtW" id="hLa-nK-pdL"/>
                                 </connections>
@@ -197,7 +197,8 @@
                                                 <action selector="cancelAdding:" destination="deS-ny-MtW" id="rwC-Q9-RaE"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7cp-hV-eF1">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7cp-hV-eF1">
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="addIdea:" destination="deS-ny-MtW" id="u5b-cn-cbw"/>
                                             </connections>
@@ -227,6 +228,43 @@
     <resources>
         <image name="pullDown.png" width="19" height="19"/>
     </resources>
+    <classes>
+        <class className="BaseTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
+        </class>
+        <class className="ContributeIdeaViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContributeIdeaViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addIdea:"/>
+                <relationship kind="action" name="cancelAdding:"/>
+                <relationship kind="outlet" name="ideaText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SectionViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showPopOver:"/>
+                <relationship kind="outlet" name="sectionsButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="Sticky" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Sticky.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ideaLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ideaView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="stickyBg" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

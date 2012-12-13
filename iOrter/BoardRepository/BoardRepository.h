@@ -16,5 +16,5 @@
 @property (nonatomic, strong) SectionService *sectionService;
 - (id)initWithBoardService:(BoardService *)service andSectionService:(SectionService *)sectionservice;
 - (NSMutableArray *)getSectionsForBoard:(NSString *)board;
-- (void)addIdea:(NSString*)idea toSection:(NSInteger)sectionId progress:(onProgress)progress complete:(onComplete)complete;
+- (void)addIdea:(NSString*)idea toSection:(NSInteger)sectionId;
 @end

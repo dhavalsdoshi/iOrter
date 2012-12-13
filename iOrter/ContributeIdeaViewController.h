@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MasterViewController.h"
+#import "HttpClient.h"
+
 @class SectionViewController;
-@interface ContributeIdeaViewController : UIViewController <UITextViewDelegate>
+@interface ContributeIdeaViewController : UIViewController <UITextViewDelegate, HttpTaskDelegate>
 
 @property (nonatomic) IBOutlet UITextView *ideaText;
 @property (nonatomic, strong) NSString *idea;

@@ -12,6 +12,7 @@
 
 @interface ContributeIdeaViewController (){
     Section *selectedSection;
+    MBProgressHUD *hud;
 }
 - (IBAction)addIdea:(id)sender;
 
@@ -55,6 +56,7 @@
 -(void) dismissKeyboard
 {
     [self.ideaText resignFirstResponder];
+    
 }
 
 -(IBAction)cancelAdding:(id)sender
@@ -63,32 +65,42 @@
 
 }
 
-- (void) clearProgressMessage {
-    [MBProgressHUD hideHUDForView:self.parentView animated:YES];
-}
 
 -(IBAction)addIdea:(id)sender
 {
     self.idea = ideaText.text;
-    SectionService *sectionService = [[SectionService alloc] initWithView:self.parentView];
+    SectionService *sectionService = [[SectionService alloc] initWithParent:self];
     BoardService *boardService = [[BoardService alloc] initWithSectionService:sectionService];
     BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
 
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.parentView animated:YES];
+    hud = [MBProgressHUD showHUDAddedTo:self.parentView animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Posting..";
     
-    [board addIdea:self.idea toSection:selectedSection.sectionId
-        progress:^(float progress) {
-            hud.progress = progress;
-        } complete:^{
-            hud.mode = MBProgressHUDModeText;
-            hud.labelText = @"Done!";
-            [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearProgressMessage) userInfo:nil repeats:NO];
-        }];
+    [board addIdea:self.idea toSection:selectedSection.sectionId];
 
-    
     NSLog(@"%@",self.idea);
     [self dismissModalViewControllerAnimated:YES];
 }
+ 
+-(void)didProgress:(float)progress{
+    hud.progress = progress;
+}
+
+-(void)didFinish {
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"Done!";
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearProgressMessage) userInfo:nil repeats:NO];
+}
+
+-(void)didFail:(NSString *)data {
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = [@"Failed: " stringByAppendingFormat:@"%@", data ];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearProgressMessage) userInfo:nil repeats:NO];
+}
+
+- (void) clearProgressMessage {
+    [MBProgressHUD hideHUDForView:self.parentView animated:YES];
+}
+
 @end
