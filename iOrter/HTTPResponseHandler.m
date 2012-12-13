@@ -11,14 +11,17 @@
 @interface HTTPResponseHandler()
 
 @property (strong, nonatomic) Complete completeCallback;
+@property (strong, nonatomic) Progress progressStatus;
 @end
 
 @implementation HTTPResponseHandler
 
--(id) initWithCompletion:(Complete) complete {
+-(id) initWithCompletion:(Complete)complete andProgress:(Progress)progress{
     self = [super init];
     if (self) {
         self.completeCallback = complete;
+        self.progressStatus = progress;
+        
     }
     
     return self;
@@ -28,17 +31,20 @@
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
     
     NSLog(@"Recieved response for POST request : %d", [httpResponse statusCode]);
+    self.progressStatus(25);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSLog(@"DidFinishLoading");
+    self.progressStatus(100);
     self.completeCallback();
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     NSLog(@"DidReceive Data");
+    self.progressStatus(50);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

@@ -59,7 +59,7 @@
 }
 
 -(void) httpCall:(NSMutableURLRequest *)postRequest withProgress:(Progress)progress withCompletion:(Complete)complete {
-    HTTPResponseHandler *handler = [[HTTPResponseHandler alloc] initWithCompletion:complete];
+    HTTPResponseHandler *handler = [[HTTPResponseHandler alloc] initWithCompletion:complete andProgress:progress] ;
     [[NSURLConnection alloc] initWithRequest:postRequest delegate:handler];
 }
 

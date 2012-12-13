@@ -14,5 +14,5 @@ typedef void (^Complete)(void);
 
 @interface HTTPResponseHandler : NSObject <NSURLConnectionDelegate>
 
--(id) initWithCompletion:(Complete) complete;
+-(id) initWithCompletion:(Complete)complete andProgress:(Progress)progress;
 @end
