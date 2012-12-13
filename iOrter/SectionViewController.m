@@ -145,10 +145,12 @@
     UISegmentedControl *control = (UISegmentedControl *) sender;
     
     if ([control selectedSegmentIndex]==1){
-        [self popover:sender];
+        [self performSegueWithIdentifier:@"addIdea" sender:control];
+
     }
     else{
-        [self performSegueWithIdentifier:@"addIdea" sender:control];
+        [self popover:sender];
+
     }
 }
 
