@@ -10,13 +10,13 @@
 
 @interface HTTPResponseHandler()
 
-@property (strong, nonatomic) Complete completeCallback;
-@property (strong, nonatomic) Progress progressStatus;
+@property (strong, nonatomic) onComplete completeCallback;
+@property (strong, nonatomic) onProgress progressStatus;
 @end
 
 @implementation HTTPResponseHandler
 
--(id) initWithCompletion:(Complete)complete andProgress:(Progress)progress{
+-(id) initWithCompletion:(onComplete)complete andProgress:(onProgress)progress{
     self = [super init];
     if (self) {
         self.completeCallback = complete;

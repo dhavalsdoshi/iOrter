@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "SectionService.h"
 #import "BoardService.h"
+#import "Global.h"
+
 @interface BoardRepository : NSObject
 @property (nonatomic, strong) BoardService *boardService;
 @property (nonatomic, strong) SectionService *sectionService;
 - (id)initWithBoardService:(BoardService *)service andSectionService:(SectionService *)sectionservice;
 - (NSMutableArray *)getSectionsForBoard:(NSString *)board;
-- (void)addIdea:(NSString*)idea toSection:(NSInteger)sectionId;
+- (void)addIdea:(NSString*)idea toSection:(NSInteger)sectionId progress:(onProgress)progress complete:(onComplete)complete;
 @end

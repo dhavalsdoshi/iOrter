@@ -74,6 +74,7 @@
 		088444E316676CD8008AD190 /* BoardServiceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardServiceTests.h; path = Service/BoardServiceTests.h; sourceTree = "<group>"; };
 		088444E416676CD8008AD190 /* BoardServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardServiceTests.m; path = Service/BoardServiceTests.m; sourceTree = "<group>"; };
 		088444EE16687BE4008AD190 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/include/libOCMock.a; sourceTree = "<group>"; };
+		1134D2DE1679D1FD00077E76 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		115569C31670651900FA146D /* DropDownButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownButton.png; sourceTree = "<group>"; };
 		115569C616707BF700FA146D /* Sticky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sticky.h; sourceTree = "<group>"; };
 		115569C716707BF700FA146D /* Sticky.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sticky.m; sourceTree = "<group>"; };
@@ -284,6 +285,7 @@
 				11FF6861167716F000E80A7F /* HTTPResponseHandler.m */,
 				11BDEFAB16773B9600782DC0 /* ContributeIdeaViewController.h */,
 				11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */,
+				1134D2DE1679D1FD00077E76 /* Global.h */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";

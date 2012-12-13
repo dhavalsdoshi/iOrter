@@ -27,8 +27,8 @@
     return [self.boardService getSectionsForBoard:@"test/2"];
 }
 
--(void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId
+-(void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId progress:(onProgress)progress complete:(onComplete)complete;
 {
-    [self.sectionService addIdea:idea toSection:sectionId];
+    [self.sectionService addIdea:idea toSection:sectionId progress:progress complete:complete];
 }
 @end

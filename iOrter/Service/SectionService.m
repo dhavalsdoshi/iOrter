@@ -36,29 +36,20 @@
     return sectionWiseIdeas;
 }
 
-- (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId
+- (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId progress:(onProgress)progress complete:(onComplete)complete;
 {
     NSString *encoded = [self urlEncode:idea];
-    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId, encoded];
+    NSString *urlString = [@"http://ideaboardz.com:/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId, encoded];
 
     NSURL *ideaUrl = [NSURL URLWithString:urlString];
     
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:ideaUrl];
     [postRequest setHTTPMethod:@"POST"];
     
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Posting";
-    
-    [self httpCall:postRequest withProgress:^(float progress) {
-        hud.progress = progress;
-    } withCompletion:^{
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    }];
+    [self httpCall:postRequest withProgress:progress withCompletion:complete];
 }
 
--(void) httpCall:(NSMutableURLRequest *)postRequest withProgress:(Progress)progress withCompletion:(Complete)complete {
+-(void) httpCall:(NSMutableURLRequest *)postRequest withProgress:(onProgress)progress withCompletion:(onComplete)complete {
     HTTPResponseHandler *handler = [[HTTPResponseHandler alloc] initWithCompletion:complete andProgress:progress] ;
     [[NSURLConnection alloc] initWithRequest:postRequest delegate:handler];
 }

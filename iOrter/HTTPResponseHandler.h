@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Global.h"
 
-
-typedef void (^Progress)(float);
-typedef void (^Complete)(void);
 
 @interface HTTPResponseHandler : NSObject <NSURLConnectionDelegate>
 
--(id) initWithCompletion:(Complete)complete andProgress:(Progress)progress;
+-(id) initWithCompletion:(onComplete)complete andProgress:(onProgress)progress;
 @end

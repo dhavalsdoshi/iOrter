@@ -8,6 +8,7 @@
 
 #import "ContributeIdeaViewController.h"
 #import "BoardRepository.h"
+#import "MBProgressHUD.h"
 
 @interface ContributeIdeaViewController (){
     Section *selectedSection;
@@ -69,7 +70,17 @@
     BoardService *boardService = [[BoardService alloc] initWithSectionService:sectionService];
     BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
 
-    [board addIdea:self.idea toSection:selectedSection.sectionId];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.parentView animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Posting..";
+    
+    [board addIdea:self.idea toSection:selectedSection.sectionId
+        progress:^(float progress) {
+            hud.progress = progress;
+        } complete:^{
+            [MBProgressHUD hideHUDForView:self.parentView animated:YES];
+        }];
+
     
     NSLog(@"%@",self.idea);
     [self dismissModalViewControllerAnimated:YES];
