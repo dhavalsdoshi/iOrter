@@ -156,7 +156,7 @@
 {
     if ([[segue identifier] isEqualToString:@"addIdea"]) {
         NSInteger *sectionId = selectedSection.sectionId;
-        [[segue destinationViewController] setSection:selectedSection];
+        [[segue destinationViewController] setSection:selectedSection andParent:self.view];
     }
 }
 

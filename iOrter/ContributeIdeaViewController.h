@@ -10,9 +10,13 @@
 #import "MasterViewController.h"
 @class SectionViewController;
 @interface ContributeIdeaViewController : UIViewController <UITextViewDelegate>
+
 @property (nonatomic) IBOutlet UITextView *ideaText;
 @property (nonatomic, strong) NSString *idea;
 @property (nonatomic, strong)  MasterViewController *delegate;
--(void)setSection:(Section *)section;
+@property (nonatomic, strong)  UIView *parentView;
+
+
+-(void)setSection:(Section *)section andParent:(UIView *)view;
 -(IBAction)cancelAdding:(id)sender;
 @end

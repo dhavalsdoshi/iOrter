@@ -8,7 +8,21 @@
 
 #import "HTTPResponseHandler.h"
 
+@interface HTTPResponseHandler()
+
+@property (strong, nonatomic) Complete completeCallback;
+@end
+
 @implementation HTTPResponseHandler
+
+-(id) initWithCompletion:(Complete) complete {
+    self = [super init];
+    if (self) {
+        self.completeCallback = complete;
+    }
+    
+    return self;
+}
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
@@ -19,6 +33,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSLog(@"DidFinishLoading");
+    self.completeCallback();
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data

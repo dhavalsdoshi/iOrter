@@ -1,8 +1,18 @@
 #import "SectionService.h"
 #import "Section.h"
 #import "HTTPResponseHandler.h"
+#import "MBProgressHUD.h"
+
 
 @implementation SectionService
+
+-(id) initWithView:(UIView *)v {
+    self = [super init];
+    if (self) {
+        self.view = v;
+    }
+    return self;
+}
 
 - (NSDictionary *)getSectionWiseIdeasForBoard:(NSString *)board {
     NSMutableString *URLString = [NSMutableString stringWithString: @"http://ideaboardz.com/retros/"];
@@ -36,8 +46,21 @@
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:ideaUrl];
     [postRequest setHTTPMethod:@"POST"];
     
-    [[NSURLConnection alloc] initWithRequest:postRequest delegate:[[HTTPResponseHandler alloc] init]];
-        
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Posting";
+    
+    [self httpCall:postRequest withProgress:^(float progress) {
+        hud.progress = progress;
+    } withCompletion:^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
+
+-(void) httpCall:(NSMutableURLRequest *)postRequest withProgress:(Progress)progress withCompletion:(Complete)complete {
+    HTTPResponseHandler *handler = [[HTTPResponseHandler alloc] initWithCompletion:complete];
+    [[NSURLConnection alloc] initWithRequest:postRequest delegate:handler];
 }
 
 - (NSString *) urlEncode:(NSString *)unencoded {

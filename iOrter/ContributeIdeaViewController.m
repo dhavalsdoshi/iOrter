@@ -8,6 +8,7 @@
 
 #import "ContributeIdeaViewController.h"
 #import "BoardRepository.h"
+
 @interface ContributeIdeaViewController (){
     Section *selectedSection;
 }
@@ -42,13 +43,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(void)setSection:(Section *)section
+ 
+-(void)setSection:(Section *)section andParent:(UIView *)view
 {
     selectedSection = section;
     self.navigationItem.title = selectedSection.name;
-
-
+    self.parentView = view;
 }
 
 -(void) dismissKeyboard
@@ -65,12 +65,13 @@
 -(IBAction)addIdea:(id)sender
 {
     self.idea = ideaText.text;
-    SectionService *sectionService = [[SectionService alloc] init];
+    SectionService *sectionService = [[SectionService alloc] initWithView:self.parentView];
     BoardService *boardService = [[BoardService alloc] initWithSectionService:sectionService];
     BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
+
     [board addIdea:self.idea toSection:selectedSection.sectionId];
+    
     NSLog(@"%@",self.idea);
     [self dismissModalViewControllerAnimated:YES];
 }
-
 @end

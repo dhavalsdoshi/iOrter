@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef void (^Progress)(float);
+typedef void (^Complete)(void);
+
 @interface HTTPResponseHandler : NSObject <NSURLConnectionDelegate>
 
+-(id) initWithCompletion:(Complete) complete;
 @end
