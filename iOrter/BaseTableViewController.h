@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Sticky.h"
 @interface BaseTableViewController : UITableViewController
-{
-    NSMutableArray *colors;
-
-}
+@property (strong, nonatomic) NSMutableArray *colors;
 - (void)styleStickyCell:(Sticky *)cell withColorIdx:(NSInteger)colorIdx andLabel:(NSString *)label;
 @end

@@ -23,12 +23,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    colors = [NSMutableArray array];
+    self.colors = [NSMutableArray array];
     
-    [colors addObject:@"stickyBlue.png"];
-    [colors addObject:@"stickyGreen.png"];
-    [colors addObject:@"stickyYellow.png"];
-    [colors addObject:@"stickyOrange.png"];
+    [self.colors addObject:@"stickyBlue.png"];
+    [self.colors addObject:@"stickyGreen.png"];
+    [self.colors addObject:@"stickyYellow.png"];
+    [self.colors addObject:@"stickyOrange.png"];
     
     self.tableView.separatorColor = [UIColor clearColor];
 }
@@ -61,7 +61,7 @@
 //                                       size.width+padding,
 //                                       size.height+padding)];
 //    
-    NSString *imageName = [colors objectAtIndex:colorIdx];
+    NSString *imageName = [self.colors objectAtIndex:colorIdx];
     UIImage *bgImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 15, 10, 24)];
     cell.stickyBg.image = bgImage;
 }

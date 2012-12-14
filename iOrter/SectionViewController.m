@@ -86,7 +86,7 @@
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSInteger colorIndex = (int)selectedSection.sectionId %  (int)colors.count;
+    NSInteger colorIndex = (int)selectedSection.sectionId %  (int)self.colors.count;
     NSString *idea = [selectedSection.ideas objectAtIndex:indexPath.row];
 
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIndex andLabel:idea];
@@ -158,7 +158,7 @@
 {
     if ([[segue identifier] isEqualToString:@"addIdea"]) {
         NSInteger *sectionId = selectedSection.sectionId;
-        [[segue destinationViewController] setSection:selectedSection andParent:self.view];
+        [[segue destinationViewController] setSection:selectedSection andParent:self];
     }
 }
 

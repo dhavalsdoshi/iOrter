@@ -7,17 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MasterViewController.h"
+#import "SectionViewController.h"
 #import "HttpClient.h"
+
 
 @class SectionViewController;
 @interface ContributeIdeaViewController : UIViewController <UITextViewDelegate, HttpTaskDelegate>
 
 @property (nonatomic) IBOutlet UITextView *ideaText;
-@property (nonatomic, strong)  MasterViewController *delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *ideaImageView;
+@property (nonatomic, strong)  SectionViewController *parent;
 @property (nonatomic, strong)  UIView *parentView;
 
 
--(void)setSection:(Section *)section andParent:(UIView *)view;
+-(void)setSection:(Section *)section andParent:(SectionViewController *)parent;
 -(IBAction)cancelAdding:(id)sender;
 @end

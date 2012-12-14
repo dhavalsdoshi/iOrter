@@ -10,6 +10,7 @@
 #import "BoardRepository.h"
 #import "MBProgressHUD.h"
 
+
 @interface ContributeIdeaViewController (){
     Section *selectedSection;
     MBProgressHUD *hud;
@@ -20,7 +21,6 @@
 
 @implementation ContributeIdeaViewController
 
-@synthesize ideaText, delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +38,11 @@
     [self.view addGestureRecognizer:tap];
     
 	// Do any additional setup after loading the view.
+    NSInteger colorIdx = (int)selectedSection.sectionId % _parent.colors.count;
+    NSString *imageName = [self.parent.colors objectAtIndex:colorIdx];
+    UIImage *bgImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 15, 10, 24)];
+    
+    self.ideaImageView.image = bgImage;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,11 +51,11 @@
     // Dispose of any resources that can be recreated.
 }
  
--(void)setSection:(Section *)section andParent:(UIView *)view
+-(void)setSection:(Section *)section andParent:(SectionViewController *)parent
 {
     selectedSection = section;
     self.navigationItem.title = selectedSection.name;
-    self.parentView = view;
+    self.parent = parent;
 }
 
 -(void) dismissKeyboard
@@ -106,4 +111,8 @@
     [MBProgressHUD hideHUDForView:self.parentView animated:YES];
 }
 
+- (void)viewDidUnload {
+    [self setIdeaImageView:nil];
+    [super viewDidUnload];
+}
 @end
