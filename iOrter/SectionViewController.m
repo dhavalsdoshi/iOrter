@@ -47,7 +47,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return selectedSection.ideas.count;
+    return [selectedSection.ideas count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -156,6 +156,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"I am in BoardViewController.prepareForSeque");
     if ([[segue identifier] isEqualToString:@"addIdea"]) {
         NSInteger *sectionId = selectedSection.sectionId;
         [[segue destinationViewController] setSection:selectedSection andParent:self];

@@ -19,6 +19,7 @@
 		115569D51671E3AD00FA146D /* BoardRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569D41671E3AD00FA146D /* BoardRepository.m */; };
 		115569D61671E3AD00FA146D /* BoardRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569D41671E3AD00FA146D /* BoardRepository.m */; };
 		115569DB1671E55100FA146D /* BoardRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569DA1671E55100FA146D /* BoardRepositoryTests.m */; };
+		115D0217167B1E1900F15C06 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115D0216167B1E1900F15C06 /* BoardViewController.m */; };
 		11BDEFAD16773B9600782DC0 /* ContributeIdeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */; };
 		11FF685C167600EF00E80A7F /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FF685B167600EE00E80A7F /* BaseTableViewController.m */; };
 		78B540DB1679A59100113691 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B540DA1679A59100113691 /* MBProgressHUD.m */; };
@@ -84,6 +85,8 @@
 		115569D41671E3AD00FA146D /* BoardRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardRepository.m; path = BoardRepository/BoardRepository.m; sourceTree = "<group>"; };
 		115569D91671E55100FA146D /* BoardRepositoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardRepositoryTests.h; path = BoardRepositoryTests/BoardRepositoryTests.h; sourceTree = "<group>"; };
 		115569DA1671E55100FA146D /* BoardRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardRepositoryTests.m; path = BoardRepositoryTests/BoardRepositoryTests.m; sourceTree = "<group>"; };
+		115D0215167B1E1900F15C06 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
+		115D0216167B1E1900F15C06 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
 		11BDEFAB16773B9600782DC0 /* ContributeIdeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeIdeaViewController.h; sourceTree = "<group>"; };
 		11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeIdeaViewController.m; sourceTree = "<group>"; };
 		11FF685A167600EE00E80A7F /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -284,6 +287,8 @@
 				11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */,
 				1134D2E21679EEAF00077E76 /* HttpClient.h */,
 				1134D2E31679EEAF00077E76 /* HttpClient.m */,
+				115D0215167B1E1900F15C06 /* BoardViewController.h */,
+				115D0216167B1E1900F15C06 /* BoardViewController.m */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				11BDEFAD16773B9600782DC0 /* ContributeIdeaViewController.m in Sources */,
 				78B540DB1679A59100113691 /* MBProgressHUD.m in Sources */,
 				1134D2E41679EEAF00077E76 /* HttpClient.m in Sources */,
+				115D0217167B1E1900F15C06 /* BoardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

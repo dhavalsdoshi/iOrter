@@ -1,6 +1,6 @@
 #import "MasterViewController.h"
 #import "Model/Section.h"
-#import "SectionViewController.h"
+#import "BoardViewController.h"
 @interface MasterViewController () {
     NSMutableArray *_objects;
     
@@ -30,10 +30,6 @@
     //    if (self.detailItem) {
     //        self.detailDescriptionLabel.text = [self.detailItem description];
     //    }
-    SectionService *sectionService = [[SectionService alloc] init];
-    BoardService *boardservice = [[BoardService alloc] initWithSectionService:sectionService];
-    self.boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
-    sections = [boardRepository getSectionsForBoard:@"test/2"];
     
     
 }
@@ -102,9 +98,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showSection"]) {
+    if ([[segue identifier] isEqualToString:@"showSections"]) {
         Section *selectedSection = [sections objectAtIndex:0];
-        [[segue destinationViewController] setSelectedSection:selectedSection andAllSections:sections];
+        [[segue destinationViewController] setBoardName:@"test/2"];
     }
 }
 
