@@ -73,6 +73,8 @@
 
 -(IBAction)addIdea:(id)sender
 {
+    [self dismissKeyboard];
+    
     NSString *idea = [self.ideaText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if (idea.length != 0) {
@@ -80,14 +82,13 @@
         BoardService *boardService = [[BoardService alloc] initWithSectionService:sectionService];
         BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
         
-        hud = [MBProgressHUD showHUDAddedTo:self.parentView animated:YES];
+        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;
         hud.labelText = @"Posting..";
         
         [board addIdea:idea toSection:selectedSection.sectionId];
         
         NSLog(@"Adding idea : %@", idea);
-        [self dismissModalViewControllerAnimated:YES];
     }
 }
  
@@ -99,6 +100,7 @@
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"Done!";
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearProgressMessage) userInfo:nil repeats:NO];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)didFail:(NSString *)data {
