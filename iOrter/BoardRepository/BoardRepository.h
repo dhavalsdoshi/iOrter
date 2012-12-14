@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "SectionService.h"
 #import "BoardService.h"
-#import "Global.h"
 
 @interface BoardRepository : NSObject
 @property (nonatomic, strong) BoardService *boardService;

@@ -105,12 +105,12 @@
 
 -(void)didFail:(NSString *)data {
     hud.mode = MBProgressHUDModeText;
-    hud.labelText = [@"Failed: " stringByAppendingFormat:@"%@", data ];
+    hud.labelText = @"Failed to post; try again..";
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearProgressMessage) userInfo:nil repeats:NO];
 }
 
 - (void) clearProgressMessage {
-    [MBProgressHUD hideHUDForView:self.parentView animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)viewDidUnload {

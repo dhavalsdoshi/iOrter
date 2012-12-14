@@ -1,7 +1,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Section.h"
-#import "Global.h"
 
 @interface SectionService : NSObject
 

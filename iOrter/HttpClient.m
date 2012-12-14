@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 ThoughtWorks. All rights reserved.
 //
 
-#import "Global.h"
 #import "HttpClient.h"
 
 @interface HttpClient ()
@@ -47,7 +46,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    [_delegate didFail:@"oh my god!"];
+    [_delegate didFail:@""];
     NSLog(@"Did Fail With Error- %@", error.localizedDescription);
 }
 
