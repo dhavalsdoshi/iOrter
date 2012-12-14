@@ -14,7 +14,6 @@
 @interface ContributeIdeaViewController : UIViewController <UITextViewDelegate, HttpTaskDelegate>
 
 @property (nonatomic) IBOutlet UITextView *ideaText;
-@property (nonatomic, strong) NSString *idea;
 @property (nonatomic, strong)  MasterViewController *delegate;
 @property (nonatomic, strong)  UIView *parentView;
 

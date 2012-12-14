@@ -20,7 +20,7 @@
 
 @implementation ContributeIdeaViewController
 
-@synthesize ideaText, idea, delegate;
+@synthesize ideaText, delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -68,19 +68,22 @@
 
 -(IBAction)addIdea:(id)sender
 {
-    self.idea = ideaText.text;
-    SectionService *sectionService = [[SectionService alloc] initWithParent:self];
-    BoardService *boardService = [[BoardService alloc] initWithSectionService:sectionService];
-    BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
-
-    hud = [MBProgressHUD showHUDAddedTo:self.parentView animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = @"Posting..";
+    NSString *idea = [self.ideaText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    [board addIdea:self.idea toSection:selectedSection.sectionId];
-
-    NSLog(@"%@",self.idea);
-    [self dismissModalViewControllerAnimated:YES];
+    if (idea.length != 0) {
+        SectionService *sectionService = [[SectionService alloc] initWithParent:self];
+        BoardService *boardService = [[BoardService alloc] initWithSectionService:sectionService];
+        BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
+        
+        hud = [MBProgressHUD showHUDAddedTo:self.parentView animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.labelText = @"Posting..";
+        
+        [board addIdea:idea toSection:selectedSection.sectionId];
+        
+        NSLog(@"Adding idea : %@", idea);
+        [self dismissModalViewControllerAnimated:YES];
+    }
 }
  
 -(void)didProgress:(float)progress{

@@ -38,9 +38,8 @@
 
 - (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId 
 {
-    
     NSString *encoded = [self urlEncode:idea];
-    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@",sectionId, encoded];
+    NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@", sectionId, encoded];
 
     HttpClient *client = [[HttpClient alloc] init];
     [client postTo:urlString delegate:self.parent];
