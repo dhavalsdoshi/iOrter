@@ -157,7 +157,6 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6E-HQ-WTe">
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWk-y9-eRX"/>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-J2-Z73">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -166,12 +165,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" type="default" id="DUT-lF-5ks"/>
-                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="trailing" secondItem="E6E-HQ-WTe" secondAttribute="trailing" type="default" id="XME-bj-uv1"/>
                                                 <constraint firstAttribute="trailing" secondItem="uQm-J2-Z73" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cBj-G1-BJ5"/>
-                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" type="default" id="ehD-PP-BaR"/>
                                                 <constraint firstItem="uQm-J2-Z73" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" constant="5" id="nQ9-bu-67B"/>
-                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="bottom" secondItem="E6E-HQ-WTe" secondAttribute="bottom" type="default" id="uiy-mv-0BM"/>
                                                 <constraint firstItem="uQm-J2-Z73" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zeM-oZ-hNw"/>
                                             </constraints>
                                         </view>
@@ -198,7 +193,7 @@
                     <navigationItem key="navigationItem" id="mGc-Kk-Lug">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dpG-zL-Elp">
                             <connections>
-                                <segue destination="deS-ny-MtW" kind="modal" id="hf8-ae-LoB"/>
+                                <segue destination="deS-ny-MtW" kind="modal" identifier="addIdea" id="hf8-ae-LoB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -216,16 +211,11 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sg4-eC-Lmf">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="4AS-Gx-sl2"/>
-                                    <constraint firstAttribute="height" constant="319" id="VQ5-1Y-Rje"/>
-                                </constraints>
-                            </imageView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59o-EW-8Z2">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="319" id="J36-ED-ZQQ"/>
+                                    <constraint firstAttribute="width" constant="238" id="fRB-qy-6Q0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -241,7 +231,7 @@
                                                 <action selector="cancelAdding:" destination="deS-ny-MtW" id="rwC-Q9-RaE"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7cp-hV-eF1">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="7cp-hV-eF1">
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="addIdea:" destination="deS-ny-MtW" id="u5b-cn-cbw"/>
@@ -254,17 +244,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jZl-RZ-I37" firstAttribute="trailing" secondItem="chr-KE-lIS" secondAttribute="trailing" type="default" id="2Bk-w6-uUS"/>
-                            <constraint firstItem="sg4-eC-Lmf" firstAttribute="trailing" secondItem="59o-EW-8Z2" secondAttribute="trailing" type="default" id="7nZ-5s-WQJ"/>
-                            <constraint firstItem="sg4-eC-Lmf" firstAttribute="top" secondItem="chr-KE-lIS" secondAttribute="top" constant="81" id="Fcl-4j-MtK"/>
                             <constraint firstItem="jZl-RZ-I37" firstAttribute="top" secondItem="chr-KE-lIS" secondAttribute="top" type="default" id="Nl7-RL-flB"/>
                             <constraint firstItem="59o-EW-8Z2" firstAttribute="top" secondItem="chr-KE-lIS" secondAttribute="top" constant="80" id="OOI-yf-DHC"/>
-                            <constraint firstItem="sg4-eC-Lmf" firstAttribute="leading" secondItem="59o-EW-8Z2" secondAttribute="leading" type="default" id="QSY-dN-GtL"/>
                             <constraint firstItem="jZl-RZ-I37" firstAttribute="leading" secondItem="chr-KE-lIS" secondAttribute="leading" type="default" id="t1W-St-8Lp"/>
-                            <constraint firstItem="sg4-eC-Lmf" firstAttribute="leading" secondItem="chr-KE-lIS" secondAttribute="leading" constant="40" id="zZv-cg-ci5"/>
+                            <constraint firstItem="59o-EW-8Z2" firstAttribute="leading" secondItem="chr-KE-lIS" secondAttribute="leading" constant="40" id="uj7-Os-Yfd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ideaImageView" destination="sg4-eC-Lmf" id="bIo-ij-nvd"/>
                         <outlet property="ideaText" destination="59o-EW-8Z2" id="63q-0b-64R"/>
                     </connections>
                 </viewController>

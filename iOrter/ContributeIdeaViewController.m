@@ -38,11 +38,10 @@
     [self.view addGestureRecognizer:tap];
     
 	// Do any additional setup after loading the view.
-    NSInteger colorIdx = 0;//(int)selectedSection.sectionId % _parent.colors.count;
-    NSString *imageName = [self.parent.colors objectAtIndex:colorIdx];
-    UIImage *bgImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 15, 10, 24)];
-    
-    self.ideaImageView.image = bgImage;
+    [_parent addShadow:self.ideaText];
+    NSInteger colorIdx = (int)selectedSection.sectionId % _parent.colors.count;
+    self.ideaText.backgroundColor = [self.parent.colors objectAtIndex:colorIdx];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,7 +66,6 @@
 -(IBAction)cancelAdding:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
-
 }
 
 

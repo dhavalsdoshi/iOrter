@@ -55,20 +55,23 @@
     cell.ideaLabel.numberOfLines = 0;
     cell.ideaLabel.backgroundColor = [UIColor clearColor];
 
-    CGFloat cornerRadius = 4;
-    cell.ideaView.backgroundColor = [UIColor redColor];
-    cell.ideaView.layer.cornerRadius = cornerRadius;
-    cell.ideaView.clipsToBounds = YES;
-    [[cell.ideaView layer] setBorderColor:[[UIColor darkGrayColor] CGColor]];
-    [[cell.ideaView layer] setBorderWidth:0];
-
-    cell.ideaView.layer.masksToBounds = NO;
-    cell.ideaView.layer.shadowOffset = CGSizeMake(-4, 6);
-    cell.ideaView.layer.shadowRadius = cornerRadius;
-    cell.ideaView.layer.shadowOpacity = 0.5;
-    cell.ideaView.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.ideaView.bounds cornerRadius:cornerRadius].CGPath;
+    [self addShadow:cell.ideaView];
     cell.ideaView.backgroundColor = [self.colors objectAtIndex:colorIdx];
+}
 
+- (void) addShadow:(UIView *)viewToStyle
+{
+    CGFloat cornerRadius = 4;
+    viewToStyle.layer.cornerRadius = cornerRadius;
+    viewToStyle.clipsToBounds = YES;
+    [[viewToStyle layer] setBorderColor:[[UIColor darkGrayColor] CGColor]];
+    [[viewToStyle layer] setBorderWidth:0];
+
+    viewToStyle.layer.masksToBounds = NO;
+    viewToStyle.layer.shadowOffset = CGSizeMake(-4, 6);
+    viewToStyle.layer.shadowRadius = cornerRadius;
+    viewToStyle.layer.shadowOpacity = 0.5;
+    viewToStyle.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:viewToStyle.bounds cornerRadius:cornerRadius].CGPath;
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
