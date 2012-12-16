@@ -55,6 +55,7 @@
 		BD5263D21674D7F300082EDB /* notesBg.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263D01674D7F300082EDB /* notesBg.png */; };
 		BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263D11674D7F300082EDB /* notesBg@2x.png */; };
 		BD5263D61674D91500082EDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5263D41674D90400082EDB /* QuartzCore.framework */; };
+		BDF82277167DF48400A65C5C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF82276167DF48400A65C5C /* TitleView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		BD5263D01674D7F300082EDB /* notesBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notesBg.png; sourceTree = "<group>"; };
 		BD5263D11674D7F300082EDB /* notesBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notesBg@2x.png"; sourceTree = "<group>"; };
 		BD5263D41674D90400082EDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BDF82276167DF48400A65C5C /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				1134D2E31679EEAF00077E76 /* HttpClient.m */,
 				115D0215167B1E1900F15C06 /* BoardViewController.h */,
 				115D0216167B1E1900F15C06 /* BoardViewController.m */,
+				BDF82276167DF48400A65C5C /* TitleView.xib */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				BD5263CF1674D02E00082EDB /* stickyYellow.png in Resources */,
 				BD5263D21674D7F300082EDB /* notesBg.png in Resources */,
 				BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */,
+				BDF82277167DF48400A65C5C /* TitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

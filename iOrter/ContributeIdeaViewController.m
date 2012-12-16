@@ -38,7 +38,7 @@
     [self.view addGestureRecognizer:tap];
     
 	// Do any additional setup after loading the view.
-    NSInteger colorIdx = (int)selectedSection.sectionId % _parent.colors.count;
+    NSInteger colorIdx = 0;//(int)selectedSection.sectionId % _parent.colors.count;
     NSString *imageName = [self.parent.colors objectAtIndex:colorIdx];
     UIImage *bgImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 15, 10, 24)];
     

@@ -14,21 +14,31 @@
     BoardRepository *board;
     NSDictionary *sectionwiseIdeas;
 }
-@synthesize sectionsButton, sections;
+@synthesize sectionsButton, sections, sectionTitle, titleView;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSBundle mainBundle] loadNibNamed:@"TitleView" owner:self options:nil];
     board = [[BoardRepository alloc] init];
-    self.title = selectedSection.name;
+
+    self.sectionTitle.backgroundColor = [UIColor clearColor];
+
+    self.sectionTitle.font = [UIFont boldSystemFontOfSize:20.0f];
+    self.sectionTitle.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    self.sectionTitle.textAlignment = UITextAlignmentCenter;
+    self.sectionTitle.minimumFontSize = 10.0f;
+
+    self.sectionTitle.text = selectedSection.name;
+    self.navigationItem.titleView = self.titleView;
 
 }
 
@@ -137,22 +147,23 @@
 
     selectedSection = [sections objectAtIndex:rowNum];
     [self.tableView reloadData];
-    self.title = selectedSection.name;
+    self.sectionTitle.text = selectedSection.name;
 
     [popover dismissPopoverAnimated:YES];
 }
 
 -(IBAction)showPopOver:(id)sender{
-    UISegmentedControl *control = (UISegmentedControl *) sender;
-    
-    if ([control selectedSegmentIndex]==1){
-        [self performSegueWithIdentifier:@"addIdea" sender:control];
-
-    }
-    else{
-        [self popover:sender];
-
-    }
+    [self popover:sender];
+//    UISegmentedControl *control = (UISegmentedControl *) sender;
+//    
+//    if ([control selectedSegmentIndex]==1){
+//        [self performSegueWithIdentifier:@"addIdea" sender:control];
+//
+//    }
+//    else{
+//        [self popover:sender];
+//
+//    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
