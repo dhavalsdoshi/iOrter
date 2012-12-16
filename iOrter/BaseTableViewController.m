@@ -50,20 +50,18 @@
 #pragma mark - Table view delegate
 
 - (void)styleStickyCell:(Sticky *)cell withColorIdx:(NSInteger)colorIdx andLabel:(NSString *)label {
-    CGSize  textSize = { 260.0, 10000.0 };
-    CGSize size = [label sizeWithFont:[UIFont fontWithName:@"Georgia-Italic" size:17.0]
-                   constrainedToSize:textSize
-                       lineBreakMode:UILineBreakModeWordWrap];
-    float padding = 20.0;
-    size.width += (padding/2);
-//    [cell.stickyBg setFrame:CGRectMake(cell.ideaLabel.frame.origin.x - padding/2,
-//                                       cell.ideaLabel.frame.origin.y - padding/2,
-//                                       size.width+padding,
-//                                       size.height+padding)];
-//    
-    NSString *imageName = [self.colors objectAtIndex:colorIdx];
-    UIImage *bgImage = [[UIImage imageNamed:imageName] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 15, 10, 24)];
-    cell.stickyBg.image = bgImage;
+    CGFloat cornerRadius = 2;
+    cell.layer.cornerRadius = cornerRadius;
+    cell.clipsToBounds = YES;
+    [[cell layer] setBorderColor:[[UIColor darkGrayColor] CGColor]];
+    [[cell layer] setBorderWidth:1.50];
+
+    cell.layer.masksToBounds = NO;
+    cell.layer.shadowOffset = CGSizeMake(-4, 6);
+    cell.layer.shadowRadius = cornerRadius;
+    cell.layer.shadowOpacity = 0.5;
+    cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cornerRadius].CGPath;
+
 }
 
 

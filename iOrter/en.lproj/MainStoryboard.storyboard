@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -37,12 +37,6 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sn-7G-U6A">
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdR-Rn-ew9">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="260" id="JNk-PZ-YWe"/>
-                                                        <constraint firstAttribute="height" constant="31" id="Qz1-4T-gHh"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="BbR-5h-jIn">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -51,11 +45,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="tdR-Rn-ew9" firstAttribute="centerX" secondItem="BbR-5h-jIn" secondAttribute="centerX" type="default" id="3f8-qq-b12"/>
-                                                <constraint firstItem="tdR-Rn-ew9" firstAttribute="top" secondItem="5sn-7G-U6A" secondAttribute="top" constant="6" id="Y4a-tz-MQW"/>
                                                 <constraint firstItem="BbR-5h-jIn" firstAttribute="leading" secondItem="5sn-7G-U6A" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hWh-a4-xmh"/>
                                                 <constraint firstItem="BbR-5h-jIn" firstAttribute="centerY" secondItem="5sn-7G-U6A" secondAttribute="centerY" type="default" id="qCV-3Z-U6I"/>
-                                                <constraint firstItem="BbR-5h-jIn" firstAttribute="centerY" secondItem="tdR-Rn-ew9" secondAttribute="centerY" type="default" id="tIA-fU-lAy"/>
                                                 <constraint firstAttribute="trailing" secondItem="BbR-5h-jIn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wku-3h-KuP"/>
                                             </constraints>
                                         </view>
@@ -66,12 +57,12 @@
                                 <constraints>
                                     <constraint firstItem="5sn-7G-U6A" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="20" type="default" id="6QT-hj-vko"/>
                                     <constraint firstItem="5sn-7G-U6A" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" type="default" id="Ntq-5e-nbp"/>
+                                    <constraint firstAttribute="bottom" secondItem="5sn-7G-U6A" secondAttribute="bottom" constant="1" id="UQY-YF-Q02"/>
                                     <constraint firstAttribute="trailing" secondItem="5sn-7G-U6A" secondAttribute="trailing" constant="20" type="default" id="Y5h-M2-vkc"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="ideaLabel" destination="BbR-5h-jIn" id="sn1-8B-Xxd"/>
                                     <outlet property="ideaView" destination="5sn-7G-U6A" id="Qyg-zk-Wro"/>
-                                    <outlet property="stickyBg" destination="tdR-Rn-ew9" id="Rh1-Du-sFE"/>
                                     <segue destination="n2n-5F-fZ6" kind="push" identifier="showSections" id="RDg-rB-gxl"/>
                                 </connections>
                             </tableViewCell>
@@ -106,7 +97,6 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhm-5a-XeN">
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vzd-eM-0jZ"/>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MS-kD-S1s">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="fZW-ll-vaq"/>
@@ -119,12 +109,8 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="4MS-kD-S1s" firstAttribute="centerX" secondItem="Vhm-5a-XeN" secondAttribute="centerX" type="default" id="9Ig-Md-7TW"/>
-                                                <constraint firstItem="Vzd-eM-0jZ" firstAttribute="bottom" secondItem="Vhm-5a-XeN" secondAttribute="bottom" type="default" id="Vvi-52-gkr"/>
+                                                <constraint firstItem="4MS-kD-S1s" firstAttribute="centerY" secondItem="Vhm-5a-XeN" secondAttribute="centerY" type="default" id="Xah-Na-zVA"/>
                                                 <constraint firstItem="4MS-kD-S1s" firstAttribute="leading" secondItem="Vhm-5a-XeN" secondAttribute="leading" constant="10" id="fkq-x3-A9k"/>
-                                                <constraint firstItem="Vzd-eM-0jZ" firstAttribute="top" secondItem="Vhm-5a-XeN" secondAttribute="top" type="default" id="iss-Av-6fU"/>
-                                                <constraint firstItem="Vzd-eM-0jZ" firstAttribute="leading" secondItem="Vhm-5a-XeN" secondAttribute="leading" type="default" id="nP1-Nm-bOA"/>
-                                                <constraint firstItem="4MS-kD-S1s" firstAttribute="centerY" secondItem="Vzd-eM-0jZ" secondAttribute="centerY" type="default" id="rZ4-50-hSg"/>
-                                                <constraint firstItem="4MS-kD-S1s" firstAttribute="centerX" secondItem="Vzd-eM-0jZ" secondAttribute="centerX" type="default" id="tiK-E8-z5h"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -138,7 +124,6 @@
                                 <connections>
                                     <outlet property="ideaLabel" destination="4MS-kD-S1s" id="I50-gs-iXF"/>
                                     <outlet property="ideaView" destination="Vhm-5a-XeN" id="EXy-JH-LNo"/>
-                                    <outlet property="stickyBg" destination="Vzd-eM-0jZ" id="lY8-7k-4ZR"/>
                                     <segue destination="Wpe-IX-ao6" kind="push" identifier="showIdeas" id="cG7-zM-uKP"/>
                                 </connections>
                             </tableViewCell>
@@ -172,7 +157,6 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6E-HQ-WTe">
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWk-y9-eRX"/>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-J2-Z73">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -181,12 +165,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" type="default" id="DUT-lF-5ks"/>
-                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="trailing" secondItem="E6E-HQ-WTe" secondAttribute="trailing" type="default" id="XME-bj-uv1"/>
                                                 <constraint firstAttribute="trailing" secondItem="uQm-J2-Z73" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cBj-G1-BJ5"/>
-                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" type="default" id="ehD-PP-BaR"/>
                                                 <constraint firstItem="uQm-J2-Z73" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" constant="5" id="nQ9-bu-67B"/>
-                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="bottom" secondItem="E6E-HQ-WTe" secondAttribute="bottom" type="default" id="uiy-mv-0BM"/>
                                                 <constraint firstItem="uQm-J2-Z73" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zeM-oZ-hNw"/>
                                             </constraints>
                                         </view>
@@ -202,7 +182,6 @@
                                 <connections>
                                     <outlet property="ideaLabel" destination="uQm-J2-Z73" id="o7D-YD-u94"/>
                                     <outlet property="ideaView" destination="E6E-HQ-WTe" id="qhq-3p-QPj"/>
-                                    <outlet property="stickyBg" destination="RWk-y9-eRX" id="OdQ-N5-kk5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -340,7 +319,6 @@
             <relationships>
                 <relationship kind="outlet" name="ideaLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="ideaView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="stickyBg" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>
