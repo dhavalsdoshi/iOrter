@@ -157,6 +157,7 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6E-HQ-WTe">
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWk-y9-eRX"/>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-J2-Z73">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -165,8 +166,12 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" type="default" id="DUT-lF-5ks"/>
+                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="trailing" secondItem="E6E-HQ-WTe" secondAttribute="trailing" type="default" id="XME-bj-uv1"/>
                                                 <constraint firstAttribute="trailing" secondItem="uQm-J2-Z73" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cBj-G1-BJ5"/>
+                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" type="default" id="ehD-PP-BaR"/>
                                                 <constraint firstItem="uQm-J2-Z73" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" constant="5" id="nQ9-bu-67B"/>
+                                                <constraint firstItem="RWk-y9-eRX" firstAttribute="bottom" secondItem="E6E-HQ-WTe" secondAttribute="bottom" type="default" id="uiy-mv-0BM"/>
                                                 <constraint firstItem="uQm-J2-Z73" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zeM-oZ-hNw"/>
                                             </constraints>
                                         </view>

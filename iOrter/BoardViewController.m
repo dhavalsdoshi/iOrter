@@ -71,6 +71,7 @@
     selectedSection = [sections objectAtIndex:indexPath.row];
     NSInteger colorIndex = (int)selectedSection.sectionId %  (int)self.colors.count;
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIndex andLabel:selectedSection.name];
+    [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

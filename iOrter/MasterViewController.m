@@ -85,24 +85,21 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_objects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
  [self styleStickyCell:(Sticky *)cell withColorIdx:0 andLabel:@"View Demo"];
+    [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showSections"]) {
-        Section *selectedSection = [sections objectAtIndex:0];
         [[segue destinationViewController] setBoardName:@"test/2"];
     }
 }
-
 
 @end

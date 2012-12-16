@@ -25,10 +25,10 @@
     [super viewDidLoad];
     self.colors = [NSMutableArray array];
     
-    [self.colors addObject:@"stickyBlue.png"];
-    [self.colors addObject:@"stickyGreen.png"];
-    [self.colors addObject:@"stickyYellow.png"];
-    [self.colors addObject:@"stickyOrange.png"];
+    [self.colors addObject:[UIColor cyanColor]];
+    [self.colors addObject:[UIColor greenColor]];
+    [self.colors addObject:[UIColor yellowColor]];
+    [self.colors addObject:[UIColor blueColor]];
     
     self.tableView.separatorColor = [UIColor clearColor];
 }
@@ -40,29 +40,47 @@
     return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    return [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    return 55;
 }
-
 
 #pragma mark - Table view delegate
 
 - (void)styleStickyCell:(Sticky *)cell withColorIdx:(NSInteger)colorIdx andLabel:(NSString *)label {
-    CGFloat cornerRadius = 2;
-    cell.layer.cornerRadius = cornerRadius;
-    cell.clipsToBounds = YES;
-    [[cell layer] setBorderColor:[[UIColor darkGrayColor] CGColor]];
-    [[cell layer] setBorderWidth:1.50];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    cell.layer.masksToBounds = NO;
-    cell.layer.shadowOffset = CGSizeMake(-4, 6);
-    cell.layer.shadowRadius = cornerRadius;
-    cell.layer.shadowOpacity = 0.5;
-    cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cornerRadius].CGPath;
+    cell.ideaLabel.font = [UIFont fontWithName:@"Georgia-Italic" size:17.0];
+    cell.ideaLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.ideaLabel.numberOfLines = 0;
+    cell.ideaLabel.backgroundColor = [UIColor clearColor];
+
+    CGFloat cornerRadius = 4;
+    cell.ideaView.backgroundColor = [UIColor redColor];
+    cell.ideaView.layer.cornerRadius = cornerRadius;
+    cell.ideaView.clipsToBounds = YES;
+    [[cell.ideaView layer] setBorderColor:[[UIColor darkGrayColor] CGColor]];
+    [[cell.ideaView layer] setBorderWidth:0];
+
+    cell.ideaView.layer.masksToBounds = NO;
+    cell.ideaView.layer.shadowOffset = CGSizeMake(-4, 6);
+    cell.ideaView.layer.shadowRadius = cornerRadius;
+    cell.ideaView.layer.shadowOpacity = 0.5;
+    cell.ideaView.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.ideaView.bounds cornerRadius:cornerRadius].CGPath;
+    cell.ideaView.backgroundColor = [self.colors objectAtIndex:colorIdx];
 
 }
 
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    Rotate cell at random angle betwee +2 and -2 degrees
+//    int i = (arc4random()%2)+(-2);
+//    float rotation = i/100.0;
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:0.2];
+//    CGAffineTransform rr=CGAffineTransformMakeRotation(rotation);
+//    cell.transform=CGAffineTransformConcat(cell.transform, rr);
+//    [UIView commitAnimations];
+}
 
 @end

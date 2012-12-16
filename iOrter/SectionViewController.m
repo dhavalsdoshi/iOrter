@@ -90,6 +90,7 @@
     NSString *idea = [selectedSection.ideas objectAtIndex:indexPath.row];
 
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIndex andLabel:idea];
+    [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
 }
 
 - (void)setSelectedSection:(Section *)section  andAllSections:(NSMutableArray *)allSections {
