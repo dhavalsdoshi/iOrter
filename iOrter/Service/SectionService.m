@@ -15,7 +15,7 @@
 }
 
 - (NSDictionary *)getSectionWiseIdeasForBoard:(NSString *)board {
-    NSMutableString *URLString = [NSMutableString stringWithString: @"http://ideaboardz.com/retros/"];
+    NSMutableString *URLString = [NSMutableString stringWithString: @"http://ideaboardz.com/retros"];
     [URLString appendString:board];
     [URLString appendString:@"/points.json"];
     NSURL *boardJSONURL = [NSURL URLWithString:URLString];

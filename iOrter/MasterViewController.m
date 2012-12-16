@@ -98,7 +98,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showSections"]) {
-        [[segue destinationViewController] setBoardName:@"test/2"];
+        [[segue destinationViewController] setBoardUrl:@"/test/2"];
     }
 }
 

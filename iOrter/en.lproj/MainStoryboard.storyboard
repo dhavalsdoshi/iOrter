@@ -82,7 +82,7 @@
         <!--Board View Controller-->
         <scene sceneID="PTd-R5-Mw1">
             <objects>
-                <tableViewController id="n2n-5F-fZ6" customClass="BoardViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BoardViewController" id="n2n-5F-fZ6" customClass="BoardViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hx3-WW-Zle">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

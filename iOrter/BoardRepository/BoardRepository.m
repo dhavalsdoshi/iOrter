@@ -24,7 +24,7 @@
 
 - (NSMutableArray *)getSectionsForBoard:(NSString *)board
 {
-    return [self.boardService getSectionsForBoard:@"test/2"];
+    return [self.boardService getSectionsForBoard:board];
 }
 
 -(void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId

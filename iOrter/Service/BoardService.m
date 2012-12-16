@@ -20,7 +20,7 @@
 -(NSMutableArray *) getSectionsForBoard:(NSString *)board
 {
     NSMutableArray *sections = [NSMutableArray arrayWithCapacity:10];
-    NSMutableString *URLString = [NSMutableString stringWithString: @"http://ideaboardz.com/for/"];
+    NSMutableString *URLString = [NSMutableString stringWithString: @"http://ideaboardz.com/for"];
     [URLString appendString:board];
     [URLString appendString:@".json"];
     NSURL *boardJSONURL = [NSURL URLWithString:URLString];

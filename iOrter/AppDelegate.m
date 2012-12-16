@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "BoardViewController.h"
 
 @implementation AppDelegate
 
@@ -34,4 +35,21 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    NSLog(@"Url: %@", url.path);
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+    BoardViewController *ivc = [storyboard instantiateViewControllerWithIdentifier:@"BoardViewController"];
+    NSString *urlEncodedBoard = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                      NULL,
+                                                                                                      (CFStringRef)url.path,
+                                                                                                      NULL,
+                                                                                                      (CFStringRef)@"!*'();:@&=+$,?%#[]",
+                                                                                                      kCFStringEncodingUTF8 ));
+    ivc.boardUrl = [urlEncodedBoard stringByReplacingOccurrencesOfString:@"/for" withString:@""];
+    [navigationController pushViewController:ivc animated:NO];
+    return YES;
+}
+
 @end

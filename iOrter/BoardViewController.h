@@ -11,5 +11,7 @@
 
 @interface BoardViewController : BaseTableViewController
 @property (nonatomic,strong) NSString *boardName;
+@property (nonatomic,strong) NSString *boardUrl;
+
 -(void) setBoardName:(NSString *)boardName;
 @end

@@ -17,18 +17,20 @@
 @end
 
 @implementation BoardViewController
+@synthesize boardName, boardUrl;
 
 -(void) setBoardname:(NSString *)boardName{
     self.boardName = boardName;
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     SectionService *sectionService = [[SectionService alloc] init];
     BoardService *boardservice = [[BoardService alloc] initWithSectionService:sectionService];
-     BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
-    sections = [boardRepository getSectionsForBoard:@"test/2"];
+    BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
+    sections = [boardRepository getSectionsForBoard:self.boardUrl];
     self.title = @"Test";
     
 }
