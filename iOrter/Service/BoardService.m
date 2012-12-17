@@ -19,6 +19,14 @@
 //if URL of board is http://ideaboardz.com/for/board_name/board_id, the board parameter should be "#{board_name}/#{board_id}"
 -(NSMutableArray *) getSectionsForBoard:(NSString *)board
 {
+
+    board = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                      NULL,
+                                                                                                      (CFStringRef)board,
+                                                                                                      NULL,
+                                                                                                      (CFStringRef)@"!*'();:@&=+$,?%#[]",
+                                                                                                      kCFStringEncodingUTF8 ));
+    
     NSMutableArray *sections = [NSMutableArray arrayWithCapacity:10];
     NSMutableString *URLString = [NSMutableString stringWithString: @"http://ideaboardz.com/for"];
     [URLString appendString:board];
