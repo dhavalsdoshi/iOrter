@@ -47,8 +47,7 @@
                                                                                                       NULL,
                                                                                                       (CFStringRef)@"!*'();:@&=+$,?%#[]",
                                                                                                       kCFStringEncodingUTF8 ));
-    ivc.boardUrl = [urlEncodedBoard stringByReplacingOccurrencesOfString:@"/for" withString:@""];
-    [navigationController popToRootViewControllerAnimated:NO];
+    ivc.boardUrl = urlEncodedBoard;
     [navigationController pushViewController:ivc animated:NO];
     return YES;
 }
