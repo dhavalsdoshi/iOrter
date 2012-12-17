@@ -79,18 +79,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0)
-    {
-        Sticky *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-        cell.ideaLabel.text = @"View Demo";
-        return cell;
-    }
-    else{
-        Sticky *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-        cell.ideaLabel.text = @"View Ideaboard";
-        return cell;
+    Sticky *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if(cell == nil){
+        cell = (Sticky*)[[UITableViewCell alloc] initWithStyle:UITableViewCellSelectionStyleNone reuseIdentifier:@"Cell"];
     }
     
+    if(indexPath.row == 0)
+    {
+
+        cell.ideaLabel.text = @"View Demo";
+    }
+    else{
+        cell.ideaLabel.text = @"View Ideaboard";
+
+    }
+    
+    return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,8 +113,12 @@
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
- [self styleStickyCell:(Sticky *)cell withColorIdx:0 andLabel:@"View Demo"];
-    [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
+   
+    NSInteger colorIdx = (int)indexPath.row %  (int)self.colors.count;
+    cell = (Sticky *)cell;
+    
+    [self styleStickyCell:(Sticky *)cell withColorIdx:colorIdx andLabel:cell.textLabel.text];
+    [super tableView:tableView willDisplayCell:(Sticky *)cell forRowAtIndexPath:indexPath];
 
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath

@@ -31,7 +31,8 @@
     BoardService *boardservice = [[BoardService alloc] initWithSectionService:sectionService];
     BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
     sections = [boardRepository getSectionsForBoard:self.boardUrl];
-    self.title = @"Test";
+    boardName = [boardUrl substringFromIndex:1];
+    self.title = boardName;
     
 }
 

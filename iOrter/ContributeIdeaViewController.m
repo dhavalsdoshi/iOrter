@@ -41,7 +41,6 @@
     [_parent addShadow:self.ideaText];
     NSInteger colorIdx = (int)selectedSection.sectionId % _parent.colors.count;
     self.ideaText.backgroundColor = [self.parent.colors objectAtIndex:colorIdx];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,7 +97,8 @@
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"Done!";
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearProgressMessage) userInfo:nil repeats:NO];
-    [self dismissModalViewControllerAnimated:YES];
+    self.ideaText.text = @"";
+    
 }
 
 -(void)didFail:(NSString *)data {
