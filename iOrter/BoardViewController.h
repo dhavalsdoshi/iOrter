@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTableViewController.h"
+#import "Board.h"
 
 @interface BoardViewController : BaseTableViewController
 @property (nonatomic,strong) NSString *boardName;
 @property (nonatomic,strong) NSString *boardUrl;
-
--(void) setBoardName:(NSString *)boardName;
+@property (nonatomic,strong) Board *board;
+-(void)setBoardId:(NSInteger)identifier name:(NSString *)name;
 @end

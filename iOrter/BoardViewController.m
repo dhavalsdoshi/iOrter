@@ -19,8 +19,9 @@
 @implementation BoardViewController
 @synthesize boardName, boardUrl;
 
--(void) setBoardname:(NSString *)boardName{
-    self.boardName = boardName;
+
+-(void)setBoardId:(NSInteger)identifier name:(NSString *)name{
+    self.board =[[Board alloc] initWithId:identifier name:name];
 }
 
 - (void)viewDidLoad
@@ -30,10 +31,11 @@
     SectionService *sectionService = [[SectionService alloc] init];
     BoardService *boardservice = [[BoardService alloc] initWithSectionService:sectionService];
     BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
+    self.boardUrl = [NSString stringWithFormat:@"/%@/%d",_board.boardName,_board.boardId];
     sections = [boardRepository getSectionsForBoard:self.boardUrl];
-    boardName = [boardUrl substringFromIndex:1];
-    boardName = [boardName stringByDeletingLastPathComponent];
-    self.title = boardName;
+//    boardName = [boardUrl substringFromIndex:1];
+//    boardName = [boardName stringByDeletingLastPathComponent];
+    self.title = _board.boardName;
     
 }
 

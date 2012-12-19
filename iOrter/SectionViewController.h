@@ -3,6 +3,7 @@
 #import "FPPopoverController.h"
 #import "ContributeIdeaViewController.h"
 #import "BaseTableViewController.h"
+#import "Board.h"
 
 
 @interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate>{
@@ -14,8 +15,10 @@
 
 @property(nonatomic, retain) IBOutlet UILabel *sectionTitle;
 @property(nonatomic, retain) IBOutlet UIView *titleView;
+@property (nonatomic,strong) Board *board;
 
 -(void)setSelectedSection:(Section *)section  andAllSections:(NSMutableArray *)allSections;
+
 
 -(IBAction)showPopOver:(id)sender;
 -(void)selectedTableRow:(NSUInteger)rowNum;

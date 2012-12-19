@@ -2,30 +2,18 @@
 #import "Model/Section.h"
 #import "BoardViewController.h"
 @interface MasterViewController () {
-    NSMutableArray *_objects;
-    UIAlertView *inputUrlAlert;
-    NSString *boardUrl;
-    NSString *boardName;
-    NSString *boardId;
+
     
 }
-- (void)configureView;
+
 @end
 
 @implementation MasterViewController{
     NSMutableArray *sections;
+    UIAlertView *inputUrlAlert;
+    NSString *boardName;
+    NSInteger boardId;
     
-}
-@synthesize boardRepository;
-#pragma mark - Managing the detail item
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
 }
 
 - (void)configureAlertView
@@ -38,16 +26,10 @@
     boardNameTextField.placeholder = @"Board Name";
     UITextField *boardIdTextField = [inputUrlAlert textFieldAtIndex:1];
     boardIdTextField.placeholder = @"Board ID";
+    boardIdTextField.secureTextEntry = NO;
     
     [inputUrlAlert show];
 }
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-    
-}
-
 
 - (void)awakeFromNib
 {
@@ -59,7 +41,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.title = @"Menu";
-    [self configureView];
 
 }
 
@@ -107,14 +88,6 @@
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-}
-
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
@@ -129,7 +102,8 @@
                                                                     *)indexPath
 {
     if(indexPath.row == 0){
-        boardUrl = @"/test/2";
+        boardName = @"test";
+        boardId = 2;
         [self performSegueWithIdentifier:@"showSections" sender:self];
      }
     else{
@@ -143,8 +117,8 @@
 {
     if(buttonIndex == 1){
         boardName = [[inputUrlAlert textFieldAtIndex:0] text];
-        boardId = [[inputUrlAlert textFieldAtIndex:1] text];
-        boardUrl = [NSString stringWithFormat:@"/%@/%@",boardName,boardId];
+        NSString *Id = [[inputUrlAlert textFieldAtIndex:1] text];
+        boardId = [Id integerValue];
         [self resignFirstResponder];
         [self performSegueWithIdentifier:@"showSections" sender:self];
     
@@ -154,7 +128,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showSections"]) {
-        [[segue destinationViewController] setBoardUrl:boardUrl];
+        [[segue destinationViewController] setBoardId:boardId name:boardName];
     }
 }
 
