@@ -5,6 +5,8 @@
     NSMutableArray *_objects;
     UIAlertView *inputUrlAlert;
     NSString *boardUrl;
+    NSString *boardName;
+    NSString *boardId;
     
 }
 - (void)configureView;
@@ -28,13 +30,15 @@
 
 - (void)configureAlertView
 {
-    //    if (self.detailItem) {
-    //        self.detailDescriptionLabel.text = [self.detailItem description];
-    //    }
     
-    inputUrlAlert = [[UIAlertView alloc] initWithTitle:@"Enter Url Fragment" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"GO..!!" , nil];
-    inputUrlAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    inputUrlAlert = [[UIAlertView alloc] initWithTitle:@"Enter Board Details" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"GO..!!" , nil];
+    inputUrlAlert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     inputUrlAlert.backgroundColor = [UIColor blackColor];
+    UITextField *boardNameTextField = [inputUrlAlert textFieldAtIndex:0];
+    boardNameTextField.placeholder = @"Board Name";
+    UITextField *boardIdTextField = [inputUrlAlert textFieldAtIndex:1];
+    boardIdTextField.placeholder = @"Board ID";
+    
     [inputUrlAlert show];
 }
 
@@ -138,7 +142,9 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 1){
-        boardUrl = [[inputUrlAlert textFieldAtIndex:0] text];
+        boardName = [[inputUrlAlert textFieldAtIndex:0] text];
+        boardId = [[inputUrlAlert textFieldAtIndex:1] text];
+        boardUrl = [NSString stringWithFormat:@"/%@/%@",boardName,boardId];
         [self resignFirstResponder];
         [self performSegueWithIdentifier:@"showSections" sender:self];
     

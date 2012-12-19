@@ -23,6 +23,12 @@
     [[NSURLConnection alloc] initWithRequest:postRequest delegate:self];
 //    [self httpCall:postRequest withProgress:progress withCompletion:complete];
 }
+- (NSData *)getSectionsFromBoard:(NSURL *)boardJSONURL
+{
+    NSData *boardJSONString = [NSData dataWithContentsOfURL:boardJSONURL];
+    return boardJSONString;
+}
+
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;

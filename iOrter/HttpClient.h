@@ -18,4 +18,5 @@
 
 @interface HttpClient : NSObject <NSURLConnectionDelegate>
 - (void)postTo:(NSString *)urlString delegate:(id) del;
+- (NSData *)getSectionsFromBoard:(NSURL *)boardJSONURL;
 @end

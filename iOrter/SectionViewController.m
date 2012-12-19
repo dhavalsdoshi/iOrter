@@ -34,20 +34,32 @@
 
     self.sectionTitle.font = [UIFont boldSystemFontOfSize:20.0f];
     self.sectionTitle.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    self.sectionTitle.textAlignment = UITextAlignmentCenter;
+    self.sectionTitle.textAlignment = UITextAlignmentLeft;
     self.sectionTitle.minimumFontSize = 10.0f;
 
     self.sectionTitle.text = selectedSection.name;
     self.navigationItem.titleView = self.titleView;
-
+    
+//    [self getIdeas];
+   
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//-(void)getIdeas
+//{
+//    
+//    SectionService *sectionService = [[SectionService alloc] init];
+//    NSDictionary *sectionAndIdeas = [sectionService getSectionWiseIdeasForBoard:@"/test/2"];
+//    for (NSDictionary *section in sectionAndIdeas) {
+//        id keySectionID = [section objectForKey:@"id"];
+//        Section *newSection = [[Section alloc] initWithId:selectedSection.sectionId name:selectedSection.name];
+//        selectedSection.ideas = [sectionAndIdeas objectForKey:selectedSection.sectionId];
+//        
+//    }
+//}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

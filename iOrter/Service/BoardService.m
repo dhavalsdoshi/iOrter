@@ -1,6 +1,7 @@
 #import "BoardService.h"
 #import "Section.h"
 #import "SectionService.h"
+#import "HttpClient.h"
 
 @interface BoardService()
 
@@ -15,6 +16,7 @@
     sectionService = secService;
     return self;
 }
+
 
 //if URL of board is http://ideaboardz.com/for/board_name/board_id, the board parameter should be "#{board_name}/#{board_id}"
 -(NSMutableArray *) getSectionsForBoard:(NSString *)board
@@ -32,7 +34,12 @@
     [URLString appendString:board];
     [URLString appendString:@".json"];
     NSURL *boardJSONURL = [NSURL URLWithString:URLString];
-    NSData *boardJSONString = [NSData dataWithContentsOfURL:boardJSONURL];
+    NSData *boardJSONString;
+    
+    HttpClient *client = [[HttpClient alloc] init];
+    boardJSONString = [client getSectionsFromBoard:boardJSONURL];
+    
+    
     NSError *error;
     NSDictionary *boardJSONDictionary = [NSJSONSerialization JSONObjectWithData:boardJSONString options:kNilOptions error:&error];
     NSDictionary *sectionsAndIdeas = [sectionService getSectionWiseIdeasForBoard:board];
