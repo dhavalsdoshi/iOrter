@@ -23,10 +23,14 @@
     [[NSURLConnection alloc] initWithRequest:postRequest delegate:self];
 //    [self httpCall:postRequest withProgress:progress withCompletion:complete];
 }
-- (NSData *)getSectionsFromBoard:(NSURL *)boardJSONURL
+- (NSData *)getDataFrom:(NSURL *)url
 {
-    NSData *boardJSONString = [NSData dataWithContentsOfURL:boardJSONURL];
-    return boardJSONString;
+    NSHTTPURLResponse *response = nil;
+    NSError *error;
+    NSMutableURLRequest *httpGetRequest = [NSMutableURLRequest requestWithURL:url];
+    [httpGetRequest setHTTPMethod:@"GET"];
+    NSData * data = [NSURLConnection sendSynchronousRequest:httpGetRequest returningResponse:&response error:&error];
+    return data;
 }
 
 
@@ -46,6 +50,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+
     NSLog(@"DidReceive Data");
     [_delegate didProgress:50];
 }

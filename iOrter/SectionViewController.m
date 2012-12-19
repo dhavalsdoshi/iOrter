@@ -40,7 +40,7 @@
     self.sectionTitle.text = selectedSection.name;
     self.navigationItem.titleView = self.titleView;
     
-//    [self getIdeas];
+    [self getIdeas];
    
 }
 - (void)didReceiveMemoryWarning
@@ -48,10 +48,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//-(void)getIdeas
-//{
-//    
-//    SectionService *sectionService = [[SectionService alloc] init];
+
+-(void)getIdeas
+{
+    
+    BoardService *boardService = [[BoardService alloc] initWithBoard:_board];
+    selectedSection.ideas = [boardService getIdeasForSection:selectedSection.sectionId];
+    
+    
 //    NSDictionary *sectionAndIdeas = [sectionService getSectionWiseIdeasForBoard:@"/test/2"];
 //    for (NSDictionary *section in sectionAndIdeas) {
 //        id keySectionID = [section objectForKey:@"id"];
@@ -59,7 +63,7 @@
 //        selectedSection.ideas = [sectionAndIdeas objectForKey:selectedSection.sectionId];
 //        
 //    }
-//}
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -115,9 +119,9 @@
     [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
 }
 
-- (void)setSelectedSection:(Section *)section  andAllSections:(NSMutableArray *)allSections {
+- (void)setSelectedSection:(Section *)section  andBoard:(Board *)boardObject {
     selectedSection = section;
-    sections = allSections;
+    _board = boardObject;
 }
 
 
@@ -182,7 +186,6 @@
 {
     NSLog(@"I am in BoardViewController.prepareForSeque");
     if ([[segue identifier] isEqualToString:@"addIdea"]) {
-        NSInteger *sectionId = selectedSection.sectionId;
         [[segue destinationViewController] setSection:selectedSection andParent:self];
     }
 }

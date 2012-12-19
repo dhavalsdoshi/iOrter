@@ -28,13 +28,10 @@
 {
     [super viewDidLoad];
 
-    SectionService *sectionService = [[SectionService alloc] init];
-    BoardService *boardservice = [[BoardService alloc] initWithSectionService:sectionService];
-    BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
-    self.boardUrl = [NSString stringWithFormat:@"/%@/%d",_board.boardName,_board.boardId];
-    sections = [boardRepository getSectionsForBoard:self.boardUrl];
-//    boardName = [boardUrl substringFromIndex:1];
-//    boardName = [boardName stringByDeletingLastPathComponent];
+//    SectionService *sectionService = [[SectionService alloc] initWithBoard:_board];
+    BoardService *boardservice = [[BoardService alloc] initWithBoard:_board];
+//    BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
+    _board.sections = [boardservice getSections];
     self.title = _board.boardName;
     
 }
@@ -57,7 +54,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [sections count];
+    return [_board.sections count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,7 +62,7 @@
     static NSString *CellIdentifier = @"Cell";
     Sticky *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
    
-    NSString *sectionName = [[sections objectAtIndex:indexPath.row] name];
+    NSString *sectionName = [[_board.sections objectAtIndex:indexPath.row] name];
     cell.ideaLabel.text = sectionName;
     
     return cell;
@@ -74,7 +71,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    selectedSection = [sections objectAtIndex:indexPath.row];
+    selectedSection = [_board.sections objectAtIndex:indexPath.row];
     NSInteger colorIndex = (int)selectedSection.sectionId %  (int)self.colors.count;
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIndex andLabel:selectedSection.name];
     [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
@@ -84,9 +81,9 @@
     if([[segue identifier] isEqualToString:@"showIdeas"] ){
 
         NSIndexPath *indexpath = [self.tableView indexPathForSelectedRow];
-        selectedSection = [sections objectAtIndex:indexpath.row];
+        selectedSection = [_board.sections objectAtIndex:indexpath.row];
         
-        [[segue destinationViewController]setSelectedSection:selectedSection andAllSections:sections];
+        [[segue destinationViewController]setSelectedSection:selectedSection andBoard:_board];
         
     }
 }

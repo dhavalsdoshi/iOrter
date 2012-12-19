@@ -4,7 +4,9 @@
 #import "HttpClient.h"
 
 
-@implementation SectionService
+@implementation SectionService{
+    Board *board;
+}
 
 -(id) initWithParent:(id)par {
     self = [super init];
@@ -13,16 +15,24 @@
     }
     return self;
 }
-
+-(id)initWithBoard:(Board *)boardObject{
+    self = [super init];
+    if(self){
+        board = boardObject;
+    }
+}
 - (NSDictionary *)getSectionWiseIdeasForBoard:(NSString *)board {
     NSMutableString *URLString = [NSMutableString stringWithString: @"http://ideaboardz.com/retros"];
     [URLString appendString:board];
     [URLString appendString:@"/points.json"];
     NSURL *boardJSONURL = [NSURL URLWithString:URLString];
+    
     NSData *boardJSON = [NSData dataWithContentsOfURL:boardJSONURL];
     NSError *error;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:boardJSON options:kNilOptions error:&error];
+    
     NSMutableDictionary *sectionWiseIdeas = [[NSMutableDictionary alloc] init];
+  
     for(NSDictionary *idea in dict)
     {
         id <NSCopying> sectionId = [idea objectForKey:@"section_id"];
@@ -36,6 +46,10 @@
     return sectionWiseIdeas;
 }
 
+-(NSMutableArray *)getIdeasForSection:(NSInteger)sectionId{
+    
+    
+}
 - (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId 
 {
     NSString *encoded = [self urlEncode:idea];
@@ -48,4 +62,5 @@
 - (NSString *) urlEncode:(NSString *)unencoded {
     return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef) unencoded, NULL, (CFStringRef)@"!*'();:@&=+$,/?", kCFStringEncodingUTF8));
 }
+
 @end

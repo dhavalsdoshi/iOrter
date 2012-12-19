@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 ThoughtWorks. All rights reserved.
 //
 #import "BoardRepository.h"
+#import "Board.h"
 
 
 @implementation BoardRepository
@@ -22,9 +23,9 @@
     return self;
 }
 
-- (NSMutableArray *)getSectionsForBoard:(NSString *)board
+- (NSMutableArray *)getSectionsForBoard:(Board *)board
 {
-    return [self.boardService getSectionsForBoard:board];
+    return [self.boardService getSections];
 }
 
 -(void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId

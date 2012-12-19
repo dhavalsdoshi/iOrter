@@ -75,15 +75,15 @@
     NSString *idea = [self.ideaText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if (idea.length != 0) {
-        SectionService *sectionService = [[SectionService alloc] initWithParent:self];
-        BoardService *boardService = [[BoardService alloc] initWithSectionService:sectionService];
-        BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
+//        SectionService *sectionService = [[SectionService alloc] initWithParent:self];
+        BoardService *boardService = [[BoardService alloc] initWithParent:self];
+//        BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
         
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;
         hud.labelText = @"Posting..";
         
-        [board addIdea:idea toSection:selectedSection.sectionId];
+        [boardService addIdea:idea toSection:selectedSection.sectionId];
         
         NSLog(@"Adding idea : %@", idea);
     }

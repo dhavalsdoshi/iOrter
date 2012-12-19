@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Section.h"
 @interface Board : NSObject
 
 @property (nonatomic, strong) NSString *boardName;

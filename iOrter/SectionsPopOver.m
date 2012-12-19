@@ -50,7 +50,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
-    Section *section = [self.delegate.sections objectAtIndex:indexPath.row];
+    Section *section = [self.delegate.board.sections objectAtIndex:indexPath.row];
     NSString *text = section.name;
     cell.textLabel.text = text;
 

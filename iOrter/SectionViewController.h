@@ -17,7 +17,7 @@
 @property(nonatomic, retain) IBOutlet UIView *titleView;
 @property (nonatomic,strong) Board *board;
 
--(void)setSelectedSection:(Section *)section  andAllSections:(NSMutableArray *)allSections;
+- (void)setSelectedSection:(Section *)section  andBoard:(Board *)boardObject;
 
 
 -(IBAction)showPopOver:(id)sender;

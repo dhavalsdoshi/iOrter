@@ -261,6 +261,45 @@
             <point key="canvasLocation" x="645" y="132"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BaseTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
+        </class>
+        <class className="BoardViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BoardViewController.h"/>
+        </class>
+        <class className="ContributeIdeaViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContributeIdeaViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addIdea:"/>
+                <relationship kind="action" name="cancelAdding:"/>
+                <relationship kind="outlet" name="ideaImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="ideaText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SectionViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showPopOver:"/>
+                <relationship kind="outlet" name="sectionTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sectionsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="titleView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="Sticky" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Sticky.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ideaLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ideaView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
