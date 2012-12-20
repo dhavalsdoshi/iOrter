@@ -7,8 +7,8 @@
 //
 
 #import "BoardViewController.h"
-#import "BoardRepository.h"
 #import "SectionViewController.h"
+#import "BoardService.h"
 @interface BoardViewController ()
 {
     NSMutableArray *sections;

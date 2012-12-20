@@ -1,9 +1,8 @@
 #import "SectionViewController.h"
-#import "BoardRepository.h"
 #import "Sticky.h"
 #import "FPPopoverController.h"
 #import "SectionsPopOver.h"
-
+#import "BoardService.h"
 @interface SectionViewController ()
 
 @end
@@ -11,7 +10,6 @@
 @implementation SectionViewController{
     Section *selectedSection;
     NSMutableDictionary *stickyColors;
-    BoardRepository *board;
     NSDictionary *sectionwiseIdeas;
 }
 @synthesize sectionsButton, sections, sectionTitle, titleView;
@@ -28,7 +26,6 @@
 {
     [super viewDidLoad];
     [[NSBundle mainBundle] loadNibNamed:@"TitleView" owner:self options:nil];
-    board = [[BoardRepository alloc] init];
 
     self.sectionTitle.backgroundColor = [UIColor clearColor];
 

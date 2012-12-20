@@ -1,6 +1,5 @@
 #import "BoardService.h"
 #import "Section.h"
-#import "SectionService.h"
 #import "HttpClient.h"
 #import "Board.h"
 
@@ -9,7 +8,6 @@
 @end
 
 @implementation BoardService{
-    SectionService *sectionService;
 }
 
 -(id) initWithBoard:(Board *)boardObject{

@@ -7,9 +7,8 @@
 //
 
 #import "ContributeIdeaViewController.h"
-#import "BoardRepository.h"
 #import "MBProgressHUD.h"
-
+#import "BoardService.h"
 
 @interface ContributeIdeaViewController (){
     Section *selectedSection;
