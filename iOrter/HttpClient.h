@@ -17,6 +17,6 @@
 @end
 
 @interface HttpClient : NSObject <NSURLConnectionDelegate>
-- (void)postTo:(NSString *)urlString delegate:(id) del;
+- (void)postTo:(NSURL *)urlString delegate:(id) del;
 - (NSData *)getDataFrom:(NSURL *)url;
 @end

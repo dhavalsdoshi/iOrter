@@ -8,7 +8,7 @@
 
 #import "BoardViewController.h"
 #import "SectionViewController.h"
-#import "BoardService.h"
+#import "IdeaboardzService.h"
 @interface BoardViewController ()
 {
     NSMutableArray *sections;
@@ -29,7 +29,7 @@
     [super viewDidLoad];
 
 
-    BoardService *boardservice = [[BoardService alloc] initWithBoard:_board];
+    IdeaboardzService *boardservice = [[IdeaboardzService alloc] initWithBoard:_board];
     _board.sections = [boardservice getSections];
     self.title = _board.boardName;
     

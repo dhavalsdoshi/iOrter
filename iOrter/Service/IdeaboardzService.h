@@ -1,9 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "Board.h"
+#import "BoardJsonParser.h"
 
-@interface BoardService : NSObject
+@interface IdeaboardzService : NSObject
 @property (nonatomic,strong) Board *board;
 @property (nonatomic,strong) id parent;
+@property (nonatomic) BoardJsonParser *parser;
+
 -(id) initWithBoard:(Board *)boardObject;
 -(id) initWithParent:(id)parent;
 

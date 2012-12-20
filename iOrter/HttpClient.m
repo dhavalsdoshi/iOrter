@@ -13,11 +13,11 @@
 @end
 
 @implementation HttpClient
-- (void)postTo:(NSString *)urlString delegate:(id) del {
+- (void)postTo:(NSURL *)url delegate:(id) del {
+    
     self.delegate = del;
     
-    NSURL *ideaUrl = [NSURL URLWithString:urlString];
-    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:ideaUrl];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     [postRequest setHTTPMethod:@"POST"];
     
     [[NSURLConnection alloc] initWithRequest:postRequest delegate:self];

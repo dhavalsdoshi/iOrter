@@ -1,5 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
-#import "BoardService.h"
+#import "IdeaboardzService.h"
 @interface BoardServiceTests : SenTestCase
 
 @end

@@ -12,7 +12,7 @@
     id mockSectionService = [OCMockObject mockForClass: [SectionService class]];
     NSString *board = @"test/2";
     [[[mockSectionService expect] andReturn:nil] getSectionWiseIdeasForBoard:board];
-    BoardService *boardService = [[BoardService alloc] initWithSectionService:mockSectionService];
+    IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithSectionService:mockSectionService];
 
     originalMethod = class_getClassMethod([NSData class], @selector(dataWithContentsOfURL:));
     Method mockMethod = class_getInstanceMethod([self class], @selector(mockMethod:));

@@ -2,7 +2,7 @@
 #import "Sticky.h"
 #import "FPPopoverController.h"
 #import "SectionsPopOver.h"
-#import "BoardService.h"
+#import "IdeaboardzService.h"
 @interface SectionViewController ()
 
 @end
@@ -50,7 +50,7 @@
 -(void)getIdeas
 {
     
-    BoardService *boardService = [[BoardService alloc] initWithBoard:_board];
+    IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithBoard:_board];
     selectedSection.ideas = [boardService getIdeasForSection:selectedSection.sectionId];
     
 }

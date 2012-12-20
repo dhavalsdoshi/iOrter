@@ -8,7 +8,7 @@
 
 #import "ContributeIdeaViewController.h"
 #import "MBProgressHUD.h"
-#import "BoardService.h"
+#import "IdeaboardzService.h"
 
 @interface ContributeIdeaViewController (){
     Section *selectedSection;
@@ -75,7 +75,7 @@
     
     if (idea.length != 0) {
 
-        BoardService *boardService = [[BoardService alloc] initWithParent:self];
+        IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithParent:self];
         
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;

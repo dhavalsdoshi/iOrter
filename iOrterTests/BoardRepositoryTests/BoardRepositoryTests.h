@@ -9,7 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "SectionService.h"
 #import "Section.h"
-#import "BoardService.h"
+#import "IdeaboardzService.h"
 
 @interface BoardRepositoryTests : SenTestCase
 - (void)testShouldGetSectionsFromBoard;
