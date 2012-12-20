@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SectionViewController.h"
-#import "HttpClient.h"
+#import "HttpClientService.h"
 
 
 @class SectionViewController;

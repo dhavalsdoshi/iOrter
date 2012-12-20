@@ -1,6 +1,6 @@
 #import "IdeaboardzService.h"
 #import "Section.h"
-#import "HttpClient.h"
+#import "HttpClientService.h"
 #import "Board.h"
 
 @interface IdeaboardzService()
@@ -13,7 +13,7 @@
 -(id) initWithBoard:(Board *)boardObject{
     self = [super init];
     self.board = boardObject;
-    _parser = [[BoardJsonParser alloc] init];
+    _JsonParser = [[BoardJsonParser alloc] init];
     return self;
 }
 -(id) initWithParent:(id)par {
@@ -34,10 +34,10 @@
     
     NSURL *url = [NSURL URLWithString:boardUrl];
     
-    HttpClient *client = [[HttpClient alloc] init];
-    NSData *boardJson = [client getDataFrom:url];
+    HttpClientService *client = [[HttpClientService alloc] init];
+    NSData *boardJson = [client getFrom:url];
     
-    NSMutableArray *sections = [_parser parseJsonForSections:boardJson];
+    NSMutableArray *sections = [_JsonParser parseToSections:boardJson];
     
     return sections;
 }
@@ -50,10 +50,10 @@
     
     NSURL *ideaUrl = [NSURL URLWithString:unencodedUrlForIdeas];
     
-    HttpClient *client = [[HttpClient alloc] init];
-    NSData *jsonIdeas = [client getDataFrom:ideaUrl];
+    HttpClientService *client = [[HttpClientService alloc] init];
+    NSData *jsonIdeas = [client getFrom:ideaUrl];
     
-    NSMutableArray *ideas = [_parser parseJsonForIdeas:jsonIdeas ofSection:sectionId];
+    NSMutableArray *ideas = [_JsonParser parseToIdeas:jsonIdeas ofSection:sectionId];
     return ideas;
     
     
@@ -69,7 +69,7 @@
     
     NSURL *url = [NSURL URLWithString:urlString];
     
-    HttpClient *client = [[HttpClient alloc] init];
+    HttpClientService *client = [[HttpClientService alloc] init];
     
     [client postTo:url delegate:self.parent];
     

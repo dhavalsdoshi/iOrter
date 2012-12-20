@@ -11,7 +11,7 @@
 		088444E016676CA3008AD190 /* IdeaboardzService.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444DF16676CA3008AD190 /* IdeaboardzService.m */; };
 		088444E516676CD8008AD190 /* BoardServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 088444E416676CD8008AD190 /* BoardServiceTests.m */; };
 		088444EF16687BE4008AD190 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 088444EE16687BE4008AD190 /* libOCMock.a */; };
-		1134D2E41679EEAF00077E76 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1134D2E31679EEAF00077E76 /* HttpClient.m */; };
+		1134D2E41679EEAF00077E76 /* HttpClientService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1134D2E31679EEAF00077E76 /* HttpClientService.m */; };
 		115569C41670651900FA146D /* DropDownButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 115569C31670651900FA146D /* DropDownButton.png */; };
 		115569C816707BF700FA146D /* Sticky.m in Sources */ = {isa = PBXBuildFile; fileRef = 115569C716707BF700FA146D /* Sticky.m */; };
 		115569CB167086C300FA146D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115569C9167086C300FA146D /* MainStoryboard.storyboard */; };
@@ -75,8 +75,8 @@
 		088444E316676CD8008AD190 /* BoardServiceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardServiceTests.h; path = Service/BoardServiceTests.h; sourceTree = "<group>"; };
 		088444E416676CD8008AD190 /* BoardServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardServiceTests.m; path = Service/BoardServiceTests.m; sourceTree = "<group>"; };
 		088444EE16687BE4008AD190 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/include/libOCMock.a; sourceTree = "<group>"; };
-		1134D2E21679EEAF00077E76 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
-		1134D2E31679EEAF00077E76 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		1134D2E21679EEAF00077E76 /* HttpClientService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClientService.h; sourceTree = "<group>"; };
+		1134D2E31679EEAF00077E76 /* HttpClientService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClientService.m; sourceTree = "<group>"; };
 		115569C31670651900FA146D /* DropDownButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownButton.png; sourceTree = "<group>"; };
 		115569C616707BF700FA146D /* Sticky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sticky.h; sourceTree = "<group>"; };
 		115569C716707BF700FA146D /* Sticky.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sticky.m; sourceTree = "<group>"; };
@@ -185,6 +185,8 @@
 		088444D916676C30008AD190 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1134D2E21679EEAF00077E76 /* HttpClientService.h */,
+				1134D2E31679EEAF00077E76 /* HttpClientService.m */,
 				088444DE16676CA3008AD190 /* IdeaboardzService.h */,
 				088444DF16676CA3008AD190 /* IdeaboardzService.m */,
 				119895251682E16C00324B87 /* BoardJsonParser.h */,
@@ -278,8 +280,6 @@
 				11FF685B167600EE00E80A7F /* BaseTableViewController.m */,
 				11BDEFAB16773B9600782DC0 /* ContributeIdeaViewController.h */,
 				11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */,
-				1134D2E21679EEAF00077E76 /* HttpClient.h */,
-				1134D2E31679EEAF00077E76 /* HttpClient.m */,
 				115D0215167B1E1900F15C06 /* BoardViewController.h */,
 				115D0216167B1E1900F15C06 /* BoardViewController.m */,
 				BDF82276167DF48400A65C5C /* TitleView.xib */,
@@ -488,7 +488,7 @@
 				11FF685C167600EF00E80A7F /* BaseTableViewController.m in Sources */,
 				11BDEFAD16773B9600782DC0 /* ContributeIdeaViewController.m in Sources */,
 				78B540DB1679A59100113691 /* MBProgressHUD.m in Sources */,
-				1134D2E41679EEAF00077E76 /* HttpClient.m in Sources */,
+				1134D2E41679EEAF00077E76 /* HttpClientService.m in Sources */,
 				115D0217167B1E1900F15C06 /* BoardViewController.m in Sources */,
 				11617246168192300081AB66 /* Board.m in Sources */,
 				119895271682E16C00324B87 /* BoardJsonParser.m in Sources */,

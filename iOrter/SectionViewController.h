@@ -12,14 +12,11 @@
 }
 @property(nonatomic, retain) IBOutlet UIButton *sectionsButton;
 @property(nonatomic, retain) NSMutableArray *sections;
-
 @property(nonatomic, retain) IBOutlet UILabel *sectionTitle;
 @property(nonatomic, retain) IBOutlet UIView *titleView;
 @property (nonatomic,strong) Board *board;
 
 - (void)setSelectedSection:(Section *)section  andBoard:(Board *)boardObject;
-
-
 -(IBAction)showPopOver:(id)sender;
 -(void)selectedTableRow:(NSUInteger)rowNum;
 @end

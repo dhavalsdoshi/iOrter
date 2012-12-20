@@ -18,7 +18,7 @@
     }
     return self;
 }
--(NSMutableArray *) parseJsonForSections:(NSData *)data;
+-(NSMutableArray *) parseToSections:(NSData *)data;
 {
     
     NSError *error;
@@ -35,7 +35,7 @@
     return _array;
 }
 
--(NSMutableArray *) parseJsonForIdeas:(NSData *)data ofSection:(NSInteger)sectionId
+-(NSMutableArray *) parseToIdeas:(NSData *)data ofSection:(NSInteger)sectionId
 {
     NSError *error;
     NSMutableArray *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];

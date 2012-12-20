@@ -9,6 +9,7 @@
 #import "BoardViewController.h"
 #import "SectionViewController.h"
 #import "IdeaboardzService.h"
+
 @interface BoardViewController ()
 {
     NSMutableArray *sections;
@@ -17,8 +18,6 @@
 @end
 
 @implementation BoardViewController
-@synthesize boardName, boardUrl;
-
 
 -(void)setBoardId:(NSInteger)identifier name:(NSString *)name{
     self.board =[[Board alloc] initWithId:identifier name:name];

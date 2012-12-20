@@ -9,8 +9,6 @@
 
 @implementation SectionViewController{
     Section *selectedSection;
-    NSMutableDictionary *stickyColors;
-    NSDictionary *sectionwiseIdeas;
 }
 @synthesize sectionsButton, sections, sectionTitle, titleView;
 
@@ -22,29 +20,38 @@
     }
     return self;
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [[NSBundle mainBundle] loadNibNamed:@"TitleView" owner:self options:nil];
+    [self styleTitleView];
+    [self getIdeas];
+   
+}
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void)setSelectedSection:(Section *)section  andBoard:(Board *)boardObject {
+    selectedSection = section;
+    _board = boardObject;
+}
+
+-(void)styleTitleView{
+    
     self.sectionTitle.backgroundColor = [UIColor clearColor];
-
+    
     self.sectionTitle.font = [UIFont boldSystemFontOfSize:20.0f];
     self.sectionTitle.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
     self.sectionTitle.textAlignment = UITextAlignmentLeft;
     self.sectionTitle.minimumFontSize = 10.0f;
-
+    
     self.sectionTitle.text = selectedSection.name;
     self.navigationItem.titleView = self.titleView;
-    
-    NSLog(@"view did Load");
-    [self getIdeas];
-   
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 -(void)getIdeas
@@ -84,6 +91,7 @@
 
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellText = [selectedSection.ideas objectAtIndex:indexPath.row];
@@ -108,12 +116,6 @@
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIndex andLabel:idea];
     [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
 }
-
-- (void)setSelectedSection:(Section *)section  andBoard:(Board *)boardObject {
-    selectedSection = section;
-    _board = boardObject;
-}
-
 
 -(void)popover:(id)sender
 {

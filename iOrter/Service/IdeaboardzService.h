@@ -5,7 +5,7 @@
 @interface IdeaboardzService : NSObject
 @property (nonatomic,strong) Board *board;
 @property (nonatomic,strong) id parent;
-@property (nonatomic) BoardJsonParser *parser;
+@property (nonatomic) BoardJsonParser *JsonParser;
 
 -(id) initWithBoard:(Board *)boardObject;
 -(id) initWithParent:(id)parent;

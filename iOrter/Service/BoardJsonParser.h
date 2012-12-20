@@ -10,8 +10,8 @@
 
 @interface BoardJsonParser : NSObject
 @property (nonatomic) NSMutableArray *array;
--(NSMutableArray *) parseJsonForSections:(NSData *)data;
--(NSMutableArray *) parseJsonForIdeas:(NSData *)data ofSection:(NSInteger)sectionId;
+-(NSMutableArray *) parseToSections:(NSData *)data;
+-(NSMutableArray *) parseToIdeas:(NSData *)data ofSection:(NSInteger)sectionId;
 
 -(id)init;
 @end

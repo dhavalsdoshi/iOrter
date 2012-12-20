@@ -47,8 +47,9 @@
                                                                                                       NULL,
                                                                                                       (CFStringRef)@"!*'();:@&=+$,?%#[]",
                                                                                                       kCFStringEncodingUTF8 ));
-    urlEncodedBoard = [urlEncodedBoard substringFromIndex:4];
-    ivc.boardUrl = urlEncodedBoard;
+    
+//    NSString
+    ivc.board.boardName = urlEncodedBoard;
     [navigationController pushViewController:ivc animated:NO];
     return YES;
 }

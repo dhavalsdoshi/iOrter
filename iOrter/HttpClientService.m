@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 ThoughtWorks. All rights reserved.
 //
 
-#import "HttpClient.h"
+#import "HttpClientService.h"
 
-@interface HttpClient ()
+@interface HttpClientService ()
 @property (strong, nonatomic) id delegate;
 @end
 
-@implementation HttpClient
+@implementation HttpClientService
 - (void)postTo:(NSURL *)url delegate:(id) del {
     
     self.delegate = del;
@@ -21,9 +21,9 @@
     [postRequest setHTTPMethod:@"POST"];
     
     [[NSURLConnection alloc] initWithRequest:postRequest delegate:self];
-//    [self httpCall:postRequest withProgress:progress withCompletion:complete];
 }
-- (NSData *)getDataFrom:(NSURL *)url
+
+- (NSData *)getFrom:(NSURL *)url
 {
     NSHTTPURLResponse *response = nil;
     NSError *error;
