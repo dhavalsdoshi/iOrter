@@ -75,9 +75,8 @@
     NSString *idea = [self.ideaText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if (idea.length != 0) {
-//        SectionService *sectionService = [[SectionService alloc] initWithParent:self];
+
         BoardService *boardService = [[BoardService alloc] initWithParent:self];
-//        BoardRepository *board = [[BoardRepository alloc] initWithBoardService:boardService andSectionService:sectionService];
         
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;

@@ -40,6 +40,7 @@
     self.sectionTitle.text = selectedSection.name;
     self.navigationItem.titleView = self.titleView;
     
+    NSLog(@"view did Load");
     [self getIdeas];
    
 }
@@ -55,14 +56,6 @@
     BoardService *boardService = [[BoardService alloc] initWithBoard:_board];
     selectedSection.ideas = [boardService getIdeasForSection:selectedSection.sectionId];
     
-    
-//    NSDictionary *sectionAndIdeas = [sectionService getSectionWiseIdeasForBoard:@"/test/2"];
-//    for (NSDictionary *section in sectionAndIdeas) {
-//        id keySectionID = [section objectForKey:@"id"];
-//        Section *newSection = [[Section alloc] initWithId:selectedSection.sectionId name:selectedSection.name];
-//        selectedSection.ideas = [sectionAndIdeas objectForKey:selectedSection.sectionId];
-//        
-//    }
 }
 #pragma mark - Table view data source
 
@@ -159,27 +152,18 @@
 -(void)selectedTableRow:(NSUInteger)rowNum
 {
     NSLog(@"SELECTED ROW %d",rowNum);
-    if (rowNum == sections.count) return;
+    if (rowNum == _board.sections.count) return;
 
-    selectedSection = [sections objectAtIndex:rowNum];
+    selectedSection = [_board.sections objectAtIndex:rowNum];
     [self.tableView reloadData];
     self.sectionTitle.text = selectedSection.name;
-
+    [self getIdeas];
+    [self.tableView reloadData];
     [popover dismissPopoverAnimated:YES];
 }
 
 -(IBAction)showPopOver:(id)sender{
     [self popover:sender];
-//    UISegmentedControl *control = (UISegmentedControl *) sender;
-//    
-//    if ([control selectedSegmentIndex]==1){
-//        [self performSegueWithIdentifier:@"addIdea" sender:control];
-//
-//    }
-//    else{
-//        [self popover:sender];
-//
-//    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

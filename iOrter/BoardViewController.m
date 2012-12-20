@@ -28,9 +28,8 @@
 {
     [super viewDidLoad];
 
-//    SectionService *sectionService = [[SectionService alloc] initWithBoard:_board];
+
     BoardService *boardservice = [[BoardService alloc] initWithBoard:_board];
-//    BoardRepository *boardRepository = [[BoardRepository alloc] initWithBoardService:boardservice andSectionService:sectionService];
     _board.sections = [boardservice getSections];
     self.title = _board.boardName;
     
