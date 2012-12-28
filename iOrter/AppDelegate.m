@@ -49,7 +49,7 @@
                                                                                                       kCFStringEncodingUTF8 ));
     
 //    NSString
-    ivc.board.boardName = urlEncodedBoard;
+    ivc.boardUrl = urlEncodedBoard;
     [navigationController pushViewController:ivc animated:NO];
     return YES;
 }

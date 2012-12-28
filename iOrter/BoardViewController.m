@@ -26,8 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-
+    if (_boardUrl!=nil) {
+    _board = [[Board alloc] initWithUrl:_boardUrl];    
+    }
+    
     IdeaboardzService *boardservice = [[IdeaboardzService alloc] initWithBoard:_board];
     _board.sections = [boardservice getSections];
     self.title = _board.boardName;

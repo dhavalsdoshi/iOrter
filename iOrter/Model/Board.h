@@ -13,7 +13,8 @@
 @property (nonatomic, strong) NSString *boardName;
 @property (nonatomic) NSInteger boardId;
 @property (nonatomic,strong) NSMutableArray *sections;
+@property (nonatomic , strong) NSString *url;
 
 -(id)initWithId:(NSInteger)boardId name:(NSString *)boardName;
-
+-(id)initWithUrl:(NSString *)url;
 @end

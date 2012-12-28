@@ -16,4 +16,10 @@
     }
     return self;
 }
+-(id)initWithUrl:(NSString *)url{
+    if(self = [super init]){
+        self.url = url;
+    }
+    return self;
+}
 @end

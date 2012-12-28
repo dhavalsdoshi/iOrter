@@ -28,9 +28,15 @@
 //if URL of board is http://ideaboardz.com/for/board_name/board_id, the board parameter should be "#{board_name}/#{board_id}"
 -(NSMutableArray *) getSections
 {
+    NSString *boardUrl;
     NSString *encodedBoardName = [self encode:_board.boardName];
+    if (_board.url == nil) {
+        boardUrl = [NSString stringWithFormat:@"http://www.ideaboardz.com/for/%@/%d.json",encodedBoardName,_board.boardId];
     
-    NSString *boardUrl = [NSString stringWithFormat:@"http://www.ideaboardz.com/for/%@/%d.json",encodedBoardName,_board.boardId];
+    }
+    else{
+        boardUrl = [NSString stringWithFormat:@"http://www.ideaboardz.com%@.json",_board.url];
+    }
     
     NSURL *url = [NSURL URLWithString:boardUrl];
     
@@ -43,10 +49,17 @@
 }
 
 -(NSMutableArray *) getIdeasForSection:(NSInteger)sectionId{
-   
+    NSString *unencodedUrlForIdeas;
     NSString *encodedBoardName = [self encode:_board.boardName];
-
-    NSString *unencodedUrlForIdeas = [NSString stringWithFormat:@"http://www.ideaboardz.com/retros/%@/%d/points.json",encodedBoardName,_board.boardId];
+    if (_board.url == nil) {
+    unencodedUrlForIdeas = [NSString stringWithFormat:@"http://www.ideaboardz.com/retros/%@/%d/points.json",encodedBoardName,_board.boardId];
+        
+    }
+    else{
+        NSString *urlPath = [_board.url stringByReplacingOccurrencesOfString:@"/for/" withString:@"/retros/"];
+        unencodedUrlForIdeas = [NSString stringWithFormat:@"http://www.ideaboardz.com%@/points.json",urlPath];
+        
+    }
     
     NSURL *ideaUrl = [NSURL URLWithString:unencodedUrlForIdeas];
     
