@@ -59,27 +59,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 4;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [label setFrame:CGRectMake(CELL_CONTENT_MARGIN, CELL_CONTENT_MARGIN, CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), MAX(size.height, 44.0f))];
+//    
+//}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Sticky *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if(cell == nil){
-        cell = (Sticky*)[[UITableViewCell alloc] initWithStyle:UITableViewCellSelectionStyleNone reuseIdentifier:@"Cell"];
-    }
     
-    if(indexPath.row == 0)
-    {
-
-        cell.ideaLabel.text = @"View Demo";
-    }
-    else{
-        cell.ideaLabel.text = @"View Ideaboard";
-
-    }
-    
-    return cell;
+    return 80;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,10 +81,9 @@
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-   
+{    cell = (Sticky *)cell;
+
     NSInteger colorIdx = (int)indexPath.row %  (int)self.colors.count;
-    cell = (Sticky *)cell;
     
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIdx andLabel:cell.textLabel.text];
     [super tableView:tableView willDisplayCell:(Sticky *)cell forRowAtIndexPath:indexPath];
@@ -106,10 +97,15 @@
         boardId = 2;
         [self performSegueWithIdentifier:@"showSections" sender:self];
      }
-    else{
+    else if(indexPath.row ==1){
         //alertview
         [self configureAlertView];
         
+    }
+    else if (indexPath.row == 2){
+        boardName = @"feedback";
+        boardId = 1;
+        [self performSegueWithIdentifier:@"showSections" sender:self];
     }
          
 }
