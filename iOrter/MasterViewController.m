@@ -107,6 +107,9 @@
         boardId = 1;
         [self performSegueWithIdentifier:@"showSections" sender:self];
     }
+    else{
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.ideaboardz.com/page/faq"]];
+    }
          
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
