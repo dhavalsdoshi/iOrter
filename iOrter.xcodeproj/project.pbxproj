@@ -55,6 +55,7 @@
 		BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263D11674D7F300082EDB /* notesBg@2x.png */; };
 		BD5263D61674D91500082EDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5263D41674D90400082EDB /* QuartzCore.framework */; };
 		BDF82277167DF48400A65C5C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF82276167DF48400A65C5C /* TitleView.xib */; };
+		D1023CA416944CD7009D5EC0 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1023CA316944CD7009D5EC0 /* FAQViewController.m */; };
 		D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1BA16941109007500C8 /* ideaboardz.png */; };
 		D19DE1CD169444DC007500C8 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1CC169444DC007500C8 /* ic_launcher.png */; };
 /* End PBXBuildFile section */
@@ -143,6 +144,8 @@
 		BD5263D11674D7F300082EDB /* notesBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notesBg@2x.png"; sourceTree = "<group>"; };
 		BD5263D41674D90400082EDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BDF82276167DF48400A65C5C /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
+		D1023CA216944CD7009D5EC0 /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
+		D1023CA316944CD7009D5EC0 /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		D19DE1BA16941109007500C8 /* ideaboardz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ideaboardz.png; sourceTree = "<group>"; };
 		D19DE1CC169444DC007500C8 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -288,6 +291,8 @@
 				115D0215167B1E1900F15C06 /* BoardViewController.h */,
 				115D0216167B1E1900F15C06 /* BoardViewController.m */,
 				BDF82276167DF48400A65C5C /* TitleView.xib */,
+				D1023CA216944CD7009D5EC0 /* FAQViewController.h */,
+				D1023CA316944CD7009D5EC0 /* FAQViewController.m */,
 			);
 			path = iOrter;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				115D0217167B1E1900F15C06 /* BoardViewController.m in Sources */,
 				11617246168192300081AB66 /* Board.m in Sources */,
 				119895271682E16C00324B87 /* BoardJsonParser.m in Sources */,
+				D1023CA416944CD7009D5EC0 /* FAQViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

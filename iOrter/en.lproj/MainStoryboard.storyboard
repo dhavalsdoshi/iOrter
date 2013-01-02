@@ -256,11 +256,57 @@
                     <navigationItem key="navigationItem" title="Master" id="36"/>
                     <connections>
                         <segue destination="n2n-5F-fZ6" kind="push" identifier="showSections" id="uNJ-lB-n5L"/>
+                        <segue destination="pZQ-AX-bfU" kind="push" identifier="showFaq" id="zGa-Hn-VRO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-665" y="132"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BQP-8J-cnh">
+            <objects>
+                <viewController id="pZQ-AX-bfU" customClass="FAQViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="10g-uB-2DH">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NY4-aE-2W2">
+                                <items>
+                                    <navigationItem title="FAQs" id="tXa-l1-LSa"/>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3f-sD-Spv">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="509" id="b5H-lJ-m5y"/>
+                                </constraints>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9Fw-pO-fsk">
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Fw-pO-fsk" firstAttribute="centerX" secondItem="NY4-aE-2W2" secondAttribute="centerX" type="default" id="3U6-OY-h84"/>
+                            <constraint firstItem="9Fw-pO-fsk" firstAttribute="top" secondItem="10g-uB-2DH" secondAttribute="top" constant="202" id="CoC-AZ-VNc"/>
+                            <constraint firstItem="P3f-sD-Spv" firstAttribute="trailing" secondItem="10g-uB-2DH" secondAttribute="trailing" type="default" id="Gnp-qq-sjG"/>
+                            <constraint firstItem="P3f-sD-Spv" firstAttribute="top" secondItem="NY4-aE-2W2" secondAttribute="bottom" type="default" id="LSe-mG-eLX"/>
+                            <constraint firstItem="P3f-sD-Spv" firstAttribute="bottom" secondItem="10g-uB-2DH" secondAttribute="bottom" type="default" id="VwK-iY-Ibd"/>
+                            <constraint firstItem="NY4-aE-2W2" firstAttribute="trailing" secondItem="10g-uB-2DH" secondAttribute="trailing" type="default" id="XvR-4Y-K8a"/>
+                            <constraint firstItem="P3f-sD-Spv" firstAttribute="leading" secondItem="10g-uB-2DH" secondAttribute="leading" type="default" id="c7P-qF-L8F"/>
+                            <constraint firstItem="NY4-aE-2W2" firstAttribute="leading" secondItem="10g-uB-2DH" secondAttribute="leading" type="default" id="gMP-Bx-ynq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IBp-34-xbb"/>
+                    <connections>
+                        <outlet property="loader" destination="9Fw-pO-fsk" id="9Xk-VK-rCr"/>
+                        <outlet property="webView" destination="P3f-sD-Spv" id="HVx-tQ-wnO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XB-1l-PoP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202" y="847"/>
         </scene>
         <!--Board View Controller-->
         <scene sceneID="PTd-R5-Mw1">
@@ -475,6 +521,13 @@
                 <relationship kind="action" name="cancelAdding:"/>
                 <relationship kind="outlet" name="ideaImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="ideaText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="FAQViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FAQViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loader" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="MasterViewController" superclassName="BaseTableViewController">

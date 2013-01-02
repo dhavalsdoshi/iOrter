@@ -118,7 +118,8 @@
         [self performSegueWithIdentifier:@"showSections" sender:self];
     }
     else if(indexPath.row == 4){
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.ideaboardz.com/page/faq"]];
+        [self performSegueWithIdentifier:@"showFaq" sender:self];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.ideaboardz.com/page/faq"]];
     }
          
 }
@@ -139,6 +140,9 @@
 {
     if ([[segue identifier] isEqualToString:@"showSections"]) {
         [[segue destinationViewController] setBoardId:boardId name:boardName];
+    }
+    else if ([[segue identifier] isEqualToString:@"showFaq"]){
+        [segue destinationViewController];
     }
 }
 
