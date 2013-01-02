@@ -41,6 +41,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.title = @"Menu";
+    [self headerForTable];
+
 
 }
 
@@ -61,12 +63,6 @@
 {
     return 4;
 }
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [label setFrame:CGRectMake(CELL_CONTENT_MARGIN, CELL_CONTENT_MARGIN, CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), MAX(size.height, 44.0f))];
-//    
-//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -112,6 +108,23 @@
     }
          
 }
+
+-(void)headerForTable
+{
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(20, 5, 280, 100)];
+//    headerView.backgroundColor = [UIColor purpleColor];
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(30, 7, 200,20)];
+//    label.backgroundColor = [UIColor purpleColor];
+//    label.textColor = [UIColor whiteColor];
+//    label.shadowColor = [UIColor grayColor];
+//    label.highlighted = YES;
+//
+//
+//    label.text = @"IDEABOARDZ";
+//    [headerView addSubview:label];
+//    self.tableView.tableHeaderView = headerView;
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 1){

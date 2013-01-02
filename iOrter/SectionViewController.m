@@ -159,6 +159,7 @@
     selectedSection = [_board.sections objectAtIndex:rowNum];
     [self.tableView reloadData];
     self.sectionTitle.text = selectedSection.name;
+    self.title = selectedSection.name;
     [self getIdeas];
     [self.tableView reloadData];
     [popover dismissPopoverAnimated:YES];

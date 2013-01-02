@@ -39,7 +39,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sn-7G-U6A">
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="View Demo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="BbR-5h-jIn">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="View Demo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="BbR-5h-jIn">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="BbR-5h-jIn" firstAttribute="top" secondItem="5sn-7G-U6A" secondAttribute="top" constant="9" id="VBH-vc-vgR"/>
+                                                        <constraint firstItem="BbR-5h-jIn" firstAttribute="centerY" secondItem="5sn-7G-U6A" secondAttribute="centerY" type="default" id="K9S-E0-oTh"/>
                                                         <constraint firstItem="BbR-5h-jIn" firstAttribute="leading" secondItem="5sn-7G-U6A" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hWh-a4-xmh"/>
                                                         <constraint firstAttribute="trailing" secondItem="BbR-5h-jIn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wku-3h-KuP"/>
                                                     </constraints>
@@ -76,7 +76,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PC7-w6-ou7">
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="View Ideaboard" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-hH-rbx">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="View Ideaboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-hH-rbx">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVx-eQ-ZU0">
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Feedback" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="jeB-74-QG9">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="jeB-74-QG9">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -150,10 +150,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPg-wj-dAX">
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FAQs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF5-xC-x5G">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="176" id="JH8-eI-Xkh"/>
-                                                            </constraints>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FAQs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF5-xC-x5G">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -162,8 +159,9 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="IF5-xC-x5G" firstAttribute="leading" secondItem="GPg-wj-dAX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0Uy-lD-0uW"/>
-                                                        <constraint firstItem="IF5-xC-x5G" firstAttribute="bottom" secondItem="GPg-wj-dAX" secondAttribute="bottom" type="default" id="ckZ-tN-Yvh"/>
-                                                        <constraint firstItem="IF5-xC-x5G" firstAttribute="top" secondItem="GPg-wj-dAX" secondAttribute="top" type="default" id="zQ3-SN-Fhx"/>
+                                                        <constraint firstItem="IF5-xC-x5G" firstAttribute="bottom" secondItem="GPg-wj-dAX" secondAttribute="bottom" type="default" id="2mG-R4-DZO"/>
+                                                        <constraint firstItem="IF5-xC-x5G" firstAttribute="top" secondItem="GPg-wj-dAX" secondAttribute="top" type="default" id="OaJ-2x-dQc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="IF5-xC-x5G" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fYf-jA-Yig"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
