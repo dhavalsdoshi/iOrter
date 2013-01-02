@@ -110,6 +110,7 @@
 }
 
 - (void)viewDidUnload {
+    
     [self setIdeaImageView:nil];
     [super viewDidUnload];
 }

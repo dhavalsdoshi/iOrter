@@ -30,8 +30,73 @@
                         <sections>
                             <tableViewSection id="T43-l2-aOt">
                                 <cells>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="132" id="cei-55-yAL">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-58-37Y">
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ideaboardz.png" translatesAutoresizingMaskIntoConstraints="NO" id="4kO-5v-MYA">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="214" id="IfM-dX-TYx"/>
+                                                                <constraint firstAttribute="height" constant="39" id="Wr9-oZ-PsP"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brainstrorm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAA-fs-fik">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="118" id="VrB-JC-pJS"/>
+                                                                <constraint firstAttribute="height" constant="25" id="nYz-HG-YGO"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Retrospect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOd-wK-yth">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="HRt-ik-QLz"/>
+                                                                <constraint firstAttribute="width" constant="100" id="SKJ-6v-Z9p"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Collaborate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-Ue-qgt">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="1Ke-8k-0mt"/>
+                                                                <constraint firstAttribute="width" constant="107" id="uV0-hp-Zda"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="4ia-Ue-qgt" firstAttribute="trailing" secondItem="gfF-58-37Y" secondAttribute="trailing" type="default" id="7dg-d0-bmG"/>
+                                                        <constraint firstItem="qOd-wK-yth" firstAttribute="top" secondItem="gfF-58-37Y" secondAttribute="top" constant="57" id="9qB-VB-xLK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="qOd-wK-yth" secondAttribute="trailing" constant="31" id="P4x-cD-CBG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="4ia-Ue-qgt" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="gWB-ak-qKX"/>
+                                                        <constraint firstItem="SAA-fs-fik" firstAttribute="top" secondItem="gfF-58-37Y" secondAttribute="top" constant="36" id="gpv-EQ-d4a"/>
+                                                        <constraint firstItem="4kO-5v-MYA" firstAttribute="leading" secondItem="gfF-58-37Y" secondAttribute="leading" type="default" id="kqA-Ml-jOg"/>
+                                                        <constraint firstItem="SAA-fs-fik" firstAttribute="leading" secondItem="gfF-58-37Y" secondAttribute="leading" constant="109" id="tyv-2H-aT0"/>
+                                                        <constraint firstItem="4kO-5v-MYA" firstAttribute="top" secondItem="gfF-58-37Y" secondAttribute="top" type="default" id="uyQ-K6-EZh"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="gfF-58-37Y" secondAttribute="bottom" constant="-6" id="VaQ-Wq-E8S"/>
+                                            <constraint firstAttribute="trailing" secondItem="gfF-58-37Y" secondAttribute="trailing" constant="20" type="default" id="YP8-UU-bjR"/>
+                                            <constraint firstItem="gfF-58-37Y" firstAttribute="leading" secondItem="cei-55-yAL" secondAttribute="leading" constant="20" type="default" id="cJF-3T-RWb"/>
+                                            <constraint firstItem="gfF-58-37Y" firstAttribute="top" secondItem="cei-55-yAL" secondAttribute="top" constant="14" id="eAT-wf-afj"/>
+                                        </constraints>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lJ0-d7-vTF" customClass="Sticky">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -68,7 +133,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Waw-SD-HxU" customClass="Sticky">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -105,7 +170,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="tGK-5I-Wet" customClass="Sticky">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -142,7 +207,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="BQ4-cW-A1e" customClass="Sticky">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -391,6 +456,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ideaboardz.png" width="246" height="45"/>
         <image name="pullDown.png" width="19" height="19"/>
     </resources>
     <classes>

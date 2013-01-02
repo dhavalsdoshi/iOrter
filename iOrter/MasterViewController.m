@@ -40,9 +40,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.title = @"Menu";
-    [self headerForTable];
-
 
 }
 
@@ -61,68 +58,51 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 5;
 }
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    return 80;
-}
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return NO;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row==0) {
+        return 133;
+    }
+    return 80;
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {    cell = (Sticky *)cell;
 
     NSInteger colorIdx = (int)indexPath.row %  (int)self.colors.count;
-    
+    if(indexPath.row!=0){
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIdx andLabel:cell.textLabel.text];
     [super tableView:tableView willDisplayCell:(Sticky *)cell forRowAtIndexPath:indexPath];
-
+    }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath
                                                                     *)indexPath
 {
-    if(indexPath.row == 0){
+    if(indexPath.row == 1){
         boardName = @"test";
         boardId = 2;
         [self performSegueWithIdentifier:@"showSections" sender:self];
      }
-    else if(indexPath.row ==1){
+    else if(indexPath.row ==2){
         //alertview
         [self configureAlertView];
         
     }
-    else if (indexPath.row == 2){
+    else if (indexPath.row == 3){
         boardName = @"feedback";
         boardId = 1;
         [self performSegueWithIdentifier:@"showSections" sender:self];
     }
-    else{
+    else if(indexPath.row == 4){
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.ideaboardz.com/page/faq"]];
     }
          
-}
-
--(void)headerForTable
-{
-//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(20, 5, 280, 100)];
-//    headerView.backgroundColor = [UIColor purpleColor];
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(30, 7, 200,20)];
-//    label.backgroundColor = [UIColor purpleColor];
-//    label.textColor = [UIColor whiteColor];
-//    label.shadowColor = [UIColor grayColor];
-//    label.highlighted = YES;
-//
-//
-//    label.text = @"IDEABOARDZ";
-//    [headerView addSubview:label];
-//    self.tableView.tableHeaderView = headerView;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

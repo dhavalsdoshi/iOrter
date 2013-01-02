@@ -55,6 +55,7 @@
 		BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263D11674D7F300082EDB /* notesBg@2x.png */; };
 		BD5263D61674D91500082EDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5263D41674D90400082EDB /* QuartzCore.framework */; };
 		BDF82277167DF48400A65C5C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF82276167DF48400A65C5C /* TitleView.xib */; };
+		D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1BA16941109007500C8 /* ideaboardz.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		BD5263D11674D7F300082EDB /* notesBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notesBg@2x.png"; sourceTree = "<group>"; };
 		BD5263D41674D90400082EDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BDF82276167DF48400A65C5C /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
+		D19DE1BA16941109007500C8 /* ideaboardz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ideaboardz.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 		BD5263A71674AFEA00082EDB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D19DE1BA16941109007500C8 /* ideaboardz.png */,
 				BD5263D01674D7F300082EDB /* notesBg.png */,
 				BD5263D11674D7F300082EDB /* notesBg@2x.png */,
 				BD5263C41674CC9B00082EDB /* pullDown.png */,
@@ -438,6 +441,7 @@
 				BD5263D21674D7F300082EDB /* notesBg.png in Resources */,
 				BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */,
 				BDF82277167DF48400A65C5C /* TitleView.xib in Resources */,
+				D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
