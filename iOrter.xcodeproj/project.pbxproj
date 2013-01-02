@@ -56,6 +56,7 @@
 		BD5263D61674D91500082EDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5263D41674D90400082EDB /* QuartzCore.framework */; };
 		BDF82277167DF48400A65C5C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF82276167DF48400A65C5C /* TitleView.xib */; };
 		D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1BA16941109007500C8 /* ideaboardz.png */; };
+		D19DE1CD169444DC007500C8 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1CC169444DC007500C8 /* ic_launcher.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +103,7 @@
 		BA6D23E2166C8D2900144EC1 /* SectionServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionServiceTest.m; path = Service/SectionServiceTest.m; sourceTree = "<group>"; };
 		BAD8A680166C7B090073871C /* SectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionViewController.h; sourceTree = "<group>"; };
 		BAD8A681166C7B090073871C /* SectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionViewController.m; sourceTree = "<group>"; };
-		BAFFB5D416672E83003968BF /* iOrter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOrter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFFB5D416672E83003968BF /* IdeaBoardz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdeaBoardz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFFB5D816672E83003968BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAFFB5DA16672E83003968BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAFFB5DC16672E83003968BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -143,6 +144,7 @@
 		BD5263D41674D90400082EDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BDF82276167DF48400A65C5C /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		D19DE1BA16941109007500C8 /* ideaboardz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ideaboardz.png; sourceTree = "<group>"; };
+		D19DE1CC169444DC007500C8 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 		BAFFB5C916672E83003968BF = {
 			isa = PBXGroup;
 			children = (
+				D19DE1CC169444DC007500C8 /* ic_launcher.png */,
 				78B540DD1679A5A100113691 /* MBProgressHUD */,
 				BD5263B31674BE2200082EDB /* FPPopover */,
 				088444EE16687BE4008AD190 /* libOCMock.a */,
@@ -242,7 +245,7 @@
 		BAFFB5D516672E83003968BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAFFB5D416672E83003968BF /* iOrter.app */,
+				BAFFB5D416672E83003968BF /* IdeaBoardz.app */,
 				BAFFB5FE16672E83003968BF /* iOrterTests.octest */,
 			);
 			name = Products;
@@ -372,7 +375,7 @@
 			);
 			name = iOrter;
 			productName = iOrter;
-			productReference = BAFFB5D416672E83003968BF /* iOrter.app */;
+			productReference = BAFFB5D416672E83003968BF /* IdeaBoardz.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BAFFB5FD16672E83003968BF /* iOrterTests */ = {
@@ -442,6 +445,7 @@
 				BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */,
 				BDF82277167DF48400A65C5C /* TitleView.xib in Resources */,
 				D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */,
+				D19DE1CD169444DC007500C8 /* ic_launcher.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +616,7 @@
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IdeaBoardz;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C13D0D28-380D-42DA-AB8F-113D2B98D735";
 				WRAPPER_EXTENSION = app;
 			};
@@ -626,7 +630,7 @@
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IdeaBoardz;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C13D0D28-380D-42DA-AB8F-113D2B98D735";
 				WRAPPER_EXTENSION = app;
 			};
