@@ -13,4 +13,6 @@
 
 - (void)styleStickyCell:(Sticky *)cell withColorIdx:(NSInteger)colorIdx andLabel:(NSString *)label;
 - (void) addShadow:(UIView *)viewToStyle;
+-(UIColor*)colorWithHexString:(NSString*)hex;
+
 @end

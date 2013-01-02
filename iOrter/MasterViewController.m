@@ -69,7 +69,10 @@
     if (indexPath.row==0) {
         return 133;
     }
-    return 80;
+    else if(indexPath.row==1){
+        return 80;
+    }
+    return 65;
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,6 +82,21 @@
     if(indexPath.row!=0){
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIdx andLabel:cell.textLabel.text];
     [super tableView:tableView willDisplayCell:(Sticky *)cell forRowAtIndexPath:indexPath];
+//        Rotate cell at random angle betwee +2 and -2 degrees
+        int i;
+        if (indexPath.row == 1 || indexPath.row == 4) {
+            i = (arc4random()%2)+(3);
+        }
+        else{
+            i = (arc4random()%2)+(-2);
+        }
+    
+    float rotation = i/100.0;
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    CGAffineTransform rr=CGAffineTransformMakeRotation(rotation);
+    cell.transform=CGAffineTransformConcat(cell.transform, rr);
+    [UIView commitAnimations];
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath
