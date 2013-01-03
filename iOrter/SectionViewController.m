@@ -84,7 +84,7 @@
         cell = [[Sticky alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    NSString *idea = [selectedSection.ideas objectAtIndex:indexPath.row];
+    NSString *idea = [[selectedSection.ideas objectAtIndex:indexPath.row] message];
 
     cell.ideaLabel.font = [UIFont fontWithName:@"Georgia-Italic" size:17.0];
     cell.ideaLabel.lineBreakMode = UILineBreakModeWordWrap;
@@ -97,7 +97,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellText = [selectedSection.ideas objectAtIndex:indexPath.row];
+    NSString *cellText = [[selectedSection.ideas objectAtIndex:indexPath.row] message];
     UIFont *cellFont = [UIFont fontWithName:@"Georgia-Italic" size:17.0];
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];

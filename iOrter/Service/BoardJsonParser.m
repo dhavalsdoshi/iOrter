@@ -8,6 +8,7 @@
 
 #import "BoardJsonParser.h"
 #import "Section.h"
+#import "Idea.h"
 
 @implementation BoardJsonParser{
 }
@@ -43,9 +44,15 @@
     for (NSDictionary *idea in dictionary) {
         NSString *Id = [idea objectForKey:@"section_id"];
         NSInteger section_id = [Id integerValue];
+        
         if(section_id == sectionId){
             NSString *point = [idea valueForKey:@"message"];
-            [_array addObject:point];
+            NSString *stringId = [idea objectForKey:@"id"];
+            NSInteger ideaId = [stringId integerValue];
+            
+            Idea *newIdea = [[Idea alloc]initWithId:ideaId andMessage:point];
+            
+            [_array addObject:newIdea];
         }
         
     }
