@@ -63,6 +63,8 @@
 
 -(IBAction)cancelAdding:(id)sender
 {
+    [self.parent viewDidLoad];
+    [self.parent.tableView reloadData];
     [self dismissModalViewControllerAnimated:YES];
 }
 
