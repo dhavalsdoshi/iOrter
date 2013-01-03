@@ -412,7 +412,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="uQm-J2-Z73" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cBj-G1-BJ5"/>
-                                                <constraint firstItem="bVo-i6-lpa" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" type="default" id="fxW-mR-NH2"/>
+                                                <constraint firstItem="bVo-i6-lpa" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" constant="-1" id="dVi-VU-LML"/>
                                                 <constraint firstItem="uQm-J2-Z73" firstAttribute="top" secondItem="E6E-HQ-WTe" secondAttribute="top" constant="5" id="nQ9-bu-67B"/>
                                                 <constraint firstItem="bVo-i6-lpa" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" constant="280" id="oFQ-2g-Brb"/>
                                                 <constraint firstItem="uQm-J2-Z73" firstAttribute="leading" secondItem="E6E-HQ-WTe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zeM-oZ-hNw"/>
@@ -490,7 +490,7 @@
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-RZ-I37">
                                 <items>
                                     <navigationItem id="zVB-YC-mNt">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3FK-i8-2Ji">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3FK-i8-2Ji">
                                             <connections>
                                                 <action selector="cancelAdding:" destination="deS-ny-MtW" id="rwC-Q9-RaE"/>
                                             </connections>
@@ -524,7 +524,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="delete.png" width="37" height="48"/>
+        <image name="delete.png" width="28" height="27"/>
         <image name="ideaboardz.png" width="246" height="45"/>
         <image name="pullDown.png" width="19" height="19"/>
     </resources>
