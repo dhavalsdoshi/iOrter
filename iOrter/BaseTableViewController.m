@@ -25,12 +25,12 @@
     [super viewDidLoad];
     self.colors = [NSMutableArray array];
     
-    [self.colors addObject:[UIColor greenColor]];
-    [self.colors addObject:[UIColor cyanColor]];
-    [self.colors addObject:[UIColor yellowColor]];
-    [self.colors addObject:[self colorWithHexString:@"EE10FF"]];
-    [self.colors addObject:[self colorWithHexString:@"4499EE"]];
-    [self.colors addObject:[UIColor orangeColor]];
+    [self.colors addObject:[self colorWithHexString:@"C3EE8F"]];
+    [self.colors addObject:[self colorWithHexString:@"CCFFFF"]];
+    [self.colors addObject:[self colorWithHexString:@"FFFF88"]];
+    [self.colors addObject:[self colorWithHexString:@"EED2FE"]];
+    [self.colors addObject:[self colorWithHexString:@"DCFFE0"]];
+    [self.colors addObject:[self colorWithHexString:@"FFC690"]];
     
     self.tableView.separatorColor = [UIColor clearColor];
 }
