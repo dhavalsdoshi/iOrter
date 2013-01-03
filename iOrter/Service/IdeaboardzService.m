@@ -88,6 +88,16 @@
     
 }
 
+-(void)deleteIdeaWithId:(NSInteger)ideaId
+{
+    NSString *urlString = [@"http://www.ideaboardz.com/points/delete/" stringByAppendingFormat:@"%d.json",ideaId ];
+    NSURL *url = [NSURL URLWithString:urlString];
+    HttpClientService *client = [[HttpClientService alloc]init];
+    NSData *data = [client getFrom:url];
+
+}
+
+
 - (NSString *) encode:(NSString *)unencoded {
      return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef) unencoded, NULL, (CFStringRef)@"!*'();@&=+$,?:/", kCFStringEncodingUTF8));
 

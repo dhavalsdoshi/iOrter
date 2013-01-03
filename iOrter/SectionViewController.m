@@ -3,13 +3,17 @@
 #import "FPPopoverController.h"
 #import "SectionsPopOver.h"
 #import "IdeaboardzService.h"
+#import "Idea.h"
 @interface SectionViewController ()
+- (IBAction)deleteIdea:(id)sender;
 
 @end
 
 @implementation SectionViewController{
     Section *selectedSection;
     UISegmentedControl *control;
+    Idea *selectedIdea;
+    IdeaboardzService *service;
 
 }
 @synthesize sectionsButton, sections, sectionTitle, titleView;
@@ -60,8 +64,8 @@
 -(void)getIdeas
 {
     
-    IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithBoard:_board];
-    selectedSection.ideas = [boardService getIdeasForSection:selectedSection.sectionId];
+    service = [[IdeaboardzService alloc] initWithBoard:_board];
+    selectedSection.ideas = [service getIdeasForSection:selectedSection.sectionId];
     
 }
 #pragma mark - Table view data source
@@ -76,6 +80,9 @@
     return [selectedSection.ideas count];
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Idea";
@@ -91,6 +98,7 @@
     cell.ideaLabel.numberOfLines = 0;
     cell.ideaLabel.text = idea;
     cell.ideaLabel.backgroundColor = [UIColor clearColor];
+    [cell.deleteButton setTag:indexPath.row];
 
     return cell;
 }
@@ -180,6 +188,10 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selected row %@",indexPath);
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"addIdea"]) {
@@ -187,4 +199,12 @@
     }
 }
 
+- (IBAction)deleteIdea:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    NSLog(@"in delete %d",button.tag );
+    selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
+    [service deleteIdeaWithId:selectedIdea.ideaId];
+    [self viewDidLoad];
+    [self.tableView reloadData];
+}
 @end

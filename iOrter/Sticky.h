@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface Sticky : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (nonatomic) IBOutlet UIView *ideaView;
 @property (nonatomic) IBOutlet UILabel *ideaLabel;
 @end

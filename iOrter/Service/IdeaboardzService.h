@@ -13,5 +13,6 @@
 -(NSMutableArray *) getSections;
 -(NSMutableArray *) getIdeasForSection:(NSInteger)sectionId;
 - (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId;
+-(void)deleteIdeaWithId:(NSInteger)ideaId;
 
 @end
