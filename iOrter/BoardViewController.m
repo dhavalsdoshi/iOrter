@@ -60,7 +60,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    Sticky *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    Sticky *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
    
     NSString *sectionName = [[_board.sections objectAtIndex:indexPath.row] name];
     cell.ideaLabel.text = sectionName;

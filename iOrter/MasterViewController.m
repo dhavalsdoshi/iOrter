@@ -2,8 +2,6 @@
 #import "Model/Section.h"
 #import "BoardViewController.h"
 @interface MasterViewController () {
-
-    
 }
 
 @end
@@ -17,8 +15,7 @@
 }
 
 - (void)configureAlertView
-{
-    
+{    
     inputUrlAlert = [[UIAlertView alloc] initWithTitle:@"Enter Board Details" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"GO..!!" , nil];
     inputUrlAlert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     inputUrlAlert.backgroundColor = [UIColor blackColor];

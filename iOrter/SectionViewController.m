@@ -108,10 +108,13 @@
     UIFont *cellFont = [UIFont fontWithName:@"Georgia-Italic" size:17.0];
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-    if (labelSize.height==0) {
-        return 44;
+
+    CGFloat height = 44;
+    if (labelSize.height <=30) {
+        height = labelSize.height + 30;
     }
-    return labelSize.height + 40;
+    NSLog(@"Height: %f", height);
+    return height;
     
 }
 
