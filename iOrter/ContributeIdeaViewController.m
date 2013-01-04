@@ -34,6 +34,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"View Did Load Idea Editer");
     [super viewDidLoad];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
@@ -42,9 +43,10 @@
     [_parent addShadow:self.ideaText];
     NSInteger colorIdx = (int)selectedSection.sectionId % _parent.colors.count;
     self.ideaText.backgroundColor = [self.parent.colors objectAtIndex:colorIdx];
-    self.ideaText.text = selectedIdea.message;
     if (selectedIdea!=nil) {
         editFlag = 1;
+        self.ideaText.text = selectedIdea.message;
+
     }
     else editFlag = 0;
 }
@@ -71,6 +73,9 @@
 
 -(IBAction)cancelAdding:(id)sender
 {
+    self.parent.selectedIdea = nil;
+    selectedIdea = nil;
+    
     [self.parent viewDidLoad];
     [self.parent.tableView reloadData];
     [self dismissModalViewControllerAnimated:YES];
@@ -100,6 +105,7 @@
         hud.labelText = @"Editing..";
         selectedIdea.message = self.ideaText.text;
         [boardService editIdeaWithId:selectedIdea.ideaId message:selectedIdea.message];
+        
         [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(cancelAdding:) userInfo:nil repeats:NO];
 
 //        [self cancelAdding:self];
@@ -129,7 +135,7 @@
 }
 
 - (void)viewDidUnload {
-    
+    selectedIdea = nil;
     [self setIdeaImageView:nil];
     [super viewDidUnload];
 }

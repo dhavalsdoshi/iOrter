@@ -12,7 +12,6 @@
 @implementation SectionViewController{
     Section *selectedSection;
     UISegmentedControl *control;
-    Idea *selectedIdea;
     IdeaboardzService *service;
 
 }
@@ -190,7 +189,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    selectedIdea = [selectedSection.ideas objectAtIndex:indexPath.row];
+    _selectedIdea = [selectedSection.ideas objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"showIdeaEditor" sender:nil];
 
 }
@@ -198,15 +197,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showIdeaEditor"]) {
-        [[segue destinationViewController] setSection:selectedSection idea:selectedIdea andParent:self];
+        [[segue destinationViewController] setSection:selectedSection idea:_selectedIdea andParent:self];
     }
 }
 
 - (IBAction)deleteIdea:(id)sender {
     UIButton *button = (UIButton *)sender;
     NSLog(@"in delete %d",button.tag );
-    selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
-    [service deleteIdeaWithId:selectedIdea.ideaId];
+    _selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
+    [service deleteIdeaWithId:_selectedIdea.ideaId];
     [self viewDidLoad];
     [self.tableView reloadData];
 }

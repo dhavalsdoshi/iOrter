@@ -4,6 +4,7 @@
 #import "ContributeIdeaViewController.h"
 #import "BaseTableViewController.h"
 #import "Board.h"
+#import "Idea.h"
 
 
 @interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate>{
@@ -15,6 +16,8 @@
 @property(nonatomic, retain) IBOutlet UILabel *sectionTitle;
 @property(nonatomic, retain) IBOutlet UIView *titleView;
 @property (nonatomic,strong) Board *board;
+@property (nonatomic) Idea *selectedIdea;
+
 
 - (void)setSelectedSection:(Section *)section  andBoard:(Board *)boardObject;
 -(IBAction)showPopOver:(id)sender;
