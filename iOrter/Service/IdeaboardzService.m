@@ -97,7 +97,18 @@
 
 }
 
-
+-(void)editIdeaWithId:(NSInteger)ideaId message:(NSString *)message
+{
+    NSString *encodedIdea = [self encode:message];
+    
+    NSString *urlString = [@"http://ideaboardz.com/points" stringByAppendingFormat:@"/%d?point[message]=%@",ideaId,encodedIdea];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    HttpClientService *client = [[HttpClientService alloc] init];
+    
+    [client putTo:url delegate:self.parent];
+}
 - (NSString *) encode:(NSString *)unencoded {
      return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef) unencoded, NULL, (CFStringRef)@"!*'();@&=+$,?:/", kCFStringEncodingUTF8));
 

@@ -13,8 +13,10 @@
 @interface ContributeIdeaViewController (){
     Section *selectedSection;
     MBProgressHUD *hud;
+    Idea *selectedIdea;
+    NSInteger editFlag;
 }
-- (IBAction)addIdea:(id)sender;
+- (IBAction)doneButtonPressed:(id)sender;
 
 @end
 
@@ -40,6 +42,11 @@
     [_parent addShadow:self.ideaText];
     NSInteger colorIdx = (int)selectedSection.sectionId % _parent.colors.count;
     self.ideaText.backgroundColor = [self.parent.colors objectAtIndex:colorIdx];
+    self.ideaText.text = selectedIdea.message;
+    if (selectedIdea!=nil) {
+        editFlag = 1;
+    }
+    else editFlag = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,10 +55,11 @@
     // Dispose of any resources that can be recreated.
 }
  
--(void)setSection:(Section *)section andParent:(SectionViewController *)parent
+-(void)setSection:(Section *)section idea:(Idea *)idea andParent:(SectionViewController *)parent;
 {
     selectedSection = section;
     self.navigationItem.title = selectedSection.name;
+    selectedIdea = idea;
     self.parent = parent;
 }
 
@@ -69,23 +77,32 @@
 }
 
 
--(IBAction)addIdea:(id)sender
+-(IBAction)doneButtonPressed:(id)sender
 {
     [self dismissKeyboard];
+    IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithParent:self];
+    
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
     
     NSString *idea = [self.ideaText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    if (idea.length != 0) {
+    if (editFlag == 0) {
+        if (idea.length != 0) {
+            
+            hud.labelText = @"Posting..";
+            [boardService addIdea:idea toSection:selectedSection.sectionId];
+        }
 
-        IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithParent:self];
+    }
+    else{
         
-        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.mode = MBProgressHUDModeIndeterminate;
-        hud.labelText = @"Posting..";
-        
-        [boardService addIdea:idea toSection:selectedSection.sectionId];
-        
-        NSLog(@"Adding idea : %@", idea);
+        hud.labelText = @"Editing..";
+        selectedIdea.message = self.ideaText.text;
+        [boardService editIdeaWithId:selectedIdea.ideaId message:selectedIdea.message];
+        [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(cancelAdding:) userInfo:nil repeats:NO];
+
+//        [self cancelAdding:self];
     }
 }
  

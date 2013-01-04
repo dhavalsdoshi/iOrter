@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SectionViewController.h"
 #import "HttpClientService.h"
+#import "Idea.h"
 
 
 @class SectionViewController;
@@ -20,6 +21,6 @@
 @property (nonatomic, strong)  UIView *parentView;
 
 
--(void)setSection:(Section *)section andParent:(SectionViewController *)parent;
+-(void)setSection:(Section *)section idea:(Idea *)idea andParent:(SectionViewController *)parent;
 -(IBAction)cancelAdding:(id)sender;
 @end

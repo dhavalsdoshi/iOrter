@@ -19,7 +19,6 @@
     
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     [postRequest setHTTPMethod:@"POST"];
-    
     [[NSURLConnection alloc] initWithRequest:postRequest delegate:self];
 }
 
@@ -33,7 +32,14 @@
     return data;
 }
 
-
+-(void)putTo:(NSURL *)url delegate:(id)del
+{
+    self.delegate = del;
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"PUT"];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+}
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
     

@@ -178,7 +178,7 @@
 
     [control setSelected:YES];
     if ([control selectedSegmentIndex]==1){
-        [self performSegueWithIdentifier:@"addIdea" sender:sender];
+        [self performSegueWithIdentifier:@"showIdeaEditor" sender:sender];
         
     }
     else{
@@ -190,12 +190,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"selected row %@",indexPath);
+    selectedIdea = [selectedSection.ideas objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"showIdeaEditor" sender:nil];
+
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"addIdea"]) {
-        [[segue destinationViewController] setSection:selectedSection andParent:self];
+    if ([[segue identifier] isEqualToString:@"showIdeaEditor"]) {
+        [[segue destinationViewController] setSection:selectedSection idea:selectedIdea andParent:self];
     }
 }
 

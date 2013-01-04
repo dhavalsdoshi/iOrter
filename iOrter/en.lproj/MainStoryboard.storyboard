@@ -460,7 +460,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="deS-ny-MtW" kind="modal" identifier="addIdea" id="H6q-i5-SFL"/>
+                        <segue destination="deS-ny-MtW" kind="modal" identifier="showIdeaEditor" id="H6q-i5-SFL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuF-25-uya" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,7 +498,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="7cp-hV-eF1">
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="addIdea:" destination="deS-ny-MtW" id="u5b-cn-cbw"/>
+                                                <action selector="doneButtonPressed:" destination="deS-ny-MtW" id="vDj-tf-vn4"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -538,8 +538,8 @@
         <class className="ContributeIdeaViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContributeIdeaViewController.h"/>
             <relationships>
-                <relationship kind="action" name="addIdea:"/>
                 <relationship kind="action" name="cancelAdding:"/>
+                <relationship kind="action" name="doneButtonPressed:"/>
                 <relationship kind="outlet" name="ideaImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="ideaText" candidateClass="UITextView"/>
             </relationships>
