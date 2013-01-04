@@ -197,7 +197,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showIdeaEditor"]) {
-        [[segue destinationViewController] setSection:selectedSection idea:_selectedIdea andParent:self];
+        [[segue destinationViewController] setSection:selectedSection andParent:self];
     }
 }
 
@@ -206,6 +206,7 @@
     NSLog(@"in delete %d",button.tag );
     _selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
     [service deleteIdeaWithId:_selectedIdea.ideaId];
+    _selectedIdea = nil;
     [self viewDidLoad];
     [self.tableView reloadData];
 }

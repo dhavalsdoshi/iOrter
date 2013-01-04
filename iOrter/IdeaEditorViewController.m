@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 ThoughtWorks. All rights reserved.
 //
 
-#import "ContributeIdeaViewController.h"
+#import "IdeaEditorViewController.h"
 #import "MBProgressHUD.h"
 #import "IdeaboardzService.h"
 
-@interface ContributeIdeaViewController (){
+@interface IdeaEditorViewController (){
     Section *selectedSection;
     MBProgressHUD *hud;
     Idea *selectedIdea;
@@ -20,36 +20,44 @@
 
 @end
 
-@implementation ContributeIdeaViewController
+@implementation IdeaEditorViewController
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
-    NSLog(@"View Did Load Idea Editer");
     [super viewDidLoad];
+    [self addGestures];
+    
+    [self setSelectedIdea];
+    [_parent addShadow:self.ideaText];
+    
+    [self setStickyBackground];
+}
+
+- (void)addGestures
+{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-    
-	// Do any additional setup after loading the view.
-    [_parent addShadow:self.ideaText];
+}
+
+- (void)setStickyBackground
+{
     NSInteger colorIdx = (int)selectedSection.sectionId % _parent.colors.count;
     self.ideaText.backgroundColor = [self.parent.colors objectAtIndex:colorIdx];
+}
+
+- (void)setSelectedIdea
+{
+    selectedIdea = _parent.selectedIdea;
+
     if (selectedIdea!=nil) {
         editFlag = 1;
         self.ideaText.text = selectedIdea.message;
-
+        
     }
     else editFlag = 0;
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -57,11 +65,10 @@
     // Dispose of any resources that can be recreated.
 }
  
--(void)setSection:(Section *)section idea:(Idea *)idea andParent:(SectionViewController *)parent;
+-(void)setSection:(Section *)section andParent:(SectionViewController *)parent;
 {
     selectedSection = section;
     self.navigationItem.title = selectedSection.name;
-    selectedIdea = idea;
     self.parent = parent;
 }
 
@@ -82,33 +89,47 @@
 }
 
 
+- (void)configureHud
+{
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+}
+
+- (void)addIdea:(NSString *)idea usingBoardService:(IdeaboardzService *)boardService
+{
+    hud.labelText = @"Posting..";
+    [boardService addIdea:idea toSection:selectedSection.sectionId];
+}
+
+- (void)editIdeaUsingService:(IdeaboardzService *)boardService
+{
+    hud.labelText = @"Editing..";
+    selectedIdea.message = self.ideaText.text;
+    [boardService editIdeaWithId:selectedIdea.ideaId message:selectedIdea.message];
+}
+
 -(IBAction)doneButtonPressed:(id)sender
 {
     [self dismissKeyboard];
     IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithParent:self];
     
-    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
+    [self configureHud];
     
     NSString *idea = [self.ideaText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if (editFlag == 0) {
         if (idea.length != 0) {
             
-            hud.labelText = @"Posting..";
-            [boardService addIdea:idea toSection:selectedSection.sectionId];
+            [self addIdea:idea usingBoardService:boardService];
         }
 
     }
     else{
         
-        hud.labelText = @"Editing..";
-        selectedIdea.message = self.ideaText.text;
-        [boardService editIdeaWithId:selectedIdea.ideaId message:selectedIdea.message];
+        [self editIdeaUsingService:boardService];
         
         [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(cancelAdding:) userInfo:nil repeats:NO];
 
-//        [self cancelAdding:self];
     }
 }
  
@@ -135,7 +156,6 @@
 }
 
 - (void)viewDidUnload {
-    selectedIdea = nil;
     [self setIdeaImageView:nil];
     [super viewDidUnload];
 }

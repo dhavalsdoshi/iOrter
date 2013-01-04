@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Model/Section.h"
 #import "FPPopoverController.h"
-#import "ContributeIdeaViewController.h"
+#import "IdeaEditorViewController.h"
 #import "BaseTableViewController.h"
 #import "Board.h"
 #import "Idea.h"

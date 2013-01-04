@@ -20,7 +20,7 @@
 		115D0217167B1E1900F15C06 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115D0216167B1E1900F15C06 /* BoardViewController.m */; };
 		11617246168192300081AB66 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 11617245168192300081AB66 /* Board.m */; };
 		119895271682E16C00324B87 /* BoardJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 119895261682E16C00324B87 /* BoardJsonParser.m */; };
-		11BDEFAD16773B9600782DC0 /* ContributeIdeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */; };
+		11BDEFAD16773B9600782DC0 /* IdeaEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BDEFAC16773B9600782DC0 /* IdeaEditorViewController.m */; };
 		11FF685C167600EF00E80A7F /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FF685B167600EE00E80A7F /* BaseTableViewController.m */; };
 		78B540DB1679A59100113691 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B540DA1679A59100113691 /* MBProgressHUD.m */; };
 		BA62AC77166DC00C00144264 /* Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = BA62AC76166DC00C00144264 /* Idea.m */; };
@@ -95,8 +95,8 @@
 		11617245168192300081AB66 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Board.m; path = Model/Board.m; sourceTree = "<group>"; };
 		119895251682E16C00324B87 /* BoardJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardJsonParser.h; path = Service/BoardJsonParser.h; sourceTree = "<group>"; };
 		119895261682E16C00324B87 /* BoardJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardJsonParser.m; path = Service/BoardJsonParser.m; sourceTree = "<group>"; };
-		11BDEFAB16773B9600782DC0 /* ContributeIdeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeIdeaViewController.h; sourceTree = "<group>"; };
-		11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeIdeaViewController.m; sourceTree = "<group>"; };
+		11BDEFAB16773B9600782DC0 /* IdeaEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaEditorViewController.h; sourceTree = "<group>"; };
+		11BDEFAC16773B9600782DC0 /* IdeaEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdeaEditorViewController.m; sourceTree = "<group>"; };
 		11FF685A167600EE00E80A7F /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		11FF685B167600EE00E80A7F /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		78B540D91679A59100113691 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = iOrter/MBProgressHUD.h; sourceTree = "<group>"; };
@@ -294,8 +294,8 @@
 				BD5263BE1674C06A00082EDB /* SectionsPopOver.m */,
 				11FF685A167600EE00E80A7F /* BaseTableViewController.h */,
 				11FF685B167600EE00E80A7F /* BaseTableViewController.m */,
-				11BDEFAB16773B9600782DC0 /* ContributeIdeaViewController.h */,
-				11BDEFAC16773B9600782DC0 /* ContributeIdeaViewController.m */,
+				11BDEFAB16773B9600782DC0 /* IdeaEditorViewController.h */,
+				11BDEFAC16773B9600782DC0 /* IdeaEditorViewController.m */,
 				115D0215167B1E1900F15C06 /* BoardViewController.h */,
 				115D0216167B1E1900F15C06 /* BoardViewController.m */,
 				BDF82276167DF48400A65C5C /* TitleView.xib */,
@@ -511,7 +511,7 @@
 				BD5263BC1674BE5A00082EDB /* FPTouchView.m in Sources */,
 				BD5263BF1674C06A00082EDB /* SectionsPopOver.m in Sources */,
 				11FF685C167600EF00E80A7F /* BaseTableViewController.m in Sources */,
-				11BDEFAD16773B9600782DC0 /* ContributeIdeaViewController.m in Sources */,
+				11BDEFAD16773B9600782DC0 /* IdeaEditorViewController.m in Sources */,
 				78B540DB1679A59100113691 /* MBProgressHUD.m in Sources */,
 				1134D2E41679EEAF00077E76 /* HttpClientService.m in Sources */,
 				115D0217167B1E1900F15C06 /* BoardViewController.m in Sources */,

@@ -13,7 +13,7 @@
 
 
 @class SectionViewController;
-@interface ContributeIdeaViewController : UIViewController <UITextViewDelegate, HttpTaskDelegate>
+@interface IdeaEditorViewController : UIViewController <UITextViewDelegate, HttpTaskDelegate>
 
 @property (nonatomic) IBOutlet UITextView *ideaText;
 @property (weak, nonatomic) IBOutlet UIImageView *ideaImageView;
@@ -21,6 +21,6 @@
 @property (nonatomic, strong)  UIView *parentView;
 
 
--(void)setSection:(Section *)section idea:(Idea *)idea andParent:(SectionViewController *)parent;
+-(void)setSection:(Section *)section andParent:(SectionViewController *)parent;
 -(IBAction)cancelAdding:(id)sender;
 @end
