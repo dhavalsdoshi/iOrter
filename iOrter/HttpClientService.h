@@ -22,5 +22,4 @@
 - (NSData *)getFrom:(NSURL *)url;
 -(void)putTo:(NSURL *)url delegate:(id)del;
 
-
 @end

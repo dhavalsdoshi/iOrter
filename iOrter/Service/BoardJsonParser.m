@@ -28,7 +28,7 @@
     id <NSFastEnumeration> allSections = [dictionary objectForKey:@"sections"];
     for (NSDictionary *section in allSections) {
         id keySectionID = [section objectForKey:@"id"];
-        NSInteger *sectionID =  (NSInteger *)[[keySectionID stringValue] intValue];
+        NSInteger sectionID =  (NSInteger)[[keySectionID stringValue] intValue];
         NSString *sectionName = [section objectForKey:@"name"];
         Section *newSection = [[Section alloc] initWithId:sectionID name:sectionName];
         [_array addObject:newSection];

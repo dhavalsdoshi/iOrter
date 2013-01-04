@@ -203,7 +203,6 @@
 
 - (IBAction)deleteIdea:(id)sender {
     UIButton *button = (UIButton *)sender;
-    NSLog(@"in delete %d",button.tag );
     _selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
     [service deleteIdeaWithId:_selectedIdea.ideaId];
     _selectedIdea = nil;

@@ -1,13 +1,14 @@
 #import "IdeaboardzService.h"
 #import "Section.h"
 #import "HttpClientService.h"
-#import "Board.h"
 
 @interface IdeaboardzService()
 
 @end
 
 @implementation IdeaboardzService{
+    NSString *encodedString;
+    NSURL *url;
 }
 
 -(id) initWithBoard:(Board *)boardObject{
@@ -29,16 +30,16 @@
 -(NSMutableArray *) getSections
 {
     NSString *boardUrl;
-    NSString *encodedBoardName = [self encode:_board.boardName];
+    encodedString = [self encode:_board.boardName];
     if (_board.url == nil) {
-        boardUrl = [NSString stringWithFormat:@"http://www.ideaboardz.com/for/%@/%d.json",encodedBoardName,_board.boardId];
+        boardUrl = [NSString stringWithFormat:@"http://www.ideaboardz.com/for/%@/%d.json",encodedString,_board.boardId];
     
     }
     else{
         boardUrl = [NSString stringWithFormat:@"http://www.ideaboardz.com%@.json",_board.url];
     }
     
-    NSURL *url = [NSURL URLWithString:boardUrl];
+    url = [NSURL URLWithString:boardUrl];
     
     HttpClientService *client = [[HttpClientService alloc] init];
     NSData *boardJson = [client getFrom:url];
@@ -61,10 +62,10 @@
         
     }
     
-    NSURL *ideaUrl = [NSURL URLWithString:unencodedUrlForIdeas];
+    url = [NSURL URLWithString:unencodedUrlForIdeas];
     
     HttpClientService *client = [[HttpClientService alloc] init];
-    NSData *jsonIdeas = [client getFrom:ideaUrl];
+    NSData *jsonIdeas = [client getFrom:url];
     
     NSMutableArray *ideas = [_JsonParser parseToIdeas:jsonIdeas ofSection:sectionId];
     return ideas;
@@ -80,7 +81,7 @@
     NSString *encodedIdea = [self encode:idea];
     NSString *urlString = [@"http://ideaboardz.com/points.json?" stringByAppendingFormat:@"point[section_id]=%d&point[message]=%@", sectionId, encodedIdea];
     
-    NSURL *url = [NSURL URLWithString:urlString];
+    url = [NSURL URLWithString:urlString];
     
     HttpClientService *client = [[HttpClientService alloc] init];
     
@@ -90,10 +91,10 @@
 
 -(void)deleteIdeaWithId:(NSInteger)ideaId
 {
-    NSString *urlString = [@"http://www.ideaboardz.com/points/delete/" stringByAppendingFormat:@"%d.json",ideaId ];
-    NSURL *url = [NSURL URLWithString:urlString];
+    encodedString = [@"http://www.ideaboardz.com/points/delete/" stringByAppendingFormat:@"%d.json",ideaId ];
+    url = [NSURL URLWithString:encodedString];
     HttpClientService *client = [[HttpClientService alloc]init];
-    NSData *data = [client getFrom:url];
+    [client getFrom:url];
 
 }
 
@@ -101,14 +102,15 @@
 {
     NSString *encodedIdea = [self encode:message];
     
-    NSString *urlString = [@"http://ideaboardz.com/points" stringByAppendingFormat:@"/%d?point[message]=%@",ideaId,encodedIdea];
+    encodedString = [@"http://ideaboardz.com/points" stringByAppendingFormat:@"/%d?point[message]=%@",ideaId,encodedIdea];
     
-    NSURL *url = [NSURL URLWithString:urlString];
+    url = [NSURL URLWithString:encodedString];
     
     HttpClientService *client = [[HttpClientService alloc] init];
     
     [client putTo:url delegate:self.parent];
 }
+
 - (NSString *) encode:(NSString *)unencoded {
      return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef) unencoded, NULL, (CFStringRef)@"!*'();@&=+$,?:/", kCFStringEncodingUTF8));
 
