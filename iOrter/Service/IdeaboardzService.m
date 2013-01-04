@@ -9,16 +9,27 @@
 @implementation IdeaboardzService{
     NSString *encodedString;
     NSURL *url;
+    HttpClientService *client;
+}
+
+-(id)init{
+    self = [super init];
+    client = [[HttpClientService alloc] init];
+    return self;
+
 }
 
 -(id) initWithBoard:(Board *)boardObject{
     self = [super init];
+    self = [self init];
     self.board = boardObject;
     _JsonParser = [[BoardJsonParser alloc] init];
     return self;
 }
+
 -(id) initWithParent:(id)par {
     self = [super init];
+    self = [self init];
     if (self) {
         self.parent = par;
     }
@@ -41,7 +52,6 @@
     
     url = [NSURL URLWithString:boardUrl];
     
-    HttpClientService *client = [[HttpClientService alloc] init];
     NSData *boardJson = [client getFrom:url];
     
     NSMutableArray *sections = [_JsonParser parseToSections:boardJson];
@@ -63,8 +73,6 @@
     }
     
     url = [NSURL URLWithString:unencodedUrlForIdeas];
-    
-    HttpClientService *client = [[HttpClientService alloc] init];
     NSData *jsonIdeas = [client getFrom:url];
     
     NSMutableArray *ideas = [_JsonParser parseToIdeas:jsonIdeas ofSection:sectionId];
@@ -83,8 +91,6 @@
     
     url = [NSURL URLWithString:urlString];
     
-    HttpClientService *client = [[HttpClientService alloc] init];
-    
     [client postTo:url delegate:self.parent];
     
 }
@@ -93,8 +99,7 @@
 {
     encodedString = [@"http://www.ideaboardz.com/points/delete/" stringByAppendingFormat:@"%d.json",ideaId ];
     url = [NSURL URLWithString:encodedString];
-    HttpClientService *client = [[HttpClientService alloc]init];
-    [client getFrom:url];
+   [client getFrom:url];
 
 }
 
@@ -105,8 +110,6 @@
     encodedString = [@"http://ideaboardz.com/points" stringByAppendingFormat:@"/%d?point[message]=%@",ideaId,encodedIdea];
     
     url = [NSURL URLWithString:encodedString];
-    
-    HttpClientService *client = [[HttpClientService alloc] init];
     
     [client putTo:url delegate:self.parent];
 }
