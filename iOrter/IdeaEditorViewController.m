@@ -21,12 +21,17 @@
 @end
 
 @implementation IdeaEditorViewController
-
+@synthesize back, done;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self addGestures];
+
+    [self.back setTarget:self];
+    self.back.action = @selector(cancelAdding:);
+    [self.done setTarget:self];
+    self.done.action = @selector(doneButtonPressed:);
     
     [self setSelectedIdea];
     [_parent addShadow:self.ideaText];
@@ -49,11 +54,9 @@
 - (void)setSelectedIdea
 {
     selectedIdea = _parent.selectedIdea;
-
     if (selectedIdea!=nil) {
         editFlag = 1;
         self.ideaText.text = selectedIdea.message;
-        
     }
     else editFlag = 0;
 }
@@ -74,8 +77,7 @@
 
 -(void) dismissKeyboard
 {
-    [self.ideaText resignFirstResponder];
-    
+    [self.ideaText resignFirstResponder];    
 }
 
 -(IBAction)cancelAdding:(id)sender
@@ -111,25 +113,18 @@
 -(IBAction)doneButtonPressed:(id)sender
 {
     [self dismissKeyboard];
-    IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithParent:self];
-    
+    IdeaboardzService *boardService = [[IdeaboardzService alloc] initWithParent:self];    
     [self configureHud];
     
     NSString *idea = [self.ideaText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
     if (editFlag == 0) {
-        if (idea.length != 0) {
-            
+        if (idea.length != 0) {            
             [self addIdea:idea usingBoardService:boardService];
         }
-
     }
     else{
-        
         [self editIdeaUsingService:boardService];
-        
         [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(cancelAdding:) userInfo:nil repeats:NO];
-
     }
 }
  
@@ -141,8 +136,7 @@
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"Done!";
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearProgressMessage) userInfo:nil repeats:NO];
-    self.ideaText.text = @"";
-    
+    self.ideaText.text = @"";    
 }
 
 -(void)didFail:(NSString *)data {
@@ -156,7 +150,7 @@
 }
 
 - (void)viewDidUnload {
-    [self setIdeaImageView:nil];
+//    [self setIdeaImageView:nil];
     [super viewDidUnload];
 }
 @end

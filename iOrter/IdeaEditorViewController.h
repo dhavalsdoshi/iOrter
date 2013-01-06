@@ -16,11 +16,14 @@
 @interface IdeaEditorViewController : UIViewController <UITextViewDelegate, HttpTaskDelegate>
 
 @property (nonatomic) IBOutlet UITextView *ideaText;
-@property (weak, nonatomic) IBOutlet UIImageView *ideaImageView;
-@property (nonatomic, strong)  SectionViewController *parent;
-@property (nonatomic, strong)  UIView *parentView;
-
+//@property (weak, nonatomic) IBOutlet UIImageView *ideaImageView;
+@property (nonatomic, strong) SectionViewController *parent;
+@property (nonatomic, strong) UIView *parentView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *back;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *done;
 
 -(void)setSection:(Section *)section andParent:(SectionViewController *)parent;
+
 -(IBAction)cancelAdding:(id)sender;
+-(IBAction)doneButtonPressed:(id)sender;
 @end

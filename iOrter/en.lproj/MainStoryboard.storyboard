@@ -389,18 +389,12 @@
                             </textView>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="jZl-RZ-I37">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="zVB-YC-mNt">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3FK-i8-2Ji">
-                                            <connections>
-                                                <action selector="cancelAdding:" destination="deS-ny-MtW" id="rwC-Q9-RaE"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7cp-hV-eF1">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3FK-i8-2Ji"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="8G2-oC-bT1">
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <action selector="doneButtonPressed:" destination="deS-ny-MtW" id="vDj-tf-vn4"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -409,6 +403,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="back" destination="3FK-i8-2Ji" id="wJA-KO-JgP"/>
+                        <outlet property="done" destination="8G2-oC-bT1" id="NG6-ue-k63"/>
                         <outlet property="ideaText" destination="59o-EW-8Z2" id="63q-0b-64R"/>
                     </connections>
                 </viewController>
@@ -441,7 +437,8 @@
             <relationships>
                 <relationship kind="action" name="cancelAdding:"/>
                 <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="outlet" name="ideaImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="done" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="ideaText" candidateClass="UITextView"/>
             </relationships>
         </class>

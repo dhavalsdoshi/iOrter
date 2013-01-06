@@ -33,8 +33,7 @@
     [control setSelectedSegmentIndex:1];
     self.title = selectedSection.name;
     [self styleTitleView];
-    [self getIdeas];
-   
+    [self getIdeas];   
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,8 +46,7 @@
     _board = boardObject;
 }
 
--(void)styleTitleView{
-    
+-(void)styleTitleView{    
     self.sectionTitle.backgroundColor = [UIColor clearColor];
     self.sectionTitle.font = [UIFont boldSystemFontOfSize:18.0f];
     self.sectionTitle.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
@@ -57,16 +55,14 @@
     
     self.sectionTitle.text = selectedSection.name;
     self.navigationItem.titleView = self.titleView;
-
 }
 
 -(void)getIdeas
 {
-    
     service = [[IdeaboardzService alloc] initWithBoard:_board];
     selectedSection.ideas = [service getIdeasForSection:selectedSection.sectionId];
-    
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -113,9 +109,7 @@
     if (labelSize.height <=30) {
         height = labelSize.height + 30;
     }
-    NSLog(@"Height: %f", height);
-    return height;
-    
+    return height;    
 }
 
 
@@ -181,12 +175,9 @@
     [control setSelected:YES];
     if ([control selectedSegmentIndex]==1){
         [self performSegueWithIdentifier:@"showIdeaEditor" sender:sender];
-        
     }
     else{
         [self popover:sender];
-        
-
     }
 }
 
@@ -194,7 +185,6 @@
 {
     _selectedIdea = [selectedSection.ideas objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"showIdeaEditor" sender:nil];
-
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
