@@ -15,11 +15,13 @@
 @property(nonatomic, retain) NSMutableArray *sections;
 @property(nonatomic, retain) IBOutlet UILabel *sectionTitle;
 @property(nonatomic, retain) IBOutlet UIView *titleView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *addIdea;
+
 @property (nonatomic,strong) Board *board;
 @property (nonatomic) Idea *selectedIdea;
 
 
 - (void)setSelectedSection:(Section *)section  andBoard:(Board *)boardObject;
--(IBAction)showPopOver:(id)sender;
+-(IBAction)showIdeaEditor:(id)sender;
 -(void)selectedTableRow:(NSUInteger)rowNum;
 @end

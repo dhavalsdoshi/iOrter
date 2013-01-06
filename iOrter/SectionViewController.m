@@ -6,7 +6,6 @@
 #import "Idea.h"
 @interface SectionViewController ()
 - (IBAction)deleteIdea:(id)sender;
-
 @end
 
 @implementation SectionViewController{
@@ -15,7 +14,7 @@
     IdeaboardzService *service;
 
 }
-@synthesize sectionsButton, sections, sectionTitle, titleView;
+@synthesize sectionsButton, sections, sectionTitle, titleView, addIdea;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,11 +28,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [[NSBundle mainBundle] loadNibNamed:@"TitleView" owner:self options:nil];
     [control setSelectedSegmentIndex:1];
-    self.title = selectedSection.name;
-    [self styleTitleView];
-    [self getIdeas];   
+    self.title = [NSString stringWithFormat:@"%@ ▼",selectedSection.name];
+//    [self styleTitleView];
+    [self getIdeas];
+
+    [self.addIdea setTarget:self];
+    self.addIdea.action = @selector(showIdeaEditor:);
+}
+
+-(void)navigationTitleTapped
+{
+ [self popover:self.navigationController.navigationBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -148,7 +154,6 @@
     [popover presentPopoverFromView:sender];
 }
 
-
 - (void)presentedNewPopoverController:(FPPopoverController *)newPopoverController
           shouldDismissVisiblePopover:(FPPopoverController*)visiblePopoverController
 {
@@ -163,22 +168,14 @@
     selectedSection = [_board.sections objectAtIndex:rowNum];
     [self.tableView reloadData];
     self.sectionTitle.text = selectedSection.name;
-    self.title = selectedSection.name;
+    self.title = [NSString stringWithFormat:@"%@ ▼",selectedSection.name];
     [self getIdeas];
     [self.tableView reloadData];
     [popover dismissPopoverAnimated:YES];
 }
 
--(IBAction)showPopOver:(id)sender{
-    control = (UISegmentedControl *) sender;
-
-    [control setSelected:YES];
-    if ([control selectedSegmentIndex]==1){
-        [self performSegueWithIdentifier:@"showIdeaEditor" sender:sender];
-    }
-    else{
-        [self popover:sender];
-    }
+-(IBAction)showIdeaEditor:(id)sender{
+    [self performSegueWithIdentifier:@"showIdeaEditor" sender:sender];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -11,12 +11,10 @@
 #import "HttpClientService.h"
 #import "Idea.h"
 
-
 @class SectionViewController;
 @interface IdeaEditorViewController : UIViewController <UITextViewDelegate, HttpTaskDelegate>
 
 @property (nonatomic) IBOutlet UITextView *ideaText;
-//@property (weak, nonatomic) IBOutlet UIImageView *ideaImageView;
 @property (nonatomic, strong) SectionViewController *parent;
 @property (nonatomic, strong) UIView *parentView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *back;

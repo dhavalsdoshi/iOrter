@@ -8,6 +8,11 @@
 
 #import "BaseTableViewController.h"
 
+@interface BaseTableViewController()
+{
+     MBProgressHUD *hud;
+}
+@end
 
 @implementation BaseTableViewController
 
@@ -117,5 +122,53 @@
 //    cell.transform=CGAffineTransformConcat(cell.transform, rr);
 //    [UIView commitAnimations];
 }
+
+- (void) displayMessage: (NSString*) message
+{
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = message;
+}
+
+- (void) displayProgressMessage: (NSString*) message
+{
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = message;
+}
+
+- (void) clearProgressMessage {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+- (void)setTitle:(NSString *)title
+{
+    [super setTitle:title];
+    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+    if (!titleView) {
+        titleView = [[UILabel alloc] initWithFrame:CGRectZero];
+        titleView.backgroundColor = [UIColor clearColor];
+        //titleView.font = [UIFont fontWithName:@"Cochin-Bold" size:(25.0)];
+        titleView.font = [UIFont boldSystemFontOfSize:17];
+        titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+        titleView.lineBreakMode = UILineBreakModeMiddleTruncation;
+        titleView.textColor = [UIColor whiteColor];
+        UITapGestureRecognizer *navSingleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navigationTitleTapped)];
+        navSingleTap.numberOfTapsRequired = 1;
+
+        [titleView setUserInteractionEnabled:YES];
+        [titleView addGestureRecognizer:navSingleTap];
+
+        self.navigationItem.titleView = titleView;
+    }
+    titleView.text = title;
+    [titleView sizeToFit];
+}
+
+-(void)navigationTitleTapped
+{
+
+}
+
 
 @end

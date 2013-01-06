@@ -345,24 +345,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mGc-Kk-Lug">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" id="SXI-8g-b8P">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" momentary="YES" id="zFS-Be-OV3">
-                                <rect key="frame" x="244" y="7" width="71" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="" image="pullDown.png"/>
-                                    <segment title="Add"/>
-                                </segments>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="showPopOver:" destination="Wpe-IX-ao6" eventType="valueChanged" id="Fpf-AB-Nul"/>
-                                </connections>
-                            </segmentedControl>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QTn-9T-oBk"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addIdea" destination="QTn-9T-oBk" id="VBX-sA-lKp"/>
                         <segue destination="deS-ny-MtW" kind="modal" identifier="showIdeaEditor" id="H6q-i5-SFL"/>
                     </connections>
                 </tableViewController>
@@ -416,7 +404,6 @@
     <resources>
         <image name="delete.png" width="28" height="27"/>
         <image name="ideaboardz.png" width="246" height="45"/>
-        <image name="pullDown.png" width="19" height="19"/>
     </resources>
     <classes>
         <class className="BaseTableViewController" superclassName="UITableViewController">
@@ -450,6 +437,7 @@
             <relationships>
                 <relationship kind="action" name="deleteIdea:"/>
                 <relationship kind="action" name="showPopOver:"/>
+                <relationship kind="outlet" name="addIdea" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="sectionTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sectionsButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="titleView" candidateClass="UIView"/>
