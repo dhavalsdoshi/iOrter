@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self addGestures];
 
     [self.back setTarget:self];
     self.back.action = @selector(cancelAdding:);

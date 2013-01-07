@@ -99,6 +99,7 @@
     cell.ideaLabel.numberOfLines = 0;
     cell.ideaLabel.text = idea;
     cell.ideaLabel.backgroundColor = [UIColor clearColor];
+    cell.deleteButton.frame = CGRectMake(281, 1,15 , 15);
     [cell.deleteButton setTag:indexPath.row];
 
     return cell;
@@ -111,12 +112,7 @@
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
 
-    CGFloat height = 44;
-    if (labelSize.height <=30) {
-        height = labelSize.height + 30;
-    }
-    NSLog(@"Height: %f", height);
-    return height;    
+    return labelSize.height +30;
 }
 
 

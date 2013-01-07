@@ -65,12 +65,13 @@
 {
     CGFloat cornerRadius = 4;
     viewToStyle.layer.cornerRadius = cornerRadius;
+    viewToStyle.layer.autoreverses = YES;
     viewToStyle.clipsToBounds = YES;
     [[viewToStyle layer] setBorderColor:[[UIColor darkGrayColor] CGColor]];
     [[viewToStyle layer] setBorderWidth:0];
 
     viewToStyle.layer.masksToBounds = NO;
-    viewToStyle.layer.shadowOffset = CGSizeMake(-4, 6);
+    viewToStyle.layer.shadowOffset = CGSizeMake(-0.5, 1);
     viewToStyle.layer.shadowRadius = cornerRadius;
     viewToStyle.layer.shadowOpacity = 0.5;
     viewToStyle.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:viewToStyle.bounds cornerRadius:cornerRadius].CGPath;
