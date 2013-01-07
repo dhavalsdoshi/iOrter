@@ -52,6 +52,7 @@
     }
     Section *section = [self.delegate.board.sections objectAtIndex:indexPath.row];
     NSString *text = section.name;
+    cell.textLabel.font = [UIFont fontWithName:@"Delius" size:18.0];
     cell.textLabel.text = text;
 
     return cell;

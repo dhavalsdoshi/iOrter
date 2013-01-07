@@ -44,6 +44,7 @@
 		BD1CFCAD16996AFE0068AE8C /* edosz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCAC16996AFE0068AE8C /* edosz.ttf */; };
 		BD1CFCAF16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCAE16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf */; };
 		BD1CFCB116996B260068AE8C /* Sketch_Block.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCB016996B260068AE8C /* Sketch_Block.ttf */; };
+		BD4E1AB4169B439900ED99D6 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = BD4E1AB3169B439900ED99D6 /* delete.png */; };
 		BD5263BA1674BE5A00082EDB /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B51674BE5A00082EDB /* FPPopoverController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BD5263BB1674BE5A00082EDB /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B71674BE5A00082EDB /* FPPopoverView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BD5263BC1674BE5A00082EDB /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B91674BE5A00082EDB /* FPTouchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -62,7 +63,6 @@
 		D11C15781695BC7400091ED3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11C15771695BC7400091ED3 /* Default-568h@2x.png */; };
 		D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1BA16941109007500C8 /* ideaboardz.png */; };
 		D19DE1CD169444DC007500C8 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1CC169444DC007500C8 /* ic_launcher.png */; };
-		D19ED75E1695B3B40029EBCC /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = D19ED75D1695B3B40029EBCC /* delete.png */; };
 		D19ED7601695B9380029EBCC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19ED75F1695B9380029EBCC /* Default@2x.png */; };
 		D1F916E6169AC7AF0064863E /* Handlee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1F916E5169AC7AF0064863E /* Handlee-Regular.ttf */; };
 		D1F916E7169AC7AF0064863E /* Handlee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1F916E5169AC7AF0064863E /* Handlee-Regular.ttf */; };
@@ -138,6 +138,7 @@
 		BD1CFCAC16996AFE0068AE8C /* edosz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = edosz.ttf; sourceTree = "<group>"; };
 		BD1CFCAE16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handwritten_Crystal_v2.ttf; sourceTree = "<group>"; };
 		BD1CFCB016996B260068AE8C /* Sketch_Block.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sketch_Block.ttf; sourceTree = "<group>"; };
+		BD4E1AB3169B439900ED99D6 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		BD5263AB1674BAD700082EDB /* sticky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticky.png; sourceTree = "<group>"; };
 		BD5263B41674BE5A00082EDB /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
 		BD5263B51674BE5A00082EDB /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
@@ -162,7 +163,6 @@
 		D11C15771695BC7400091ED3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D19DE1BA16941109007500C8 /* ideaboardz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ideaboardz.png; sourceTree = "<group>"; };
 		D19DE1CC169444DC007500C8 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
-		D19ED75D1695B3B40029EBCC /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		D19ED75F1695B9380029EBCC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D1F916E5169AC7AF0064863E /* Handlee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Handlee-Regular.ttf"; sourceTree = "<group>"; };
 		D1F916E9169AC7B80064863E /* Delius-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delius-Regular.ttf"; sourceTree = "<group>"; };
@@ -369,7 +369,7 @@
 		BD5263A71674AFEA00082EDB /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D19ED75D1695B3B40029EBCC /* delete.png */,
+				BD4E1AB3169B439900ED99D6 /* delete.png */,
 				D19DE1BA16941109007500C8 /* ideaboardz.png */,
 				BD5263D01674D7F300082EDB /* notesBg.png */,
 				BD5263D11674D7F300082EDB /* notesBg@2x.png */,
@@ -485,7 +485,6 @@
 				BDF82277167DF48400A65C5C /* TitleView.xib in Resources */,
 				D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */,
 				D19DE1CD169444DC007500C8 /* ic_launcher.png in Resources */,
-				D19ED75E1695B3B40029EBCC /* delete.png in Resources */,
 				D19ED7601695B9380029EBCC /* Default@2x.png in Resources */,
 				D11C15781695BC7400091ED3 /* Default-568h@2x.png in Resources */,
 				BD1CFCAD16996AFE0068AE8C /* edosz.ttf in Resources */,
@@ -493,6 +492,7 @@
 				BD1CFCB116996B260068AE8C /* Sketch_Block.ttf in Resources */,
 				D1F916E6169AC7AF0064863E /* Handlee-Regular.ttf in Resources */,
 				D1F916EA169AC7B80064863E /* Delius-Regular.ttf in Resources */,
+				BD4E1AB4169B439900ED99D6 /* delete.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

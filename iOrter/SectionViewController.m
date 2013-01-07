@@ -85,6 +85,7 @@
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Idea";
@@ -100,7 +101,7 @@
     cell.ideaLabel.numberOfLines = 0;
     cell.ideaLabel.text = idea;
     cell.ideaLabel.backgroundColor = [UIColor clearColor];
-    cell.deleteButton.frame = CGRectMake(281, 1,15 , 15);
+//    cell.deleteButton.frame = CGRectMake(281, 1,15 , 15);
     [cell.deleteButton setTag:indexPath.row];
     [cell.voteButton setTag:indexPath.row];
     NSInteger votes = [[selectedSection.ideas objectAtIndex:indexPath.row] votesCount];
@@ -117,7 +118,6 @@
 
     return labelSize.height +30;
 }
-
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -190,7 +190,6 @@
         [[segue destinationViewController] setSection:selectedSection andParent:self];
     }
 }
-
 
 - (IBAction)deleteIdea:(id)sender {
     UIButton *button = (UIButton *)sender;
