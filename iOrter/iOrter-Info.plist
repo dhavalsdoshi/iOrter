@@ -69,5 +69,11 @@
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackTranslucent</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>edosz.ttf</string>
+		<string>Handwritten_Crystal_v2.ttf</string>
+		<string>Sketch_Block.ttf</string>
+	</array>
 </dict>
 </plist>

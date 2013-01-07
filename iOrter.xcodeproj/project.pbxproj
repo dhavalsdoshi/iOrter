@@ -41,6 +41,9 @@
 		BAFFB60216672E83003968BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DA16672E83003968BF /* Foundation.framework */; };
 		BAFFB60A16672E83003968BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB60816672E83003968BF /* InfoPlist.strings */; };
 		BAFFB60D16672E83003968BF /* iOrterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB60C16672E83003968BF /* iOrterTests.m */; };
+		BD1CFCAD16996AFE0068AE8C /* edosz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCAC16996AFE0068AE8C /* edosz.ttf */; };
+		BD1CFCAF16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCAE16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf */; };
+		BD1CFCB116996B260068AE8C /* Sketch_Block.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCB016996B260068AE8C /* Sketch_Block.ttf */; };
 		BD5263BA1674BE5A00082EDB /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B51674BE5A00082EDB /* FPPopoverController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BD5263BB1674BE5A00082EDB /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B71674BE5A00082EDB /* FPPopoverView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BD5263BC1674BE5A00082EDB /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5263B91674BE5A00082EDB /* FPTouchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -128,6 +131,9 @@
 		BAFFB60916672E83003968BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BAFFB60B16672E83003968BF /* iOrterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOrterTests.h; sourceTree = "<group>"; };
 		BAFFB60C16672E83003968BF /* iOrterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOrterTests.m; sourceTree = "<group>"; };
+		BD1CFCAC16996AFE0068AE8C /* edosz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = edosz.ttf; sourceTree = "<group>"; };
+		BD1CFCAE16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handwritten_Crystal_v2.ttf; sourceTree = "<group>"; };
+		BD1CFCB016996B260068AE8C /* Sketch_Block.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sketch_Block.ttf; sourceTree = "<group>"; };
 		BD5263AB1674BAD700082EDB /* sticky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticky.png; sourceTree = "<group>"; };
 		BD5263B41674BE5A00082EDB /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
 		BD5263B51674BE5A00082EDB /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 		BAFFB5DE16672E83003968BF /* iOrter */ = {
 			isa = PBXGroup;
 			children = (
+				BD1CFCAA16996AEF0068AE8C /* Fonts */,
 				BD5263A71674AFEA00082EDB /* Images */,
 				088444D916676C30008AD190 /* Service */,
 				088444D016676A2F008AD190 /* Model */,
@@ -339,6 +346,16 @@
 				BAFFB60816672E83003968BF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BD1CFCAA16996AEF0068AE8C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BD1CFCAC16996AFE0068AE8C /* edosz.ttf */,
+				BD1CFCAE16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf */,
+				BD1CFCB016996B260068AE8C /* Sketch_Block.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		BD5263A71674AFEA00082EDB /* Images */ = {
@@ -463,6 +480,9 @@
 				D19ED75E1695B3B40029EBCC /* delete.png in Resources */,
 				D19ED7601695B9380029EBCC /* Default@2x.png in Resources */,
 				D11C15781695BC7400091ED3 /* Default-568h@2x.png in Resources */,
+				BD1CFCAD16996AFE0068AE8C /* edosz.ttf in Resources */,
+				BD1CFCAF16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf in Resources */,
+				BD1CFCB116996B260068AE8C /* Sketch_Block.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

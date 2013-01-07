@@ -94,7 +94,7 @@
 
     NSString *idea = [[selectedSection.ideas objectAtIndex:indexPath.row] message];
 
-    cell.ideaLabel.font = [UIFont fontWithName:@"Georgia-Italic" size:17.0];
+    cell.ideaLabel.font = [UIFont fontWithName:@"Handwritten Crystal V2" size:25.0];
     cell.ideaLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.ideaLabel.numberOfLines = 0;
     cell.ideaLabel.text = idea;
@@ -107,7 +107,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellText = [[selectedSection.ideas objectAtIndex:indexPath.row] message];
-    UIFont *cellFont = [UIFont fontWithName:@"Georgia-Italic" size:17.0];
+    UIFont *cellFont = [UIFont fontWithName:@"Handwritten Crystal V2" size:25.0];
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
 
@@ -115,6 +115,7 @@
     if (labelSize.height <=30) {
         height = labelSize.height + 30;
     }
+    NSLog(@"Height: %f", height);
     return height;    
 }
 
