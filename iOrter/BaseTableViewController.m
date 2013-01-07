@@ -52,10 +52,10 @@
 - (void)styleStickyCell:(Sticky *)cell withColorIdx:(NSInteger)colorIdx andLabel:(NSString *)label {
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    cell.ideaLabel.font = [UIFont fontWithName:@"Handwritten Crystal V2" size:25.0];
-    cell.ideaLabel.lineBreakMode = UILineBreakModeWordWrap;
-    cell.ideaLabel.numberOfLines = 0;
-    cell.ideaLabel.backgroundColor = [UIColor clearColor];
+    cell.ideaLabel.font = [UIFont fontWithName:@"Delius" size:20.0];
+//    cell.ideaLabel.lineBreakMode = UILineBreakModeWordWrap;
+//    cell.ideaLabel.numberOfLines = 0;
+//    cell.ideaLabel.backgroundColor = [UIColor clearColor];
 
     [self addShadow:cell.ideaView];
     cell.ideaView.backgroundColor = [self.colors objectAtIndex:colorIdx];
@@ -149,7 +149,7 @@
     if (!titleView) {
         titleView = [[UILabel alloc] initWithFrame:CGRectZero];
         titleView.backgroundColor = [UIColor clearColor];
-        titleView.font = [UIFont fontWithName:@"Handwritten Crystal V2" size:(24.0)];
+        titleView.font = [UIFont fontWithName:@"Delius" size:(24.0)];
 //        titleView.font = [UIFont boldSystemFontOfSize:17];
         titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
         titleView.lineBreakMode = UILineBreakModeMiddleTruncation;

@@ -63,6 +63,7 @@
     Sticky *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
    
     NSString *sectionName = [[_board.sections objectAtIndex:indexPath.row] name];
+    cell.ideaLabel.font = [UIFont fontWithName:@"Delius" size:20.0];
     cell.ideaLabel.text = sectionName;
     
     return cell;

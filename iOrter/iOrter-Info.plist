@@ -71,6 +71,8 @@
 	<string>UIStatusBarStyleBlackTranslucent</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Handlee-Regular.ttf</string>
+		<string>Delius-Regular.ttf</string>
 		<string>edosz.ttf</string>
 		<string>Handwritten_Crystal_v2.ttf</string>
 		<string>Sketch_Block.ttf</string>

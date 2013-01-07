@@ -34,7 +34,7 @@
     
     [self setSelectedIdea];
     [_parent addShadow:self.ideaText];
-    
+    self.ideaText.font = [UIFont fontWithName:@"Delius" size:20.0];
     [self setStickyBackground];
 }
 

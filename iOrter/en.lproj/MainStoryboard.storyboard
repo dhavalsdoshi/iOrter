@@ -82,7 +82,7 @@
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Test Drive..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BbR-5h-jIn">
                                                             <rect key="frame" x="20" y="9" width="106" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -112,7 +112,7 @@
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="View Ideaboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NEg-hH-rbx">
                                                             <rect key="frame" x="20" y="10" width="152" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -142,7 +142,7 @@
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Feedback.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jeB-74-QG9">
                                                             <rect key="frame" x="20" y="11" width="123" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -172,7 +172,7 @@
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FAQs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IF5-xC-x5G">
                                                             <rect key="frame" x="19" y="0.0" width="131" height="38"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -413,53 +413,6 @@
         <image name="delete.png" width="28" height="27"/>
         <image name="ideaboardz.png" width="246" height="45"/>
     </resources>
-    <classes>
-        <class className="BaseTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
-        </class>
-        <class className="BoardViewController" superclassName="BaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BoardViewController.h"/>
-        </class>
-        <class className="FAQViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FAQViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loader" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="IdeaEditorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IdeaEditorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelAdding:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="done" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="ideaText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="BaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-        <class className="SectionViewController" superclassName="BaseTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="deleteIdea:"/>
-                <relationship kind="action" name="showIdeaEditor:"/>
-                <relationship kind="outlet" name="addIdea" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="sectionTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sectionsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="titleView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="Sticky" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Sticky.h"/>
-            <relationships>
-                <relationship kind="outlet" name="deleteButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="ideaLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ideaView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

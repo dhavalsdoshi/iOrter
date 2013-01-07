@@ -62,6 +62,7 @@
     return NO;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
     if (indexPath.row==0) {
         return 133;
     }
@@ -70,14 +71,17 @@
     }
     return 65;
 }
-
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{    cell = (Sticky *)cell;
+{
+    cell = (Sticky *)cell;
+    cell.textLabel.font = [UIFont fontWithName:@"Handlee" size:25.0];
 
     NSInteger colorIdx = (int)indexPath.row %  (int)self.colors.count;
     if(indexPath.row!=0){
     [self styleStickyCell:(Sticky *)cell withColorIdx:colorIdx andLabel:cell.textLabel.text];
-    [super tableView:tableView willDisplayCell:(Sticky *)cell forRowAtIndexPath:indexPath];
+    
+
+        [super tableView:tableView willDisplayCell:(Sticky *)cell forRowAtIndexPath:indexPath];
 //        Rotate cell at random angle betwee +2 and -2 degrees
         int i;
         if (indexPath.row == 1 || indexPath.row == 4) {
@@ -86,7 +90,6 @@
         else{
             i = (arc4random()%2)+(-2);
         }
-    
     float rotation = i/100.0;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
