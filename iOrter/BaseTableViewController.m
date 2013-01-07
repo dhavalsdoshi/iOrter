@@ -57,7 +57,7 @@
 //    cell.ideaLabel.numberOfLines = 0;
 //    cell.ideaLabel.backgroundColor = [UIColor clearColor];
 
-//    [self addShadow:cell.ideaView];
+    [self addShadow:cell.ideaView];
     cell.ideaView.backgroundColor = [self.colors objectAtIndex:colorIdx];
 }
 
@@ -74,7 +74,7 @@
     viewToStyle.layer.shadowOffset = CGSizeMake(-0.5, 1);
     viewToStyle.layer.shadowRadius = cornerRadius;
     viewToStyle.layer.shadowOpacity = 0.5;
-    viewToStyle.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:viewToStyle.bounds cornerRadius:cornerRadius].CGPath;
+//    viewToStyle.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:viewToStyle.bounds cornerRadius:cornerRadius].CGPath;
 }
 
 -(UIColor*)colorWithHexString:(NSString*)hex
