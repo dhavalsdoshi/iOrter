@@ -49,8 +49,9 @@
             NSString *point = [idea valueForKey:@"message"];
             NSString *stringId = [idea objectForKey:@"id"];
             NSInteger ideaId = [stringId integerValue];
-            
-            Idea *newIdea = [[Idea alloc]initWithId:ideaId andMessage:point];
+            NSString *votes = [idea objectForKey:@"votes_count"];
+            NSInteger votesCount = [votes integerValue];
+            Idea *newIdea = [[Idea alloc]initWithId:ideaId Message:point andVotes:votesCount];
             
             [_array addObject:newIdea];
         }

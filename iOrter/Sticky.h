@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (nonatomic) IBOutlet UIView *ideaView;
 @property (nonatomic) IBOutlet UILabel *ideaLabel;
+@property (weak, nonatomic) IBOutlet UIButton *voteButton;
+
 @end

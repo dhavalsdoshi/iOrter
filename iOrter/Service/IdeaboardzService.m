@@ -103,6 +103,13 @@
 
 }
 
+-(void)voteForIdeaWithId:(NSInteger)ideaId
+{
+    encodedString = [@"http://www.ideaboardz.com/points/" stringByAppendingFormat:@"%d/votes.json?vote[point_id]=%d",ideaId,ideaId];
+    url = [NSURL URLWithString:encodedString];
+    [client postTo:url delegate:self.parent];
+}
+
 -(void)editIdeaWithId:(NSInteger)ideaId message:(NSString *)message
 {
     NSString *encodedIdea = [self encode:message];

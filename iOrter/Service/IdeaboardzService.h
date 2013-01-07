@@ -15,5 +15,6 @@
 - (void)addIdea:(NSString *)idea toSection:(NSInteger)sectionId;
 -(void)deleteIdeaWithId:(NSInteger)ideaId;
 -(void)editIdeaWithId:(NSInteger)ideaId message:(NSString *)message;
+-(void)voteForIdeaWithId:(NSInteger)ideaId;
 
 @end

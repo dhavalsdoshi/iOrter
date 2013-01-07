@@ -5,6 +5,7 @@
 #import "IdeaboardzService.h"
 #import "Idea.h"
 @interface SectionViewController ()
+- (IBAction)vote:(id)sender;
 - (IBAction)deleteIdea:(id)sender;
 @end
 
@@ -101,7 +102,9 @@
     cell.ideaLabel.backgroundColor = [UIColor clearColor];
     cell.deleteButton.frame = CGRectMake(281, 1,15 , 15);
     [cell.deleteButton setTag:indexPath.row];
-
+    [cell.voteButton setTag:indexPath.row];
+    NSInteger votes = [[selectedSection.ideas objectAtIndex:indexPath.row] votesCount];
+    [cell.voteButton setTitle:[NSString stringWithFormat:@"+%d",votes] forState:UIControlStateNormal];
     return cell;
 }
 
@@ -188,6 +191,7 @@
     }
 }
 
+
 - (IBAction)deleteIdea:(id)sender {
     UIButton *button = (UIButton *)sender;
     _selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
@@ -195,5 +199,21 @@
     _selectedIdea = nil;
     [self viewDidLoad];
     [self.tableView reloadData];
+}
+
+-(IBAction)vote:(id)sender
+{
+    UIButton *button = (UIButton *)sender;
+    _selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
+    [service voteForIdeaWithId:_selectedIdea.ideaId];
+    _selectedIdea = nil;
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getIdeas) userInfo:nil repeats:NO];
+    [self viewDidLoad];
+   [self.tableView reloadData];
+}
+- (void)viewDidUnload {
+//     setVoteButton:nil];
+    [super viewDidUnload];
 }
 @end

@@ -57,7 +57,7 @@
 //    cell.ideaLabel.numberOfLines = 0;
 //    cell.ideaLabel.backgroundColor = [UIColor clearColor];
 
-    [self addShadow:cell.ideaView];
+//    [self addShadow:cell.ideaView];
     cell.ideaView.backgroundColor = [self.colors objectAtIndex:colorIdx];
 }
 
