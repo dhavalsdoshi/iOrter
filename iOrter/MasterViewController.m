@@ -11,6 +11,7 @@
     UIAlertView *inputUrlAlert;
     NSString *boardName;
     NSInteger boardId;
+    NSUserDefaults *userDefaults;
     
 }
 
@@ -19,11 +20,23 @@
     inputUrlAlert = [[UIAlertView alloc] initWithTitle:@"Enter Board Details" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"GO..!!" , nil];
     inputUrlAlert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     inputUrlAlert.backgroundColor = [UIColor blackColor];
+  
+    NSString *str = [userDefaults objectForKey:@"boardName"];
+    NSInteger integer = [userDefaults integerForKey:@"boardId"];
+    
+    
     UITextField *boardNameTextField = [inputUrlAlert textFieldAtIndex:0];
     boardNameTextField.placeholder = @"Board Name";
     UITextField *boardIdTextField = [inputUrlAlert textFieldAtIndex:1];
     boardIdTextField.placeholder = @"Board ID";
     boardIdTextField.secureTextEntry = NO;
+    
+    if (userDefaults!=nil) {
+        [[inputUrlAlert textFieldAtIndex:0] setText:str];
+        [[inputUrlAlert textFieldAtIndex:1] setText:[NSString stringWithFormat:@"%d",integer]];
+        
+    }
+    
     
     [inputUrlAlert show];
 }
@@ -37,6 +50,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,6 +137,14 @@
          
 }
 
+- (void)configureUserDefaults
+{
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:boardName forKey:@"boardName"];
+    [userDefaults setInteger:boardId forKey:@"boardId"];
+    [userDefaults synchronize];
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 1){
@@ -130,6 +152,8 @@
         NSString *Id = [[inputUrlAlert textFieldAtIndex:1] text];
         boardId = [Id integerValue];
         [self resignFirstResponder];
+        
+        [self configureUserDefaults];
         [self performSegueWithIdentifier:@"showSections" sender:self];
     
     }
