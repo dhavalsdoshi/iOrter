@@ -5,7 +5,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [Crittercism enableWithAppID: @"50ebca84f716964532000008"];
     return YES;
 }
 							

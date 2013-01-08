@@ -68,6 +68,8 @@
 		D1F916E7169AC7AF0064863E /* Handlee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1F916E5169AC7AF0064863E /* Handlee-Regular.ttf */; };
 		D1F916EA169AC7B80064863E /* Delius-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1F916E9169AC7B80064863E /* Delius-Regular.ttf */; };
 		D1F916EB169AC7B80064863E /* Delius-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1F916E9169AC7B80064863E /* Delius-Regular.ttf */; };
+		D1F9172C169C03870064863E /* libCrittercism_v3_4_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F9172B169C03870064863E /* libCrittercism_v3_4_6.a */; };
+		D1F9172F169C05E80064863E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F9172E169C05E80064863E /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +168,10 @@
 		D19ED75F1695B9380029EBCC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D1F916E5169AC7AF0064863E /* Handlee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Handlee-Regular.ttf"; sourceTree = "<group>"; };
 		D1F916E9169AC7B80064863E /* Delius-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delius-Regular.ttf"; sourceTree = "<group>"; };
+		D1F91729169C03870064863E /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		D1F9172A169C03870064863E /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		D1F9172B169C03870064863E /* libCrittercism_v3_4_6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v3_4_6.a; sourceTree = "<group>"; };
+		D1F9172E169C05E80064863E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,10 +179,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F9172F169C05E80064863E /* SystemConfiguration.framework in Frameworks */,
 				BD5263D61674D91500082EDB /* QuartzCore.framework in Frameworks */,
 				BAFFB5D916672E83003968BF /* UIKit.framework in Frameworks */,
 				BAFFB5DB16672E83003968BF /* Foundation.framework in Frameworks */,
 				BAFFB5DD16672E83003968BF /* CoreGraphics.framework in Frameworks */,
+				D1F9172C169C03870064863E /* libCrittercism_v3_4_6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +260,7 @@
 		BAFFB5C916672E83003968BF = {
 			isa = PBXGroup;
 			children = (
+				D1F91728169C03870064863E /* CrittercismSDK */,
 				D11C15771695BC7400091ED3 /* Default-568h@2x.png */,
 				D19ED75F1695B9380029EBCC /* Default@2x.png */,
 				D19DE1CC169444DC007500C8 /* ic_launcher.png */,
@@ -277,6 +286,7 @@
 		BAFFB5D716672E83003968BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1F9172E169C05E80064863E /* SystemConfiguration.framework */,
 				BD5263D41674D90400082EDB /* QuartzCore.framework */,
 				BAFFB5D816672E83003968BF /* UIKit.framework */,
 				BAFFB5DA16672E83003968BF /* Foundation.framework */,
@@ -395,6 +405,16 @@
 				BD5263B91674BE5A00082EDB /* FPTouchView.m */,
 			);
 			name = FPPopover;
+			sourceTree = "<group>";
+		};
+		D1F91728169C03870064863E /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D1F91729169C03870064863E /* Crittercism.h */,
+				D1F9172A169C03870064863E /* CrittercismDelegate.h */,
+				D1F9172B169C03870064863E /* libCrittercism_v3_4_6.a */,
+			);
+			path = CrittercismSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -666,6 +686,10 @@
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CrittercismSDK\"",
+				);
 				PRODUCT_NAME = IdeaBoardz;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C13D0D28-380D-42DA-AB8F-113D2B98D735";
 				WRAPPER_EXTENSION = app;
@@ -680,6 +704,10 @@
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CrittercismSDK\"",
+				);
 				PRODUCT_NAME = IdeaBoardz;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C13D0D28-380D-42DA-AB8F-113D2B98D735";
 				WRAPPER_EXTENSION = app;
