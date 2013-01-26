@@ -7,7 +7,7 @@
 #import "Idea.h"
 
 
-@interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate>{
+@interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate, UIAlertViewDelegate>{
     FPPopoverController *popover;
     NSMutableArray *sections;
 }

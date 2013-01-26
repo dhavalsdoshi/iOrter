@@ -192,13 +192,26 @@
 }
 
 - (IBAction)deleteIdea:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Confirm delete"
+                                                        message:@"Are you sure you want to delete this item?" delegate:self
+                                              cancelButtonTitle:@"No"
+                                              otherButtonTitles:@"Yes", nil];
     UIButton *button = (UIButton *)sender;
-    _selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
-    [service deleteIdeaWithId:_selectedIdea.ideaId];
-    _selectedIdea = nil;
-    [self viewDidLoad];
-    [self.tableView reloadData];
+    alertView.tag = button.tag;
+    [alertView show];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        _selectedIdea = [selectedSection.ideas objectAtIndex:alertView.tag];
+        [service deleteIdeaWithId:_selectedIdea.ideaId];
+        _selectedIdea = nil;
+        [self viewDidLoad];
+        [self.tableView reloadData];
+    }
+}
+
 
 -(IBAction)vote:(id)sender
 {
