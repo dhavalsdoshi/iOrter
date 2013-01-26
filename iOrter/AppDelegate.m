@@ -6,6 +6,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Crittercism enableWithAppID: @"50ebca84f716964532000008"];
+
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary: [[UIBarButtonItem appearance] titleTextAttributesForState:UIControlStateNormal]];
+    [attributes setValue:[UIFont fontWithName:@"Delius" size:18] forKey:UITextAttributeFont];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
     return YES;
 }
 							

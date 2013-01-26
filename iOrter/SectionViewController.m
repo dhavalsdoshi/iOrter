@@ -105,6 +105,7 @@
     [cell.deleteButton setTag:indexPath.row];
     [cell.voteButton setTag:indexPath.row];
     NSInteger votes = [[selectedSection.ideas objectAtIndex:indexPath.row] votesCount];
+    cell.voteButton.titleLabel.font = [UIFont fontWithName:@"Delius" size:15];
     [cell.voteButton setTitle:[NSString stringWithFormat:@"+%d",votes] forState:UIControlStateNormal];
     return cell;
 }
@@ -211,7 +212,6 @@
         [self.tableView reloadData];
     }
 }
-
 
 -(IBAction)vote:(id)sender
 {
