@@ -19,10 +19,12 @@
 
 }
 
--(id) initWithBoard:(Board *)boardObject{
+-(id) initWithBoard:(Board *)board parent:(id)parent
+{
     self = [super init];
     self = [self init];
-    self.board = boardObject;
+    self.board = board;
+    self.parent = parent;
     _JsonParser = [[BoardJsonParser alloc] init];
     return self;
 }
@@ -35,7 +37,6 @@
     }
     return self;
 }
-
 
 //if URL of board is http://ideaboardz.com/for/board_name/board_id, the board parameter should be "#{board_name}/#{board_id}"
 -(NSMutableArray *) getSections

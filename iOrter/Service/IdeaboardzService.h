@@ -7,7 +7,7 @@
 @property (nonatomic,strong) id parent;
 @property (nonatomic) BoardJsonParser *JsonParser;
 
--(id) initWithBoard:(Board *)boardObject;
+-(id) initWithBoard:(Board *)board parent:(id)parent;
 -(id) initWithParent:(id)parent;
 
 -(NSMutableArray *) getSections;

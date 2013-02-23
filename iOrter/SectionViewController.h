@@ -5,9 +5,10 @@
 #import "BaseTableViewController.h"
 #import "Board.h"
 #import "Idea.h"
+#import "HttpClientService.h"
 
 
-@interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate, UIAlertViewDelegate>{
+@interface SectionViewController : BaseTableViewController<FPPopoverControllerDelegate, UIAlertViewDelegate, HttpTaskDelegate>{
     FPPopoverController *popover;
     NSMutableArray *sections;
 }

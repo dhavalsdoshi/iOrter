@@ -30,7 +30,7 @@
     _board = [[Board alloc] initWithUrl:_boardUrl];    
     }
     
-    IdeaboardzService *boardservice = [[IdeaboardzService alloc] initWithBoard:_board];
+    IdeaboardzService *boardservice = [[IdeaboardzService alloc] initWithBoard:_board parent:self];
     _board.sections = [boardservice getSections];
     self.title = _board.boardName;
     

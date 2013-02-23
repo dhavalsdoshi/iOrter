@@ -66,7 +66,7 @@
 
 -(void)getIdeas
 {
-    service = [[IdeaboardzService alloc] initWithBoard:_board];
+    service = [[IdeaboardzService alloc] initWithBoard:_board parent:self];
     selectedSection.ideas = [service getIdeasForSection:selectedSection.sectionId];
 }
 
@@ -219,11 +219,17 @@
     _selectedIdea = [selectedSection.ideas objectAtIndex:button.tag];
     [service voteForIdeaWithId:_selectedIdea.ideaId];
     _selectedIdea = nil;
-    
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getIdeas) userInfo:nil repeats:NO];
-    [self viewDidLoad];
-   [self.tableView reloadData];
 }
+
+-(void)didFinish {
+    [self getIdeas];
+    [self.tableView reloadData];
+}
+
+-(void)didProgress:(float)progress{
+
+}
+
 - (void)viewDidUnload {
 //     setVoteButton:nil];
     [super viewDidUnload];
