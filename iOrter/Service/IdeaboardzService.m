@@ -54,8 +54,11 @@
     
     NSData *boardJson = [client getFrom:url];
     
-    NSMutableArray *sections = [_JsonParser parseToSections:boardJson];
-    
+    NSMutableArray *sections = nil;
+
+    if (boardJson!=nil) {
+        sections = [_JsonParser parseToSections:boardJson];
+    }
     return sections;
 }
 

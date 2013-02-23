@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 #import "Sticky.h"
 #import "MBProgressHUD.h"
+#import "Reachability.h"
 
 @interface BaseTableViewController : UITableViewController
 
@@ -22,5 +24,6 @@
 - (void) clearProgressMessage;
 - (void) setTitle:(NSString *)title;
 - (void) navigationTitleTapped;
+- (BOOL) isConnectedToInternet;
 
 @end

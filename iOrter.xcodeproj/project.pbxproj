@@ -58,6 +58,7 @@
 		BD5263D21674D7F300082EDB /* notesBg.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263D01674D7F300082EDB /* notesBg.png */; };
 		BD5263D31674D7F300082EDB /* notesBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5263D11674D7F300082EDB /* notesBg@2x.png */; };
 		BD5263D61674D91500082EDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5263D41674D90400082EDB /* QuartzCore.framework */; };
+		BD888C2C16D8B44900A8C5BD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BD888C2B16D8B44900A8C5BD /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BDF82277167DF48400A65C5C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF82276167DF48400A65C5C /* TitleView.xib */; };
 		D1023CA416944CD7009D5EC0 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1023CA316944CD7009D5EC0 /* FAQViewController.m */; };
 		D11C15781695BC7400091ED3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11C15771695BC7400091ED3 /* Default-568h@2x.png */; };
@@ -159,6 +160,8 @@
 		BD5263D01674D7F300082EDB /* notesBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notesBg.png; sourceTree = "<group>"; };
 		BD5263D11674D7F300082EDB /* notesBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notesBg@2x.png"; sourceTree = "<group>"; };
 		BD5263D41674D90400082EDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BD888C2A16D8B44900A8C5BD /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		BD888C2B16D8B44900A8C5BD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		BDF82276167DF48400A65C5C /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		D1023CA216944CD7009D5EC0 /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		D1023CA316944CD7009D5EC0 /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 		BAFFB5C916672E83003968BF = {
 			isa = PBXGroup;
 			children = (
+				BD888C2916D8B43800A8C5BD /* Connectivity */,
 				D1F91728169C03870064863E /* CrittercismSDK */,
 				D11C15771695BC7400091ED3 /* Default-568h@2x.png */,
 				D19ED75F1695B9380029EBCC /* Default@2x.png */,
@@ -405,6 +409,15 @@
 				BD5263B91674BE5A00082EDB /* FPTouchView.m */,
 			);
 			name = FPPopover;
+			sourceTree = "<group>";
+		};
+		BD888C2916D8B43800A8C5BD /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				BD888C2A16D8B44900A8C5BD /* Reachability.h */,
+				BD888C2B16D8B44900A8C5BD /* Reachability.m */,
+			);
+			name = Connectivity;
 			sourceTree = "<group>";
 		};
 		D1F91728169C03870064863E /* CrittercismSDK */ = {
@@ -570,6 +583,7 @@
 				11617246168192300081AB66 /* Board.m in Sources */,
 				119895271682E16C00324B87 /* BoardJsonParser.m in Sources */,
 				D1023CA416944CD7009D5EC0 /* FAQViewController.m in Sources */,
+				BD888C2C16D8B44900A8C5BD /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

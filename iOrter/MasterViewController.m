@@ -1,6 +1,7 @@
 #import "MasterViewController.h"
 #import "Model/Section.h"
 #import "BoardViewController.h"
+
 @interface MasterViewController () {
 }
 
@@ -115,6 +116,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath
                                                                     *)indexPath
 {
+    if (![self isConnectedToInternet]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Internet Error" message:@"You don't seem to be connected to internet. Please check your connection and try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+
     if(indexPath.row == 1){
         boardName = @"test";
         boardId = 2;

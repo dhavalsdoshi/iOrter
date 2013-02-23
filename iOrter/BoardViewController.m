@@ -36,6 +36,12 @@
     
 }
 
+-(void) cancelNavigation
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

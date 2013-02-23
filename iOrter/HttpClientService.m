@@ -32,6 +32,10 @@
     request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
     NSData * data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (error.code == NSURLErrorNotConnectedToInternet){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
     return data;
 }
 
@@ -67,6 +71,10 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    if (error.code == NSURLErrorNotConnectedToInternet){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
     [_delegate didFail:@""];
     NSLog(@"Did Fail With Error- %@", error.localizedDescription);
 }

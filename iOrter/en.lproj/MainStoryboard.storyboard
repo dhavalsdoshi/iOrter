@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -205,7 +205,7 @@
             </objects>
             <point key="canvasLocation" x="-665" y="132"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - FAQs-->
         <scene sceneID="BQP-8J-cnh">
             <objects>
                 <viewController id="pZQ-AX-bfU" customClass="FAQViewController" sceneMemberID="viewController">
@@ -230,7 +230,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IBp-34-xbb"/>
+                    <navigationItem key="navigationItem" title="FAQs" id="IBp-34-xbb"/>
                     <connections>
                         <outlet property="loader" destination="9Fw-pO-fsk" id="9Xk-VK-rCr"/>
                         <outlet property="webView" destination="P3f-sD-Spv" id="HVx-tQ-wnO"/>
@@ -284,7 +284,9 @@
                             <outlet property="delegate" destination="n2n-5F-fZ6" id="geA-wI-O4a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nYm-p7-k8r"/>
+                    <navigationItem key="navigationItem" id="nYm-p7-k8r">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="Y4X-qW-k29"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maj-2E-lBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
