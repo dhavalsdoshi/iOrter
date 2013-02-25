@@ -117,7 +117,7 @@
                                                                     *)indexPath
 {
     if (![self isConnectedToInternet]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Internet Error" message:@"You don't seem to be connected to internet. Please check your connection and try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"You don't seem to be connected to internet. Please check your connection and try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return;
     }
