@@ -40,8 +40,8 @@
                                                 <view contentMode="scaleToFill" id="gfF-58-37Y">
                                                     <rect key="frame" x="20" y="14" width="280" height="124"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ideaboardz.png" id="4kO-5v-MYA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="39"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ideaBoardzLogoMain.png" id="4kO-5v-MYA">
+                                                            <rect key="frame" x="-5" y="-2" width="194" height="52"/>
                                                         </imageView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brainstrorm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SAA-fs-fik">
                                                             <rect key="frame" x="109" y="36" width="118" height="25"/>
@@ -427,7 +427,7 @@
     </scenes>
     <resources>
         <image name="delete.png" width="48" height="48"/>
-        <image name="ideaboardz.png" width="246" height="45"/>
+        <image name="ideaBoardzLogoMain.png" width="250" height="68"/>
     </resources>
     <classes>
         <class className="BaseTableViewController" superclassName="UITableViewController">

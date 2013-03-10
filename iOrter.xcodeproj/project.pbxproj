@@ -32,15 +32,18 @@
 		BAFFB5E316672E83003968BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5E116672E83003968BF /* InfoPlist.strings */; };
 		BAFFB5E516672E83003968BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5E416672E83003968BF /* main.m */; };
 		BAFFB5E916672E83003968BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5E816672E83003968BF /* AppDelegate.m */; };
-		BAFFB5EB16672E83003968BF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EA16672E83003968BF /* Default.png */; };
-		BAFFB5ED16672E83003968BF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EC16672E83003968BF /* Default@2x.png */; };
-		BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB5EE16672E83003968BF /* Default-568h@2x.png */; };
 		BAFFB5F516672E83003968BF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB5F416672E83003968BF /* MasterViewController.m */; };
 		BAFFB60016672E83003968BF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5FF16672E83003968BF /* SenTestingKit.framework */; };
 		BAFFB60116672E83003968BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5D816672E83003968BF /* UIKit.framework */; };
 		BAFFB60216672E83003968BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFFB5DA16672E83003968BF /* Foundation.framework */; };
 		BAFFB60A16672E83003968BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFFB60816672E83003968BF /* InfoPlist.strings */; };
 		BAFFB60D16672E83003968BF /* iOrterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFFB60C16672E83003968BF /* iOrterTests.m */; };
+		BD070F9816ECFAB600E493E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD070F9516ECFAB600E493E7 /* Default-568h@2x.png */; };
+		BD070F9916ECFAB600E493E7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BD070F9616ECFAB600E493E7 /* Default.png */; };
+		BD070F9A16ECFAB600E493E7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD070F9716ECFAB600E493E7 /* Default@2x.png */; };
+		BD070F9D16ECFB9B00E493E7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BD070F9B16ECFB9B00E493E7 /* icon.png */; };
+		BD070F9E16ECFB9B00E493E7 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD070F9C16ECFB9B00E493E7 /* icon@2x.png */; };
+		BD070FA416ECFCEC00E493E7 /* ideaBoardzLogoMain.png in Resources */ = {isa = PBXBuildFile; fileRef = BD070FA316ECFCEC00E493E7 /* ideaBoardzLogoMain.png */; };
 		BD1CFCAD16996AFE0068AE8C /* edosz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCAC16996AFE0068AE8C /* edosz.ttf */; };
 		BD1CFCAF16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCAE16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf */; };
 		BD1CFCB116996B260068AE8C /* Sketch_Block.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFCB016996B260068AE8C /* Sketch_Block.ttf */; };
@@ -61,10 +64,8 @@
 		BD888C2C16D8B44900A8C5BD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BD888C2B16D8B44900A8C5BD /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BDF82277167DF48400A65C5C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF82276167DF48400A65C5C /* TitleView.xib */; };
 		D1023CA416944CD7009D5EC0 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1023CA316944CD7009D5EC0 /* FAQViewController.m */; };
-		D11C15781695BC7400091ED3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11C15771695BC7400091ED3 /* Default-568h@2x.png */; };
 		D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1BA16941109007500C8 /* ideaboardz.png */; };
 		D19DE1CD169444DC007500C8 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = D19DE1CC169444DC007500C8 /* ic_launcher.png */; };
-		D19ED7601695B9380029EBCC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19ED75F1695B9380029EBCC /* Default@2x.png */; };
 		D1F916E6169AC7AF0064863E /* Handlee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1F916E5169AC7AF0064863E /* Handlee-Regular.ttf */; };
 		D1F916E7169AC7AF0064863E /* Handlee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1F916E5169AC7AF0064863E /* Handlee-Regular.ttf */; };
 		D1F916EA169AC7B80064863E /* Delius-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1F916E9169AC7B80064863E /* Delius-Regular.ttf */; };
@@ -127,9 +128,6 @@
 		BAFFB5E616672E83003968BF /* iOrter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOrter-Prefix.pch"; sourceTree = "<group>"; };
 		BAFFB5E716672E83003968BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAFFB5E816672E83003968BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BAFFB5EA16672E83003968BF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		BAFFB5EC16672E83003968BF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		BAFFB5EE16672E83003968BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BAFFB5F316672E83003968BF /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BAFFB5F416672E83003968BF /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		BAFFB5FE16672E83003968BF /* iOrterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOrterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +136,12 @@
 		BAFFB60916672E83003968BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BAFFB60B16672E83003968BF /* iOrterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOrterTests.h; sourceTree = "<group>"; };
 		BAFFB60C16672E83003968BF /* iOrterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOrterTests.m; sourceTree = "<group>"; };
+		BD070F9516ECFAB600E493E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BD070F9616ECFAB600E493E7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BD070F9716ECFAB600E493E7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BD070F9B16ECFB9B00E493E7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		BD070F9C16ECFB9B00E493E7 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		BD070FA316ECFCEC00E493E7 /* ideaBoardzLogoMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ideaBoardzLogoMain.png; sourceTree = "<group>"; };
 		BD1CFCAC16996AFE0068AE8C /* edosz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = edosz.ttf; sourceTree = "<group>"; };
 		BD1CFCAE16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handwritten_Crystal_v2.ttf; sourceTree = "<group>"; };
 		BD1CFCB016996B260068AE8C /* Sketch_Block.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sketch_Block.ttf; sourceTree = "<group>"; };
@@ -165,10 +169,8 @@
 		BDF82276167DF48400A65C5C /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		D1023CA216944CD7009D5EC0 /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		D1023CA316944CD7009D5EC0 /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
-		D11C15771695BC7400091ED3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D19DE1BA16941109007500C8 /* ideaboardz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ideaboardz.png; sourceTree = "<group>"; };
 		D19DE1CC169444DC007500C8 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
-		D19ED75F1695B9380029EBCC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D1F916E5169AC7AF0064863E /* Handlee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Handlee-Regular.ttf"; sourceTree = "<group>"; };
 		D1F916E9169AC7B80064863E /* Delius-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delius-Regular.ttf"; sourceTree = "<group>"; };
 		D1F91729169C03870064863E /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
@@ -265,8 +267,6 @@
 			children = (
 				BD888C2916D8B43800A8C5BD /* Connectivity */,
 				D1F91728169C03870064863E /* CrittercismSDK */,
-				D11C15771695BC7400091ED3 /* Default-568h@2x.png */,
-				D19ED75F1695B9380029EBCC /* Default@2x.png */,
 				D19DE1CC169444DC007500C8 /* ic_launcher.png */,
 				78B540DD1679A5A100113691 /* MBProgressHUD */,
 				BD5263B31674BE2200082EDB /* FPPopover */,
@@ -335,14 +335,16 @@
 		BAFFB5DF16672E83003968BF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BD070F9B16ECFB9B00E493E7 /* icon.png */,
+				BD070F9C16ECFB9B00E493E7 /* icon@2x.png */,
+				BD070F9516ECFAB600E493E7 /* Default-568h@2x.png */,
+				BD070F9616ECFAB600E493E7 /* Default.png */,
+				BD070F9716ECFAB600E493E7 /* Default@2x.png */,
 				115569C31670651900FA146D /* DropDownButton.png */,
 				BAFFB5E016672E83003968BF /* iOrter-Info.plist */,
 				BAFFB5E116672E83003968BF /* InfoPlist.strings */,
 				BAFFB5E416672E83003968BF /* main.m */,
 				BAFFB5E616672E83003968BF /* iOrter-Prefix.pch */,
-				BAFFB5EA16672E83003968BF /* Default.png */,
-				BAFFB5EC16672E83003968BF /* Default@2x.png */,
-				BAFFB5EE16672E83003968BF /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -384,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4E1AB3169B439900ED99D6 /* delete.png */,
+				BD070FA316ECFCEC00E493E7 /* ideaBoardzLogoMain.png */,
 				D19DE1BA16941109007500C8 /* ideaboardz.png */,
 				BD5263D01674D7F300082EDB /* notesBg.png */,
 				BD5263D11674D7F300082EDB /* notesBg@2x.png */,
@@ -502,9 +505,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFFB5E316672E83003968BF /* InfoPlist.strings in Resources */,
-				BAFFB5EB16672E83003968BF /* Default.png in Resources */,
-				BAFFB5ED16672E83003968BF /* Default@2x.png in Resources */,
-				BAFFB5EF16672E83003968BF /* Default-568h@2x.png in Resources */,
 				115569C41670651900FA146D /* DropDownButton.png in Resources */,
 				115569CB167086C300FA146D /* MainStoryboard.storyboard in Resources */,
 				BD5263C61674CC9B00082EDB /* pullDown.png in Resources */,
@@ -518,14 +518,18 @@
 				BDF82277167DF48400A65C5C /* TitleView.xib in Resources */,
 				D19DE1BB16941109007500C8 /* ideaboardz.png in Resources */,
 				D19DE1CD169444DC007500C8 /* ic_launcher.png in Resources */,
-				D19ED7601695B9380029EBCC /* Default@2x.png in Resources */,
-				D11C15781695BC7400091ED3 /* Default-568h@2x.png in Resources */,
 				BD1CFCAD16996AFE0068AE8C /* edosz.ttf in Resources */,
 				BD1CFCAF16996B0E0068AE8C /* Handwritten_Crystal_v2.ttf in Resources */,
 				BD1CFCB116996B260068AE8C /* Sketch_Block.ttf in Resources */,
 				D1F916E6169AC7AF0064863E /* Handlee-Regular.ttf in Resources */,
 				D1F916EA169AC7B80064863E /* Delius-Regular.ttf in Resources */,
 				BD4E1AB4169B439900ED99D6 /* delete.png in Resources */,
+				BD070F9816ECFAB600E493E7 /* Default-568h@2x.png in Resources */,
+				BD070F9916ECFAB600E493E7 /* Default.png in Resources */,
+				BD070F9A16ECFAB600E493E7 /* Default@2x.png in Resources */,
+				BD070F9D16ECFB9B00E493E7 /* icon.png in Resources */,
+				BD070F9E16ECFB9B00E493E7 /* icon@2x.png in Resources */,
+				BD070FA416ECFCEC00E493E7 /* ideaBoardzLogoMain.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,8 +680,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajdeep Kwatra (V24C648P8T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chirag Doshi";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chirag Doshi";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -685,8 +689,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "C13D0D28-380D-42DA-AB8F-113D2B98D735";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C13D0D28-380D-42DA-AB8F-113D2B98D735";
+				PROVISIONING_PROFILE = "6EFCE40D-F273-4B60-B6C5-26C156ECBC33";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6EFCE40D-F273-4B60-B6C5-26C156ECBC33";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -713,7 +717,7 @@
 		BAFFB61216672E83003968BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajdeep Kwatra (V24C648P8T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chirag Doshi";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOrter/iOrter-Prefix.pch";
 				INFOPLIST_FILE = "iOrter/iOrter-Info.plist";
@@ -723,7 +727,7 @@
 					"\"$(SRCROOT)/CrittercismSDK\"",
 				);
 				PRODUCT_NAME = IdeaBoardz;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C13D0D28-380D-42DA-AB8F-113D2B98D735";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6EFCE40D-F273-4B60-B6C5-26C156ECBC33";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
